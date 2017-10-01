@@ -1,0 +1,96 @@
+<link rel="SHORTCUT ICON" href="seiryub.png" type="image/x-icon">
+<html>
+	<head>
+
+		<title>BO2 ANIM TUTORIAL</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
+	
+		<h1>BO2 Weapon Animation replacement tutorial</h1>
+		<div id="dontcenter">
+			<br><br><br>
+		<p>Download and install <a href="http://mirror2.cheatengine.org/download/d1/CheatEngine64.exe">Cheat Engine</a></p><br>
+		<a>once downloaded, open up bo2, load any clip in your theater</a><br>
+		<a>once your clip has loaded, open cheat engine.</a><br>
+		<a><b>NOTE:</b>make sure you have cheat engine open <b>only</b> in theater!</a><br>
+		<a>do <b>not</b> go in a public/private match while having cheat engine running</a><br><br>
+		<a>Click the red/green glowing button in cheat engine: </a><br><br>
+		<img src="temp\1.png"><br><br><a>Select the bo2 process (t6mp.exe) and click on open:</a><br><br><img src="temp\2.png"><br><br>
+		<a>next up you're gonna look at what weapon is used, and what weapon you want to turn it into</a><br>
+		<a>in this case, i'm using the DSR, and i wish to change the animation into the AN94.</a><br><br>
+		<img src="temp\3.jpg" width="640" height="360"><br><br>
+		<a>get back to cheat engine, set <i>value type</i> to <i>string</i> and write <i>viewmodel_dsr</i></a><br><a>if you are using another weapon, use that id instead of dsr</a><br><a>press First Scan</a><br><br>
+		<img src="temp\4.png"><a>___</a><img src="temp\5.png"><br><br>
+		<a>This may take a while. whenever you see this you know it is done loading and you can continue:</a><br><br>
+		<img src="temp\6.png"><br><br>
+		<a>Select all of these Addresses/Values by clicking on one of them and pressing CTRL+A</a><br>
+		<a>Click on the red arrow in the corner (as shown in the image above)</a><br><br>
+		<a>all the addresses should have been added to the list below.</a><br><a>Select all of the new addresses in the list below by clicking one and pressing CTRL+A</a><br><br>
+		<a>Right click on one of one of the words 'string[13]' (13 may be a different number).</a><br>
+		<a>Click <i>Change record</i>, <i>Type</i>, or press ALT+ENTER.</a><br><br>
+		<img src="temp\7.png"><br><br>
+		<a>Next, Change the number in the 'Length' textfield to 50 and press Ok.</a><br><br>
+		<img src="temp\8.png"><br><br>
+		<a>The values now have changed into the weapon animation names</a><br><a> such as <b>viewmodel_dsr_reload</b>, <b>viewmodel_dsr_pullout</b>, etc etc</a><br><br>
+		<img src="temp\9.png"><br><br>
+		<a>All you have to do is change the names.</a><br><a> Click on one of the addresses in the list and press ENTER to change its value</a><br><a>now simply replace 'dsr50' with 'an94' and press ENTER to save the new value</a><br><br>
+		<a>a list of weapon animation values can be found <a href="temp\model_state.txt">here</a><br><a><br>
+		<a>you can replace just the reload animation (may look sloppy),</a><br><a> but you can also replace all of them (which takes alot of time)</a><br><br>
+		<a>as you might have seen in the screenshot above, there are TWO values called 'viewmodel_dsr50_idle'</a><br>
+		<a>There are THREE addresses for each seperate reload animation</a><br><a> you have to replace all of those in order to get it working</a><br><br>
+
+		<a>ingame, press esc, and hit 'jump to start', the new animations will now load.</a><br><br>
+		<img src="temp\10.png" width="640" height="360">
+		<h2>Have fun!</h2><br>
+		<a href="https://twitter.com/intent/tweet" class="twitter-mention-button" data-text="Replacing weapon animations in any cod by @gmzorz_ " data-show-count="false">Share this tutorial</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><br><br>
+	</div>
+	</body>
+	<footer>
+		<a>&#169;Gmzorz (<a href="http://www.twitter.com/gmzorz">Gmzorz</a>)</a><br>
+		<br><a>If you have any questions, feel free to message me.</a>
+		<style>
+			body
+			{
+				background-color: #252525;
+				color: #FFFFFF;
+				font-family: Arial;
+				text-align: center;
+			}
+			#dontcenter
+			{
+				text-align: left;
+				padding-left: 300px;
+			}
+			a:link 
+			{
+			    color: #00BBFF;
+			    text-decoration: none;
+			}
+
+
+			a:visited 
+			{
+			    color: #00BBFF;
+			    text-decoration: none;
+			}
+
+
+			a:hover 
+			{
+			    color: #FFFFFF;
+			    text-decoration: none;
+			}
+
+			a:active 
+			{
+			    color: #FFFFFF;
+			    text-decoration: none;
+			}
+			footer
+			{
+				color: #909090;
+			}
+		</style>
+	</footer>
+</html>

@@ -1,0 +1,172 @@
+<html>
+<title>Inception cinematic</title>
+
+<h1>Inception cinematic explained</h1>
+the cinematic is done with 2 recordings, one with greenscreen sky.<br>
+it is very simple, but time consuming. Requires simple math.<br><br>
+
+record one facing up and recording one facing down, first recording movement has to match the other movement except for one thing<br>
+it has to be mirrored, and the z position has to be higher.<br><br>
+
+export campath with cam_export in iw5mvm<br>
+original path:<br><br>
+<div id="dot">
+0_7.28818e+06/80/-0.142083/0.309782/-0.046876/-0.938962/-125.07/-1418.12/242.749;7.28871e+06/80/-0.448162/0.0924428/-0.0466581/-0.887935/-424.755/-1291.92/67.7724;7.28932e+06/80/0.969426/0.0209061/-0.227716/0.0890008/-589.636/-794.224/122.207;7.28985e+06/80/0.93524/0.0606329/-0.287798/0.197035/-562.962/-303.354/113.727;7.29088e+06/80/0.722695/-0.0351666/-0.689286/-0.0368712/-564.978/527.438/216.252;</div><br><br>
+
+organised: <br><br>
+<div id="dot">
+0_7.28818e+06/80/-0.142083/0.309782/-0.046876/-0.938962/-125.07/-1418.12/242.749;   <br>  
+7.28871e+06/80/-0.448162/0.0924428/-0.0466581/-0.887935/-424.755/-1291.92/67.7724;  <br>  
+7.28932e+06/80/0.969426/0.0209061/-0.227716/0.0890008/-589.636/-794.224/122.207;    <br> 
+7.28985e+06/80/0.93524/0.0606329/-0.287798/0.197035/-562.962/-303.354/113.727;     <br>
+7.29088e+06/80/0.722695/-0.0351666/-0.689286/-0.0368712/-564.978/527.438/216.252;  </div><br><br>  
+
+We can display it as the following:<br><br>
+
+demotick/fov/aw/ax/ay/az/x/y/z;<br><br>
+or you can call it like this<br>
+Point in timeline/fov/viewport W angle/viewport X angle/viewport Y angle/viewport Z angle/x position/y position/z position; (; separates this point from the next point)<br><br>
+
+Apply the following sums (to mirror):<br>
+<i>ay * -1 <br>
+az * -1<br></i>
+for example, if ay is 1, it becomes -1, if az is -0.3 is becomes 0.3<br><br>
+
+brings you to the following:<br><br>
+<div id="dot">
+0_7.28818e+06/80/-0.142083/0.309782/0.046876/0.938962/-125.07/-1418.12/242.749;    <br> 
+7.28871e+06/80/-0.448162/0.0924428/0.0466581/0.887935/-424.755/-1291.92/67.7724;   <br>  
+7.28932e+06/80/0.969426/0.0209061/0.227716/-0.0890008/-589.636/-794.224/122.207;   <br>  
+7.28985e+06/80/0.93524/0.0606329/0.287798/-0.197035/-562.962/-303.354/113.727; <br>    
+7.29088e+06/80/0.722695/-0.0351666/0.689286/0.0368712/-564.978/527.438/216.252; </div><br><br>    
+
+Get the difference between points (in xyz)<br>
+(second point minus first point, third point minus second point, and so on..)<br><br>
+
+<b>x:</b><br>
+<div id="dot">
+-125.07 + -299.685 = the next point => -424.755<br>
+-424.755 + -164.881<br>
+-589.636 + 26.674<br>
+-562.962 + -2.016<br>
+-564.978</div><br><br>
+
+<b>y:</b><br>
+<div id="dot">
+-1418.12 + 126.2<br>
+-1291.92 + 497.696<br>
+-794.224 + 490.87<br>
+-303.354 + 830.792<br>
+527.438</div><br><br>
+
+<b>z:</b><br>
+<div id="dot">
+242.749	+ -174.9766<br>
+67.7724	+ 54.4346<br>
+122.207	+ -8.48<br>
+113.727	+ 102.525<br>
+216.252</div><br><br>
+
+now we have to invert (*-1) these differences and add them to the new xyz starting point (preferably somewhere up high)<br><br>
+
+new starting point (xyz): 400/900/1400<br><br>
+
+x:<br>
+<div id="dot">
+400 + (-299.685*-1) = 699.685<br>
+699.685 + (-164.881*-1) = 864.566<br>
+864.566 + (26.674*-1) = 837.892<br>
+837.892 + (-2.016*-1) = 839.908<br>
+839.908</div><br><br>
+
+y:<br>
+<div id="dot">
+900.899 + (126.2*-1) = 774.699<br>
+774.699 + (497.696*-1) = 277.003<br>
+277.003 + (490.87*-1) = -213.867<br>
+-213.867 + (-830.792*-1) = -1044.659<br>
+-1044.659</div><br><br>
+
+z:<br>
+<div id="dot">
+1400 + (-174.9766*-1) = 1574.9766<br>
+1574.9766 + (54.4346*-1) = 1520.542<br>
+1520.542 + (-8.48*-1) = 1529.022<br>
+1529.022 + (102.525*-1) = 1426.497<br>
+1426.497</div><br><br>
+
+add to the campath:<br><br>
+
+<div id="dot">
+0_7.28818e+06/80/-0.142083/0.309782/0.046876/0.938962/400/900.899/1400;  <br>   
+7.28871e+06/80/-0.448162/0.0924428/0.0466581/0.887935/699.685/774.699/1574.9766; <br>    
+7.28932e+06/80/0.969426/0.0209061/0.227716/-0.0890008/864.566/277.003/1520.542; <br>    
+7.28985e+06/80/0.93524/0.0606329/0.287798/-0.197035/837.892/-213.867/1529.022;  <br>   
+7.29088e+06/80/0.722695/-0.0351666/0.689286/0.0368712/839.908/-1044.659/1426.497; <br>
+</div><br>
+
+de-organise and put it in a .cam file (go to your favorite text editor, paste the new campath and save as .cam)<br><br>
+<div id="dot">
+0_7.28818e+06/80/-0.142083/0.309782/0.046876/0.938962/400/900.899/1400;7.28871e+06/80/-0.448162/0.0924428/0.0466581/0.887935/699.685/774.699/1574.9766;7.28932e+06/80/0.969426/0.0209061/0.227716/-0.0890008/864.566/277.003/1520.542;7.28985e+06/80/0.93524/0.0606329/0.287798/-0.197035/837.892/-213.867/1529.022;7.29088e+06/80/0.722695/-0.0351666/0.689286/0.0368712/839.908/-1044.659/1426.497;</div><br><br>
+
+go ingame anosud use cam_import to load the new camera movement<br><br>
+
+in post, you're gonna have to mirror the footage both horizontally and vertically (scale*-1)<br><br>
+
+PS i recommend you use the frozen dollycam function, works better and is easier to use when combing maps :)<br>
+ALSO, i included an excel file to ease the process of calculating the mirrorred coords.<br>
+<style>
+			body
+			{
+				background-color: #252525;
+				color: #FFFFFF;
+				font-family: Arial;
+				padding-left: 50px;
+				padding-top: 50px;
+			}
+			#dontcenter
+			{
+				text-align: left;
+				padding-left: 300px;
+			}
+			a:link 
+			{
+			    color: #00BBFF;
+			    text-decoration: none;
+			}
+
+
+			a:visited 
+			{
+			    color: #00BBFF;
+			    text-decoration: none;
+			}
+			#dot
+			{
+				
+				border-width: 1px;
+				border-top-style: dotted;
+    			border-right-style: solid;
+    			border-bottom-style: dotted;
+    			border-left-style: solid;
+				word-wrap: break-word;
+			}
+
+			a:hover 
+			{
+			    color: #FFFFFF;
+			    text-decoration: none;
+			}
+
+			a:active 
+			{
+			    color: #FFFFFF;
+			    text-decoration: none;
+			}
+			footer
+			{
+				color: #909090;
+			}
+		</style>
+
+	</html>

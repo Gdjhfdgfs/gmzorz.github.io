@@ -1,0 +1,129 @@
+<link rel="SHORTCUT ICON" href="seiryub.png" type="image/x-icon">
+
+<h2><a href="growFx.zip" download target="_blank">Download mod</a></h2>
+<title>Models spawning script</title>
+<b>Models spawning script</b>
+<br>Info<br>
+<b>First (Private) Release: </b>7/29/2016<br>
+<b>Open Release: </b>12/09/2016<br>
+this mod was based on my previous models spawning script/plugin, which was made around 2014 using the mw3 server addon, Which has been discontinued for a while.<br>
+<br>
+ 
+<a href="sunnyraid.png"><img src="sunnyraid.png" height="288" width="512"></a><br><br>
+<b>credits:</b><br>
+Azsry (corrections)
+ <br><br>
+You can only use one spawn function per game, either SpawnModel or PlayFx, as they are both using the same controls.<br><br>
+
+
+<b>Usage</b><br>
+
+Watch this video<br>
+<iframe width="640" height="360"
+src="https://www.youtube.com/embed/zr-tZGEM8J0">
+</iframe><br><br>
+
+If you are using redacted, simply put the .gsc files in the data/scripts folder.<br><br>
+
+
+
+<b>Adding models</b><br>
+Firstly, we need to know our limitations.<br>
+Bo2 does not allow users to modify their fastfiles. The tools to modify them are currently private so as of right now we will have to work with the existing fastfiles.<br>
+If one wishes to spawn a model, it has to be a model of the fastfile that is currently loaded (e.g. if you are on the map nuketown, the nuketown .ff is loaded)<br>
+Spawning a model from the map aftermath onto the map nuketown will most likely give you a black box.<br>
+Now that we know what our limitations are, we can add the models into the .gsc code.<br>
+Open the .gsc file and scroll down to the SpawnModel function, where you will see lists (arrays) of strings of the maps. <br>
+We can add a model to a map cycle by creating a new string<br><br>
+<i>case "mp_drone":<br>
+	
+                level.models[0] = ("t5_foliage_tree_aquilaria01v2_no_vines");</i>  //First model on the list<br>
+                <i>level.models[1] = ("t5_foliage_plants_tropic09");</i> //Second model on the list... <br><i>
+                maxNum = level.models.size;</i>  //Tells the game how big the current list is (this can be put under for(;;) if preferred) <br>
+                <i>break;</i> //indicates the end of the map list<br> 
+            </i>
+            <br>
+if your favorite map is not in the list, you can add it as shown above, add another case for your map and add the models.<br><br>
+Models for each map fastfile can be found <b><a href="map_models">here</a></b><br>
+Fx for each map fastfile can be found <b><a href="bo2fx.txt">here</a></b><br><br>
+
+Simply put the model you wish to add inbetween the brackets and Quotation marks<br><br>
+<b>Spawning models</b><br>
+ 
+ADS: cycle through map models (from the string arrays in SpawnModel) <br>
+USE button: Spawn model<br>
+in most cases, the ADS button = Right mouse and USE = F button (USE is used for picking up weapons ingame)<br><br>
+
+ 
+<b>Saving maps/models</b><br>
+ 
+go ingame and place your models. Once you're done, navigate to the redacted game files and open the data folder<br>
+open up games_mp.log with your default text editor and scroll all the way down<br>
+you should see something like this:<br><br>
+ 
+<i>setCustomModel((100, 200, 300), (0, 120, 0), 0, "model_name");</i><br><br>
+ 
+navigate to redacted\data\scripts, open playFx.gsc and find the map function you were working on.<br>
+simply paste the lines from games_mp.log into the map function and save the file, do <b>not</b> put the timestamps in there! watch my tutorial video on how to remove those easily<br>
+
+make sure you <b>save</b> the file.<br><br>
+
+ 
+<b>Spawning effects (FX)</b><br>
+ 
+method works the same as spawning models<br><br>
+  
+questions<br>
+skype: gijs.oosterling<br>
+Discord: Gmzorz #1650<br>
+<a href="https://twitter.com/intent/tweet" class="twitter-mention-button" data-text="GrowFX mod for Black Ops 2 Redacted by @gmzorz " data-show-count="false">Share this tutorial</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+ 
+<br><br>
+
+<a href="growFx.zip" download target="_blank">Download mod</a><br>
+
+<style>
+			body
+			{
+				background-color: #252525;
+				color: #FFFFFF;
+				font-family: Arial;
+				padding-left: 50px;
+				padding-top: 50px;
+			}
+			#dontcenter
+			{
+				text-align: left;
+				padding-left: 300px;
+			}
+			a:link 
+			{
+			    color: #00BBFF;
+			    text-decoration: none;
+			}
+
+
+			a:visited 
+			{
+			    color: #00BBFF;
+			    text-decoration: none;
+			}
+
+
+			a:hover 
+			{
+			    color: #FFFFFF;
+			    text-decoration: none;
+			}
+
+			a:active 
+			{
+			    color: #FFFFFF;
+			    text-decoration: none;
+			}
+			footer
+			{
+				color: #909090;
+			}
+		</style>

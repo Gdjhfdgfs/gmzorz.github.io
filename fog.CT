@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="18">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>129</ID>
+      <Description>"fog on"</Description>
+      <LastState Value="-4.34932865E-37" Activated="1" RealAddress="2E4AD2C0"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2E4AD2C0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>132</ID>
+      <Description>"fog start"</Description>
+      <LastState Value="76547" Activated="1" RealAddress="2E4AD314"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2E4AD314</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>131</ID>
+      <Description>"fog distance"</Description>
+      <LastState Value="-10758.74902" Activated="1" RealAddress="2E4AD310"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2E4AD310</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>136</ID>
+      <Description>"fog rotation 2"</Description>
+      <LastState Value="1308.846924" Activated="1" RealAddress="2E4AD324"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2E4AD324</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>133</ID>
+      <Description>"height"</Description>
+      <LastState Value="121212" Activated="1" RealAddress="2E4AD318"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2E4AD318</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>152</ID>
+      <Description>"No description"</Description>
+      <LastState Value="1" Activated="0" RealAddress="43CFAB70"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>43CFAB70</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>153</ID>
+      <Description>"No description"</Description>
+      <LastState Value="1" Activated="0" RealAddress="43CFAFD0"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>43CFAFD0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>141</ID>
+      <Description>"fog r (far)"</Description>
+      <LastState Value="0" Activated="0" RealAddress="2E4AD340"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2E4AD340</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>142</ID>
+      <Description>"fog g (far)"</Description>
+      <LastState Value="0" Activated="0" RealAddress="2E4AD344"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2E4AD344</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>143</ID>
+      <Description>"fog b (far)"</Description>
+      <LastState Value="0" Activated="0" RealAddress="2E4AD348"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2E4AD348</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>138</ID>
+      <Description>"fog r (near)"</Description>
+      <LastState Value="12" Activated="1" RealAddress="2E4AD330"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2E4AD330</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>139</ID>
+      <Description>"fog g (near)"</Description>
+      <LastState Value="12" Activated="1" RealAddress="2E4AD334"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2E4AD334</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>140</ID>
+      <Description>"fog b (near)"</Description>
+      <LastState Value="12" Activated="1" RealAddress="2E4AD338"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2E4AD338</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>137</ID>
+      <Description>"flare size"</Description>
+      <LastState Value="0" Activated="1" RealAddress="2E4AD32C"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2E4AD32C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>135</ID>
+      <Description>"fog rotation"</Description>
+      <LastState Value="199.9799805" Activated="1" RealAddress="2E4AD320"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2E4AD320</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>134</ID>
+      <Description>"fog bias"</Description>
+      <LastState Value="10702.34863" Activated="1" RealAddress="2E4AD31C"/>
+      <Color>80000008</Color>
+      <VariableType>Float</VariableType>
+      <Address>2E4AD31C</Address>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

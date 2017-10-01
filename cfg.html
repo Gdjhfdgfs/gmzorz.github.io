@@ -1,0 +1,220 @@
+<html>
+<div id="borderme"><br>
+//Gmzorz's extended standard config <br>
+//everything written with "//" before will not be executed by the console, i use this feature to make notes<br><br>
+
+con_gamemsgwindow0msgtime "0"<br>
+	&nbsp;&nbsp;&nbsp;//set killfeed fadetime (Value is in seconds)<br>
+con_gamemsgwindow0linecount "0"<br>
+	&nbsp;&nbsp;&nbsp;//set killfeed height (Value is amount of lines)<br>
+cg_chatheight "0"<br>
+	&nbsp;&nbsp;&nbsp;//Amount of chatlines to be displayed<br>
+hud_enable 0<br>
+g_hardcore 1<br>
+ui_hud_hardcore "1"<br>
+	//hud_enable, g_hardcore and ui_hud_hardcore disable unnecessary hud elements<br>
+	//to disable hud elements, set hud_enable to "0 and g_hardcore to "1"<br>
+cg_drawcrosshair "0"<br>
+	//Value "1": showing crosshair<br>
+	//Value "0": removing crosshair<br>
+//cg_draw2d "1"<br>
+	//Value "1": displaying all hud objects except for the ones that are affected by other hud dvars*<br>
+	//Value "0": removes all hud objects including the ones that are affected by other hud dvars*<br>
+	//*: dvars such as hud_enable, g_hardcore, cg_chatheight, cg_drawcrosshair, etc etc<br>
+cg_TeamColor_Allies "0 0 0"<br>
+cg_TeamColor_Axis "1 1 1"<br>
+	//Colors of the killfeed<br>
+	//Values are in RGB colors: "R G B",<br>
+	//"1 1 1" = white;<br>
+	//"0 0 0" = black; <br>
+	//"1 0 0" = red;<br>
+	//"0 1 0" = green;<br>
+	//"0 0 1" = blue;<br>
+	//"1 1 0" = yellow;<br>
+	//"1 0 1" = purple;<br>
+	//"0 1 1" = light blue;<br><br>
+
+//looks<br>
+sm_enable "1'<br>
+	//Value "1": showing baked shadows (non-realtime shadows, images placed on the map)<br>
+	//Value "0": removing baked shadows <br>
+r_fog "1"<br>
+	//Value "1": showing fog<br>
+	//Value "0": removing fog<br>
+cg_fov "80"<br>
+	//Field of view<br>
+cg_fovscale "1.125"<br>
+	//With fovscale you can basically do any fov in first person<br>
+	//values are from 0 to 2, standard value is 1 and i recommend using something around 1 (eg 0.9, 1.1)<br>
+cg_gun_x "-0.2"<br>
+	//Gun position X<br>
+cg_gun_y "0"<br>
+	//Gun position Y<br>
+cg_gun_z "0"<br>
+	//Gun position Z<br>
+r_filmusetweaks 1<br>
+	//Value "1": enables filmtweak adjustment, you need to enable r_filmtweakenable to use the tints<br>
+r_filmtweakenable 1<br>
+	//Value "1": enables dark/light/mediumtint and contrast/brightness<br>
+	//it may look very bright on this config<br>
+r_filmtweakdarktint 1.1 1.1 1.1<br>
+r_filmtweaklighttint 0.9 0.9 0.9<br>
+r_filmtweakmediumtint 1 1 1<br>
+	//dark, light and mediumtint are in RGB values ("R G B")<br>
+	//note that filmtweaks are just ingame color corrections, you don't need them if you are good with color corrections.<br>
+r_filmtweakcontrast 1.35<br>
+	//contrast of the filmtweaks, use this instead of r_contrast if you are using filmtweaks<br>
+r_filmtweakbrightness 0.1<br>
+	//contrast of the filmtweaks, use this instead of r_contrast if you are using filmtweaks<br>
+r_dof_tweak 0 <br>
+	//tweak 0 if using sweetfx dof<br>
+r_ssaopower 4<br>
+r_ssaoblurradius 1.5 <br>
+	//dont power to 0 if using sweetfx dof<br>
+r_detail "1"<br>
+	//Dvar description unknown<br>
+	//Value "1": showing details<br>
+	//Value "0": removing details (camo turns white, as well as some objects)<br>
+r_specularmap "1"<br>
+	//Specularmap 2 or 3 looks shit but it basically makes everything looks like plastic<br>
+r_colormap "1"<br>
+	//Value "0": Black colormap<br>
+	//Value "1": Normal colormap<br>
+	//Value "2": White colormap<br>
+r_specularcolorscale "2"<br>
+	//amount of specularity<br>
+//r_diffusecolorscale "1.2"<br>
+r_glowusetweaks 1<br>
+//
+r_dof_viewmodelend 0<br>
+r_dof_nearend 0;/timescale 1
+
+
+cg_drawgun 1
+
+scr_gameended 1
+
+//blood removal (part of it)
+hud_health_pulserate_injured "0"
+hud_health_pulserate_critical "0"
+hud_health_startpulse_critical "0"
+hud_health_startpulse_injured "0"
+hud_healthOverlay_phaseEnd_pulseDuration "0"
+hud_healthOverlay_phaseEnd_toAlpha "0"
+hud_healthOverlay_phaseOne_pulseDuration "0"
+hud_healthOverlay_phaseThree_pulseDuration "0"
+hud_healthOverlay_phaseThree_toAlphaMultiplier "0"
+hud_healthOverlay_phaseTwo_pulseDuration "0"
+hud_healthOverlay_phaseTwo_toAlphaMultiplier "0"
+hud_healthOverlay_pulseStart "0"
+hud_healthOverlay_regenPauseTime "0"
+
+//Icon removal 
+cg_hudDamageIconHeight "0"
+cg_hudDamageIconInScope "0"
+cg_hudDamageIconOffset "0"
+cg_hudDamageIconTime "0"
+cg_hudDamageIconWidth "0"
+cg_hudgrenadeiconenable "0"
+cg_hudGrenadeIconEnabledFlash "0"
+cg_hudGrenadeIconHeight "0"
+cg_hudGrenadeIconInScope "0"`
+cg_hudGrenadeIconWidth "0"
+cg_hudGrenadePointerHeight "0"
+cg_hudGrenadePointerWidth "0"
+
+//quality check
+r_aasamples "16"
+r_aaalpha "2"
+r_texfilteranisomax "16"
+r_texfilteranisomin "16"
+r_lodBiasRigid "-1000"
+r_lodBiasSkinned "-1000"
+r_lodScaleRigid "1"
+r_lodScaleSkinned "1"
+r_drawDecals "1"
+r_drawSun "0"
+r_drawWater "1"
+cg_blood "1"
+cg_brass "1"
+r_specular "1"
+r_distortion "1"
+r_zfeather "1"
+fx_marks "1"
+fx_vismintracedist "1000"
+
+//boob
+bg_bobAmplitudeDucked "0.0075 0.0075"
+bg_bobAmplitudeProne "0.02 0.005"
+bg_bobAmplitudeSprinting "0.02 0.014"
+bg_bobAmplitudeStanding "0.007 0.007"
+bg_bobMax ".3"
+
+//extra hud
+cg_drawlagometer "0"
+con_minicon "0"
+cg_drawfriendlynames "0"
+cg_drawcrosshairnames "0"
+cg_crosshairalpha "0"
+waypointoffscreenpointerheight "1.18"
+waypointoffscreenpointerwidth "1.8"
+waypointiconheight "1.18"
+waypointiconwidth "1.19"
+waypointdebugdraw "0"
+r_smc_enable 1
+cg_overheadnamesfarscale "0.4"
+cg_overheadiconsize "0"
+cg_overheadRankSize "0"
+cg_overheadnamesfont "6"
+cg_overheadnamessize "0"
+cg_overheadnamesglow "0 0 0 1"
+<style>
+			body
+			{
+				background-color: #252525;
+				color: #FFFFFF;
+				font-family: Arial;
+				padding-left: 50px;
+				padding-top: 50px;
+			}
+			#dontcenter
+			{
+				text-align: left;
+				padding-left: 300px;
+			}
+			a:link 
+			{
+			    color: #00BBFF;
+			    text-decoration: none;
+			}
+			#borderme
+			{
+    			border-style: solid;
+    			border-width: 5px;
+			}
+
+			a:visited 
+			{
+			    color: #00BBFF;
+			    text-decoration: none;
+			}
+
+
+			a:hover 
+			{
+			    color: #FFFFFF;
+			    text-decoration: none;
+			}
+
+			a:active 
+			{
+			    color: #FFFFFF;
+			    text-decoration: none;
+			}
+			footer
+			{
+				color: #909090;
+			}
+		</style>
+
+	</html>
