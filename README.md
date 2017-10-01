@@ -1,2 +1,0 @@
-# gmzorz.github.io
-Resources
