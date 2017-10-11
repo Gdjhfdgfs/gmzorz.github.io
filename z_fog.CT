@@ -68,12 +68,32 @@
           <ActivateSound/>
           <DeactivateSound/>
         </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>10</Value>
+          <ID>6</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>200</Value>
+          <ID>7</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
       </Hotkeys>
     </CheatEntry>
     <CheatEntry>
       <ID>163</ID>
       <Description>"z_fogFadeDist"</Description>
-      <LastState Value="300" RealAddress="036224BC"/>
+      <LastState Value="3000" RealAddress="036224BC"/>
       <VariableType>Float</VariableType>
       <Address>t6mpv43.exe+32224BC</Address>
       <Hotkeys>
@@ -137,12 +157,32 @@
           <ActivateSound/>
           <DeactivateSound/>
         </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>2500</Value>
+          <ID>6</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>36631</Value>
+          <ID>7</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
       </Hotkeys>
     </CheatEntry>
     <CheatEntry>
       <ID>169</ID>
       <Description>"z_fogHeight"</Description>
-      <LastState Value="10000" RealAddress="036224C4"/>
+      <LastState Value="1000" RealAddress="036224C4"/>
       <VariableType>Float</VariableType>
       <Address>t6mpv43.exe+32224C4</Address>
       <Hotkeys>
@@ -203,6 +243,26 @@
           </Keys>
           <Value>10000</Value>
           <ID>5</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>20000</Value>
+          <ID>6</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>10702</Value>
+          <ID>7</ID>
           <ActivateSound/>
           <DeactivateSound/>
         </Hotkey>
@@ -275,12 +335,32 @@
           <ActivateSound/>
           <DeactivateSound/>
         </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>6</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>199</Value>
+          <ID>7</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
       </Hotkeys>
     </CheatEntry>
     <CheatEntry>
       <ID>166</ID>
       <Description>"z_fogBaseColorR"</Description>
-      <LastState Value="1" RealAddress="036224D8"/>
+      <LastState Value="40" RealAddress="036224D8"/>
       <VariableType>Float</VariableType>
       <Address>036224D8</Address>
       <Hotkeys>
@@ -344,12 +424,32 @@
           <ActivateSound/>
           <DeactivateSound/>
         </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>6</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>5</Value>
+          <ID>7</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
       </Hotkeys>
     </CheatEntry>
     <CheatEntry>
       <ID>167</ID>
       <Description>"z_fogBaseColorG"</Description>
-      <LastState Value="1" RealAddress="036224DC"/>
+      <LastState Value="10" RealAddress="036224DC"/>
       <VariableType>Float</VariableType>
       <Address>t6mpv43.exe+32224DC</Address>
       <Hotkeys>
@@ -413,12 +513,32 @@
           <ActivateSound/>
           <DeactivateSound/>
         </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>6</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>5</Value>
+          <ID>7</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
       </Hotkeys>
     </CheatEntry>
     <CheatEntry>
       <ID>168</ID>
       <Description>"z_fogBaseColorB"</Description>
-      <LastState Value="1" RealAddress="036224E0"/>
+      <LastState Value="5" RealAddress="036224E0"/>
       <VariableType>Float</VariableType>
       <Address>t6mpv43.exe+32224E0</Address>
       <Hotkeys>
@@ -479,6 +599,26 @@
           </Keys>
           <Value>1</Value>
           <ID>5</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>6</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>5</Value>
+          <ID>7</ID>
           <ActivateSound/>
           <DeactivateSound/>
         </Hotkey>
@@ -551,12 +691,32 @@
           <ActivateSound/>
           <DeactivateSound/>
         </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>100</Value>
+          <ID>6</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>0.89</Value>
+          <ID>7</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
       </Hotkeys>
     </CheatEntry>
     <CheatEntry>
       <ID>170</ID>
       <Description>"z_fogFarColorR"</Description>
-      <LastState Value="1" RealAddress="036224E8"/>
+      <LastState Value="40" RealAddress="036224E8"/>
       <VariableType>Float</VariableType>
       <Address>036224E8</Address>
       <Hotkeys>
@@ -620,12 +780,32 @@
           <ActivateSound/>
           <DeactivateSound/>
         </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>6</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>5</Value>
+          <ID>7</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
       </Hotkeys>
     </CheatEntry>
     <CheatEntry>
       <ID>171</ID>
       <Description>"z_fogFarColorG"</Description>
-      <LastState Value="1" RealAddress="036224EC"/>
+      <LastState Value="10" RealAddress="036224EC"/>
       <VariableType>Float</VariableType>
       <Address>t6mpv43.exe+32224EC</Address>
       <Hotkeys>
@@ -689,12 +869,32 @@
           <ActivateSound/>
           <DeactivateSound/>
         </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>6</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>5</Value>
+          <ID>7</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
       </Hotkeys>
     </CheatEntry>
     <CheatEntry>
       <ID>172</ID>
       <Description>"z_fogFarColorB"</Description>
-      <LastState Value="1" RealAddress="036224F0"/>
+      <LastState Value="5" RealAddress="036224F0"/>
       <VariableType>Float</VariableType>
       <Address>t6mpv43.exe+32224F0</Address>
       <Hotkeys>
@@ -755,6 +955,26 @@
           </Keys>
           <Value>1</Value>
           <ID>5</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>6</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>5</Value>
+          <ID>7</ID>
           <ActivateSound/>
           <DeactivateSound/>
         </Hotkey>
@@ -824,6 +1044,26 @@
           </Keys>
           <Value>1</Value>
           <ID>5</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>0.89</Value>
+          <ID>7</ID>
+          <ActivateSound/>
+          <DeactivateSound/>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>100</Value>
+          <ID>6</ID>
           <ActivateSound/>
           <DeactivateSound/>
         </Hotkey>
