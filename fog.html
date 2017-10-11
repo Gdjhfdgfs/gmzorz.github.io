@@ -1,77 +1,67 @@
 <link rel="SHORTCUT ICON" href="seiryub.png" type="image/x-icon">
-<title>Bo2 Fog mod/Depth matte tutorial</title>
-<h1>Bo2 Fog mod/Depth matte tutorial</h1>
-<a href="https://twitter.com/intent/tweet" class="twitter-mention-button" data-text="Bo2 fog mod/Depth matte tutorial by @gmzorz " data-show-count="false">Share</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><br>
-<h2><a href="fog.CT" download target="_blank">Download mod (.ct)</a></h2>
-<i>right click -> save as</i><br><br>
-1. Get <a href="http://www.cheatengine.org/">cheat engine</a><br>
-2. open bo2, pick a clip<br>
-3. open the fog.ct file using cheat engine, once it opened, click the red/green glowing button and choose the bo2 process (keep address list)<br>
-4. in the list of addresses, select all the checkboxes on the left (set them to active)and change 'fog on' to 1<br>
-(if 'fog on' is set to NaN, don't check it yet.<br>
-Instead, change it to 1 first, then go ingame and press play for a second, then click the chermark in cheat engine and change it to 1 once again)<br>
-the value will most likely return to its original value, and sometimes flicker to the value you set it to, but don't worry, it will work<br>
-5. change the fog values, try to change fog start and fog distance.<br>
-just double click on the value and you're ready<br><br>
- 
-BEFORE DOING THE STEPS, KNOW THIS:<br>
-# Always restart the game if you're done using cheat engine, just closing cheat engine is not enough!<br>
-# Only use this method in theater mode. (private match is safe, but only if you keep it private, if you let someone join you, it's over, VAC will take you).<br>
+<head>
 
-<br>
+	
 
-<br><br>
-<b>Making a depth matte using the fog mod</b><br><br>
-*requires a working bo2 console<br>
-To get a depthmatte, download <a href="depthconfig.cfg" download target="_blank">this config</a> and execute it using your bo2 console<br> (you might have to play with the exposure value a bit)<br>
-next, apply the following settings in the cheat engine file:<br><br>
-<img src="depth.png">
-<br><br>
-to disable the depth matte, execute <a href="depthoff.cfg" download target="_blank">this config</a> and uncheck all the boxes in cheat engine.<br>
-you might have to press the play or play back button ingame in order to reset the fog<br><br><br><br>Footer note: the fog mod was originally founded by <a href="http://youtube.com/gmzorz">Gmzorz</a> and <a href="https://www.youtube.com/user/AzsryEdits">Azsry</a><br>
-<a>the depth config/image was made/found by <a href="https://www.youtube.com/channel/UCsxVK7vzvB43X16sXK3IWDg">Digital Citizen</a></a>
 
+	<title>Gmzorz's Resources</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<div class="cont" data-sectionid="0" data-syntax="text" data-name="DVARSTUFF">
+<div id="section-content-2394321">
+<pre class="editor no-highlight"><code><h1>BO2/Redacted Fog mod</h1><h2><a href="z_fog.CT" download target="_blank">Download mod (.ct)</a></h2><a href="http://www.cheatengine.org/">Get Cheat Engine</a><br>
+
+	<a href="foggy day.png"><img src="Foggy day.png" height="270" width="480"></a>
+
+	Using the fog mod, you can customise the ingame Bo2 dof using a simple Cheat Engine table.
+	This includes Start distance, Fade distance, Height, Bias, Color and Exposure.
+
+	The Table includes 8 Numeric keybinds, each has its own 'fog preset'
+<h2>Presets:</h2>
+	<a href="foggy day.png"><img src="foggy day.png" height="135" width="240"></img></a>	<a href="aqua.png"><img src="aqua.png" height="135" width="240"></img></a>	<a href="Pitch black.png"><img src="Pitch black.png" height="135" width="240"></img></a>	<a href="Denpa.png"><img src="Denpa.png" height="135" width="240"></img></a>
+	<b>NUM1</b>				<b>NUM2</b>				<b>NUM3</b>				<b>NUM4</b>
+	 <i>Foggy Day</i>			 <i>Aqua</i>				 <i>Pitch black</i>			 <i>Denpa</i>
+
+	<a href="Forest fire.png"><img src="Forest fire.png" height="135" width="240"></img></a>	<a href="Smog.png"><img src="Smog.png" height="135" width="240"></img></a>	<a href="depthp.png"><img src="depthp.png" height="135" width="240"></img></a>	
+	<b>NUM5</b>				<b>NUM6</b>				<b>NUM7</b>				<b>NUM8</b>
+	 <i>Forest fire</i>			 <i>Smog</i>				 <i>Depth map</i>			 <i>Resets fog</i>
+	<h2>Making a depth matte using the fog mod</h2>
+	*requires a working bo2 console (check: <a href="redacted.html">BO2/Redacted Resources page)</a>.
+
+	Open the z_fog.CT file using cheat engine and hook it to the bo2 process
+	Press <b>NUM7</b> to set the depth fog. Then move on to your preferred console and execute <a href="depth.cfg" download target="_blank"><b>this config</b></a>.
+	To disable the depthmatte, press <b>NUM8</b> and execute <a href="depthoff.cfg" download target="_blank"><b>this config</b></a>
+	you might have to press the play or play back button ingame in order to reset the fog
+
+Footer note: the fog mod was originally founded by <a href="http://youtube.com/gmzorz">Gmzorz</a> and <a href="https://www.youtube.com/user/AzsryEdits">Azsry</a>
+<a>the depth config/settings was made/found by <a href="https://www.youtube.com/channel/UCsxVK7vzvB43X16sXK3IWDg">Digital Citizen</a></a>
+
+   <a href="http://twitter.com/gmzorz"><img src="twit128.png" width="64" height="64"></img></a><a href="http://youtube.com/gmzorz"><img src="yt128.png" width="64" height="64"></img></a>
+	</code></div></div></div>
+<html>
+
+</code>
 <style>
-			body
-			{
-				background-color: #252525;
-				color: #FFFFFF;
-				font-family: Arial;
-				padding-left: 50px;
-				padding-top: 50px;
-			}
-			#dontcenter
-			{
-				text-align: left;
-				padding-left: 300px;
-			}
-			a:link 
-			{
-			    color: #00BBFF;
-			    text-decoration: none;
-			}
 
-
-			a:visited 
-			{
-			    color: #00BBFF;
-			    text-decoration: none;
-			}
-
-
-			a:hover 
-			{
-			    color: #FFFFFF;
-			    text-decoration: none;
-			}
-
-			a:active 
-			{
-			    color: #FFFFFF;
-			    text-decoration: none;
-			}
-			footer
-			{
-				color: #909090;
-			}
+	body
+	{
+				background-color: #F2D194;
+				color: #000000;	
+	}
+	a:link 
+	{
+	    color: #BF6B04;
+	    text-decoration: none;
+	}
+	#mn
+	{
+		font-size: 20px;
+	}
+	a:visited 
+	{
+	    color: #872702;
+	    text-decoration: none;
+	}
+</style>
 		</style>
+</html>
