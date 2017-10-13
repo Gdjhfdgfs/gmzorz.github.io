@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="26">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>164</ID>
+      <Description>"z_fogStartDist"</Description>
+      <LastState Value="0" RealAddress="036434B8"/>
+      <VariableType>Float</VariableType>
+      <Address>t6mp.exe+32434B8</Address>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <Value>150</Value>
+          <ID>0</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>98</Key>
+          </Keys>
+          <Value>60</Value>
+          <ID>1</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>99</Key>
+          </Keys>
+          <Value>50</Value>
+          <ID>2</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>100</Key>
+          </Keys>
+          <Value>100</Value>
+          <ID>3</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>101</Key>
+          </Keys>
+          <Value>100</Value>
+          <ID>4</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>102</Key>
+          </Keys>
+          <Value>100</Value>
+          <ID>5</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>0</Value>
+          <ID>6</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>200</Value>
+          <ID>7</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>163</ID>
+      <Description>"z_fogFadeDist"</Description>
+      <LastState Value="2500" RealAddress="036434BC"/>
+      <VariableType>Float</VariableType>
+      <Address>t6mp.exe+32434BC</Address>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>0</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>98</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>1</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>99</Key>
+          </Keys>
+          <Value>100</Value>
+          <ID>2</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>100</Key>
+          </Keys>
+          <Value>10000</Value>
+          <ID>3</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>101</Key>
+          </Keys>
+          <Value>3000</Value>
+          <ID>4</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>102</Key>
+          </Keys>
+          <Value>300</Value>
+          <ID>5</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>2500</Value>
+          <ID>6</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>36631</Value>
+          <ID>7</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>169</ID>
+      <Description>"z_fogHeight"</Description>
+      <LastState Value="20000" RealAddress="036434C4"/>
+      <VariableType>Float</VariableType>
+      <Address>t6mp.exe+32434C4</Address>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <Value>5000000</Value>
+          <ID>0</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>98</Key>
+          </Keys>
+          <Value>500</Value>
+          <ID>1</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>99</Key>
+          </Keys>
+          <Value>1200</Value>
+          <ID>2</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>100</Key>
+          </Keys>
+          <Value>10000000</Value>
+          <ID>3</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>101</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>4</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>102</Key>
+          </Keys>
+          <Value>10000</Value>
+          <ID>5</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>20000</Value>
+          <ID>6</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>10702</Value>
+          <ID>7</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>174</ID>
+      <Description>"z_fogBias"</Description>
+      <LastState Value="1" RealAddress="036434C8"/>
+      <VariableType>Float</VariableType>
+      <Address>t6mp.exe+32434C8</Address>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>0</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>98</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>1</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>99</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>2</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>100</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>3</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>101</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>4</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>102</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>5</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>6</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>199</Value>
+          <ID>7</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>166</ID>
+      <Description>"z_fogBaseColorR"</Description>
+      <LastState Value="1000" RealAddress="036434D8"/>
+      <VariableType>Float</VariableType>
+      <Address>036434D8</Address>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <Value>10</Value>
+          <ID>0</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>98</Key>
+          </Keys>
+          <Value>10</Value>
+          <ID>1</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>99</Key>
+          </Keys>
+          <Value>0</Value>
+          <ID>2</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>100</Key>
+          </Keys>
+          <Value>40</Value>
+          <ID>3</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>101</Key>
+          </Keys>
+          <Value>40</Value>
+          <ID>4</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>102</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>5</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>6</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>5</Value>
+          <ID>7</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>167</ID>
+      <Description>"z_fogBaseColorG"</Description>
+      <LastState Value="1000" RealAddress="036434DC"/>
+      <VariableType>Float</VariableType>
+      <Address>t6mp.exe+32434DC</Address>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <Value>10</Value>
+          <ID>0</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>98</Key>
+          </Keys>
+          <Value>15</Value>
+          <ID>1</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>99</Key>
+          </Keys>
+          <Value>0</Value>
+          <ID>2</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>100</Key>
+          </Keys>
+          <Value>20</Value>
+          <ID>3</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>101</Key>
+          </Keys>
+          <Value>10</Value>
+          <ID>4</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>102</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>5</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>6</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>5</Value>
+          <ID>7</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>168</ID>
+      <Description>"z_fogBaseColorB"</Description>
+      <LastState Value="1000" RealAddress="036434E0"/>
+      <VariableType>Float</VariableType>
+      <Address>t6mp.exe+32434E0</Address>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <Value>10</Value>
+          <ID>0</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>98</Key>
+          </Keys>
+          <Value>20</Value>
+          <ID>1</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>99</Key>
+          </Keys>
+          <Value>0</Value>
+          <ID>2</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>100</Key>
+          </Keys>
+          <Value>30</Value>
+          <ID>3</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>101</Key>
+          </Keys>
+          <Value>5</Value>
+          <ID>4</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>102</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>5</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>6</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>5</Value>
+          <ID>7</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>165</ID>
+      <Description>"z_fogBaseExposure"</Description>
+      <LastState Value="100" RealAddress="036434E4"/>
+      <VariableType>Float</VariableType>
+      <Address>036434E4</Address>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>0</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>98</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>1</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>99</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>2</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>100</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>3</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>101</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>4</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>102</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>5</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>100</Value>
+          <ID>6</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>0.89</Value>
+          <ID>7</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>170</ID>
+      <Description>"z_fogFarColorR"</Description>
+      <LastState Value="1000" RealAddress="036434E8"/>
+      <VariableType>Float</VariableType>
+      <Address>036434E8</Address>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <Value>10</Value>
+          <ID>0</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>98</Key>
+          </Keys>
+          <Value>10</Value>
+          <ID>1</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>99</Key>
+          </Keys>
+          <Value>0</Value>
+          <ID>2</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>100</Key>
+          </Keys>
+          <Value>40</Value>
+          <ID>3</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>101</Key>
+          </Keys>
+          <Value>40</Value>
+          <ID>4</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>102</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>5</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>6</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>5</Value>
+          <ID>7</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>171</ID>
+      <Description>"z_fogFarColorG"</Description>
+      <LastState Value="1000" RealAddress="036434EC"/>
+      <VariableType>Float</VariableType>
+      <Address>t6mp.exe+32434EC</Address>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <Value>10</Value>
+          <ID>0</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>98</Key>
+          </Keys>
+          <Value>15</Value>
+          <ID>1</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>99</Key>
+          </Keys>
+          <Value>0</Value>
+          <ID>2</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>100</Key>
+          </Keys>
+          <Value>20</Value>
+          <ID>3</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>101</Key>
+          </Keys>
+          <Value>10</Value>
+          <ID>4</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>102</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>5</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>6</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>5</Value>
+          <ID>7</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>172</ID>
+      <Description>"z_fogFarColorB"</Description>
+      <LastState Value="1000" RealAddress="036434F0"/>
+      <VariableType>Float</VariableType>
+      <Address>t6mp.exe+32434F0</Address>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <Value>10</Value>
+          <ID>0</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>98</Key>
+          </Keys>
+          <Value>20</Value>
+          <ID>1</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>99</Key>
+          </Keys>
+          <Value>0</Value>
+          <ID>2</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>100</Key>
+          </Keys>
+          <Value>30</Value>
+          <ID>3</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>101</Key>
+          </Keys>
+          <Value>5</Value>
+          <ID>4</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>102</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>5</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>1000</Value>
+          <ID>6</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>5</Value>
+          <ID>7</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>173</ID>
+      <Description>"z_fogFarExposure"</Description>
+      <LastState Value="100" RealAddress="036434F4"/>
+      <VariableType>Float</VariableType>
+      <Address>t6mp.exe+32434F4</Address>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>0</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>98</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>1</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>99</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>2</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>100</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>3</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>101</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>4</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>102</Key>
+          </Keys>
+          <Value>1</Value>
+          <ID>5</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>104</Key>
+          </Keys>
+          <Value>0.89</Value>
+          <ID>7</ID>
+        </Hotkey>
+        <Hotkey>
+          <Action>Set Value</Action>
+          <Keys>
+            <Key>103</Key>
+          </Keys>
+          <Value>100</Value>
+          <ID>6</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>178</ID>
+      <Description>"PRESETS (OPEN ME)"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>179</ID>
+          <Description>"NUM1 = Foggy day"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>185</ID>
+          <Description>"NUM2 = Aqua"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>181</ID>
+          <Description>"NUM3 = Pitch black"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>182</ID>
+          <Description>"NUM4 = Denpa"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>183</ID>
+          <Description>"NUM5 = Forest fire"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>184</ID>
+          <Description>"NUM6 = Smog"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
