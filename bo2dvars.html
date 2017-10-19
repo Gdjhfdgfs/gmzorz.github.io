@@ -281,14 +281,15 @@ We can search for the value 1 in CE. Instead, we're going to set r_heroLightScal
 (***Setting it to 0.9 will filter out the other addresses. the game consists of more 1s than 0.9s ;))
 
 In CE, we're going to do the same as with the FOV. Enter 0.9 in the search box and press first scan (make sure you hit NEW SCAN before starting a new scan).
-Next, go to bo2 and change r_heroLightScale to 0.3, then go to cheat engine and write down 0.3 and hit next scan. do this until you have &lt; 30 static addresses left.
+Next, go to bo2 and change r_heroLightScale to 0.3 0 0, then go to cheat engine and write down 0.3 and hit next scan. do this until you have &lt; 30 static addresses left.
 Add the static addresses to the address list and find the one that controls the R value of the Dvar (dont forget to give the address a description)
 
 Now that you've found the R address of the dvar, you can do the same with G, B and A
-But it can be done easier! Just select the R address, hit ctrl+c and ctrl+v. 
+This can be done easier! Just select the R address, hit ctrl+c and ctrl+v. 
 A window will pop up. Write down the number 4 in the "adjust address by:" window and press Paste
 it'll create a new address in the list, rename that description to G. This address controls the Green color of the dvar.
 Do this again with the G address and name the next one B, do this again and name the last one A, simple as that.
+the three FLOAT3 values are right next to each other in the game memory, once you find one of the values it's easy to find the others.
 
 Now you'll be able to boost the heroLightScale up to any value. If you're annoyed by the glow thats surrounding the player, use r_bloomTweaks 1.
 -------------
