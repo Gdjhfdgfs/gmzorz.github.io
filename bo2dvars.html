@@ -31,7 +31,8 @@
 	<a href="#template">Template config</a>
 	<a href="#greenscreen">Greenscreen commands</a>
 	<a href="#extdvars">Extending dvars</a>
-	<a href="#greenscreenplayers">Greenscreening players</a>
+	<a href="#heroLighting">Greenscreening players (Using Herolighting)</a>
+	<a href="#lockPvs">Greenscreening players (Using Lockpvs)</a>
 	<a href="#dvars">Full Dvar list</a>
 
 <fud id="fud">
@@ -266,7 +267,7 @@ Eventually you will find the right address, and you'll be able to change it to a
 You can also right-click on the address and then choosing what to change. you can also change the description by hitting ctrl+enter (set the desc to cg_fov)
 -------------
 
-<gsp id="greenscreenplayers">
+<gsp id="heroLighting">
 <b>GREENSCREENING PLAYERS USING HEROLIGHTING</b>
 -------------
 I recommend checking out the <a href="#extdvars">extending dvars</a> guide before doing this
@@ -293,6 +294,29 @@ the three FLOAT3 values are right next to each other in the game memory, once yo
 
 Now you'll be able to boost the heroLightScale up to any value. If you're annoyed by the glow thats surrounding the player, use <b>r_bloomTweaks 1</b>.
 -------------
+
+<gsp id="lockPvs">
+<b>GREENSCREENING PLAYERS USING LOCKPVS</b>
+-------------
+Requires a working console
+
+Head over to Bo2, load a theater recording and go to the point in the timeline where you want the greenscreen to happen.
+Move as close as you can to the player and execute the following set of Dvars:
+
+r_zfar 1;
+r_lockPvs 0;
+r_modelLimit 0;
+r_clearColor 0 1 0 1;
+r_clearColor2 0 1 0 1;
+r_bloomTweaks 1;
+
+Next, find a position/camera view where you can <b>only</b> see the player, so that everything else is green.
+After that, set r_lockPvs to <b>1</b>.
+This is where you can set your camera points.
+If you wish to turn the greenscreen off, set <b>r_zfar</b> to <b>0</b>, <b>r_modellimit</b> to <b>1024</b>, and <b>r_lockpvs</b> to <b>0</b>.
+Want to remove the soldier when you're playing a regular cinematic? use <b>r_dobjLimit 0</b> (default = 512).
+
+Alternatively, you can watch this <a href="https://www.youtube.com/watch?v=MB9aqxur1Vg">tutorial video</a> by MSBH
 
 <dvarlist id="dvars">
 <b>FULL DVAR LIST</b>
