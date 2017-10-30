@@ -1,23 +1,50 @@
 <link rel="SHORTCUT ICON" href="console.png" type="image/x-icon">
 <title>Bo2 Dvar/Config Guide for Editing</title>
 <style>
-	body
-	{
-				background-color: #F2D194;
-				color: #000000;	
+	body{
+		background-color: #F2D194;
+		color: #000000;	
 	}
-	a:link 
-	{
+	a:link{
 	    color: #BF6B04;
 	    text-decoration: none;
 	}
 
-	a:visited 
-	{
+	a:visited{
 	    color: #872702;
 	    text-decoration: none;
 	}
+	#templateConfig{
+		background-color: #F2D194 ;
+		font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+		resize: none;
+		font-size: 11px;
+	}
+	#copyTemplate {
+	    background-color: #BF6B04;
+	    border: none;
+	    color: black;
+	    width: 360px;
+	    text-align: center;
+	    font-size: 15px;
+	    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	}
 </style>
+<script type="text/javascript">
+function dvarArea(id) {
+	document.getElementById(id).focus();
+	document.getElementById(id).select();
+} 
+function copyMe(button, text) {
+  	var copyText = document.getElementById(text);
+  	copyText.select();
+  	document.execCommand("Copy");
+  	document.getElementById(button).innerHTML = "Copied to clipboard!";
+  	setTimeout(function(){ 
+		document.getElementById(button).innerHTML = "Copy to clipboard";
+    }, 2500); 
+}
+</script>
 
 <div class="cont" data-sectionid="0" data-syntax="text" data-name="DVARSTUFF">
 			<div id="section-content-2394321">
@@ -153,78 +180,80 @@ BOOL:		Byte			True or false, 1 = True, 0 = False. Or you could say 1 = ON and 0 
 
 <tp id="template">
 <b>FULL TEMPLATE CONFIG</b> (These are the basic dvars you need when you're starting a new config)
--------------
-cg_chatHeight "0"
-cg_drawCrosshair "0"
-cg_drawGun "1"
-cg_fov "80"
-cg_fovscale "1.125"
-cg_gun_x "0"
-cg_gun_y "0"
-cg_gun_z "0"
-cg_overheadIconSize "0"
-cg_overheadNamesSize "0"
-cg_overheadRankSize "0"
-cg_centertime "0"
-con_gameMsgWindow0LineCount "4"
-con_gameMsgWindow0MsgTime "5"
-g_TeamColor_Axis "0.65 0.57 0.41 1"
-g_TeamColor_Allies "0.52 0.28 0.28 1"
-phys_gravity "-800"
-r_skytransition "0"
-r_heroLightScale "1 1 1"
-r_modellimit "1024"
-r_dobjLimit "512"
-r_skipPvs "0"
-r_clearColor "0 0 0 0"
-r_clearColor2 "0 0 0 0"
-r_bloomTweaks "0"
-r_bloomHiQuality "1"
-r_ssao "3_HBAO"
-r_aaalpha "2"
-r_aasamples "16"
-r_texFilterMipMode "Force Trilinear"
-r_texFilterAnisoMin "16" 
-r_texFilterAnisoMax "16"
-r_autoLodScale "0"
-r_lodBiasRigid "-1000"
-r_lodBiasSkinned "-1000"
-r_lodScaleRigid "1"
-r_lodScaleSkinned "1"
-waypointIconWidth "0"
-waypointIconHeight "0"
-waypointOffscreenPointerHeight "0"
-waypointOffscreenPointerWidth "0"
-hud_health_pulserate_critical "0"
-hud_health_pulserate_injured "0"
-hud_health_startpulse_critical "0"
-hud_health_startpulse_injured "0"
-hud_healthOverlay_phaseEnd_pulseDuration "0"
-hud_healthOverlay_phaseEnd_toAlpha "0"
-hud_healthOverlay_phaseOne_pulseDuration "0"
-hud_healthOverlay_phaseOne_toAlphaAdd "0"
-hud_healthOverlay_phaseThree_pulseDuration "0"
-hud_healthOverlay_phaseThree_toAlphaMultiplier "0"
-hud_healthOverlay_phaseTwo_pulseDuration "0"
-hud_healthOverlay_phaseTwo_toAlphaMultiplier "0"
-hud_healthOverlay_pulseStart "0"
-hud_healthOverlay_regenPauseTime "0"
--------------
+
+<button id="copyTemplate" onclick="copyMe('copyTemplate', 'templateConfig')">Copy to clipboard</button>
+<textarea readonly rows="55" id="templateConfig" onClick="SelectAll('templateConfig');"style="width:360px">
+cg_chatHeight "0";
+cg_drawCrosshair "0";
+cg_drawGun "1";
+cg_fov "80";
+cg_fovscale "1.125";
+cg_gun_x "0";
+cg_gun_y "0";
+cg_gun_z "0";
+cg_overheadIconSize "0";
+cg_overheadNamesSize "0";
+cg_overheadRankSize "0";
+cg_centertime "0";
+con_gameMsgWindow0LineCount "4";
+con_gameMsgWindow0MsgTime "5";
+g_TeamColor_Axis "0.65 0.57 0.41 1";
+g_TeamColor_Allies "0.52 0.28 0.28 1";
+phys_gravity "-800";
+r_skytransition "0";
+r_heroLightScale "1 1 1";
+r_modellimit "1024";
+r_dobjLimit "512";
+r_skipPvs "0";
+r_clearColor "0 0 0 0";
+r_clearColor2 "0 0 0 0";
+r_bloomTweaks "0";
+r_bloomHiQuality "1";
+r_ssao "3_HBAO";
+r_aaalpha "2";
+r_aasamples "16";
+r_texFilterMipMode "Force Trilinear";
+r_texFilterAnisoMin "16";
+r_texFilterAnisoMax "16";
+r_autoLodScale "0";
+r_lodBiasRigid "-1000";
+r_lodBiasSkinned "-1000";
+r_lodScaleRigid "1";
+r_lodScaleSkinned "1";
+waypointIconWidth "0";
+waypointIconHeight "0";
+waypointOffscreenPointerHeight "0";
+waypointOffscreenPointerWidth "0";
+hud_health_pulserate_critical "0";
+hud_health_pulserate_injured "0";
+hud_health_startpulse_critical "0";
+hud_health_startpulse_injured "0";
+hud_healthOverlay_phaseEnd_pulseDuration "0";
+hud_healthOverlay_phaseEnd_toAlpha "0";
+hud_healthOverlay_phaseOne_pulseDuration "0";
+hud_healthOverlay_phaseOne_toAlphaAdd "0";
+hud_healthOverlay_phaseThree_pulseDuration "0";
+hud_healthOverlay_phaseThree_toAlphaMultiplier "0";
+hud_healthOverlay_phaseTwo_pulseDuration "0";
+hud_healthOverlay_phaseTwo_toAlphaMultiplier "0";
+hud_healthOverlay_pulseStart "0";
+hud_healthOverlay_regenPauseTime "0";</textarea>
 
 <gs id="greenscreen">
-<b>GREENSCREEN</b>
+<b>GREENSCREEN ON:</b>
+
 -------------
-r_modellimit 0
-r_skipPvs 1
-r_clearColor 0 1 0 0
-r_clearColor2 0 1 0 0
-r_bloomTweaks 1
-r_bloomHiQuality 0
-r_znear 10000
-r_zfar 0.000001
+r_modellimit "0";
+r_skipPvs "1";
+r_clearColor "0 1 0 0";
+r_clearColor2 "0 1 0 0";
+r_bloomTweaks "1";
+r_bloomHiQuality "0";
+r_znear "10000";
+r_zfar "0.000001";
 -------------
 
-<b>GREENSCREEN OFF</b>
+<b>GREENSCREEN OFF:</b>
 -------------
 r_modellimit 1024
 r_skipPvs 0
