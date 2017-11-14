@@ -60,6 +60,8 @@ function copyMe(button, text) {
 	<a href="#extdvars">Extending dvars</a>
 	<a href="#heroLighting">Greenscreening players (Using Herolighting)</a>
 	<a href="#lockPvs">Greenscreening players (Using Lockpvs)</a>
+	<a href="">Greenscreening players (Using a Greenscreen map, Coming soon)</a>
+	<a href="#skygs">Greenscreening the sky</a>
 	<a href="#dvars">Full Dvar list</a>
 	<a href="http://gmzorz.com/fog">Depth mattes and fog</a>
 
@@ -251,26 +253,26 @@ hud_healthOverlay_regenPauseTime "0";</textarea>
 <b>GREENSCREEN ON:</b>
 
 -------------
-r_modellimit 0
-r_skipPvs 1
-r_clearColor 0 1 0 0
-r_clearColor2 0 1 0 0
-r_bloomTweaks 1
-r_bloomHiQuality 0
-r_znear 10000
-r_zfar 0.000001
+r_modellimit 0;
+r_skipPvs 1;
+r_clearColor 0 1 0 0;
+r_clearColor2 0 1 0 0;
+r_bloomTweaks 1;
+r_bloomHiQuality 0;
+r_znear 10000;
+r_zfar 0.000001;
 -------------
 
 <b>GREENSCREEN OFF:</b>
 -------------
-r_modellimit 1024
-r_skipPvs 0
-r_clearColor 0 0 0 0
-r_clearColor2 0 0 0 0
-r_bloomTweaks 0
-r_bloomHiQuality 1
-r_znear 4
-r_zfar 0
+r_modellimit 1024;
+r_skipPvs 0;
+r_clearColor 0 0 0 0;
+r_clearColor2 0 0 0 0;
+r_bloomTweaks 0;
+r_bloomHiQuality 1;
+r_znear 4;
+r_zfar 0;
 -------------
 
 <ext id="extdvars">
@@ -355,6 +357,19 @@ If you wish to turn the greenscreen off, set <b>r_zfar</b> to <b>0</b>, <b>r_mod
 Want to remove the soldier when you're playing a regular cinematic? use <b>r_dobjLimit 0</b> (default = 512).
 
 Alternatively, you can watch this <a href="https://www.youtube.com/watch?v=MB9aqxur1Vg">tutorial video</a> by MSBH
+
+<gsp id="skygs">
+<b>GREENSCREENING THE SKY</b>
+-------------
+To greenscreen the sky we need to make use of the modellimit dvar
+
+r_modelLimit 0;
+r_clearColor 0 1 0 1;
+r_clearColor2 0 1 0 1;
+
+These commands will do the trick. to turn the sky back to its original state, change r_modelLimit back to 1024
+SIDE NOTE: If you set r_modelLimit to 0, some other objects may disappear from the map.
+If you don't want this to happen, Play around with r_modelLimit, try r_modelLimit 10, maybe 20, 30 or even 40. depends on the map.  
 
 <dvarlist id="dvars">
 <b>FULL DVAR LIST</b>
