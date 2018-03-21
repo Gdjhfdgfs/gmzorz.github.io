@@ -1,0 +1,54 @@
+;Gather text from source code
+[GatherTextStep0]
+CommandletClass=GatherTextFromSource
+SourcePaths=FortniteGame/Source/
+SourceFileSearchFilters=*.cpp
+SourceFileSearchFilters=*.h
+SourceFileSearchFilters=*.c
+SourceFileSearchFilters=*.inl
+SourceFileSearchFilters=*.mm
+ManifestDependencies=../../../Engine/Content/Localization/Engine.manifest
+
+;Gather text from assets
+[GatherTextStep1]
+CommandletClass=GatherTextFromAssets
+IncludePaths=*/Content/*
+PackageExtensions=*.umap
+PackageExtensions=*.upk
+PackageExtensions=*.uasset
+bFixBroken=false
+
+;Write Manifest
+[GatherTextStep2]
+CommandletClass=GenerateGatherManifest
+DestinationPath=../../../FortniteGame/Content/Localization
+ManifestName=FortniteGame.manifest
+bAutoCheckOut=true
+bAutoCheckIn=false
+
+;Write Archives
+[GatherTextStep3]
+CommandletClass=GenerateGatherArchive
+SourcePath=../../../FortniteGame/Content/Localization
+ManifestName=FortniteGame.manifest
+SourceCulture=en-US
+CulturesToGenerate=en-US
+CulturesToGenerate=ja-JP
+CulturesToGenerate=ko-KR
+DestinationPath=../../../FortniteGame/Content/Localization
+ArchiveName=FortniteGame.archive
+bAutoCheckOut=true
+bAutoCheckIn=false
+
+;Write Localized Text Resource
+[GatherTextStep4]
+CommandletClass=GenerateTextLocalizationResource
+SourcePath=../../../FortniteGame/Content/Localization
+ManifestName=FortniteGame.manifest
+CulturesToGenerate=en-US
+CulturesToGenerate=ja-JP
+CulturesToGenerate=ko-KR
+DestinationPath=../../../FortniteGame/Content/Localization
+ResourceName=FortniteGame.locres
+bAutoCheckOut=true
+bAutoCheckInÝ¡»ìœB

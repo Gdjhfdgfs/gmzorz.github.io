@@ -1,0 +1,13 @@
+[CommonSettings]
+SourcePath=Content/Localization/MCP
+DestinationPath=Content/Localization/MCP
+NativeCulture=en
+CulturesToGenerate=en
+CulturesToGenerate=zh-CN
+ManifestName=MCP.manifest
+ArchiveName=MCP.archive
+DialogueScriptName=MCPDialogue.csv
+
+[GatherTextStep0]
+CommandletClass=ImportDialogueSrüV"L¶¸
+›

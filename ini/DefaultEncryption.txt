@@ -1,0 +1,5 @@
+[Core.Encryption]
+rsa.privateexp=0x000005ae34ade8effcb1e58c518177fb297c9d04192fc08e0000033d
+rsa.modulus=0x000005ae34ade8effcb1e58c51817849ee7113c63cbff41a00000385
+rsa.publicexp=0x000001e4bc39f84ffee5f72ec5d5d2a90dd43456b30feada00000115
+aes.key=y298qjSb115NqQ3Agad30DWn2QYrTI8CT6aP05l2PBV9Qe92S94PdoVC§ƒ#Ó2aªB

@@ -1,0 +1,100 @@
+[ScalabilitySettings]
+PerfIndexValues_ScreenHeight="480 720 1080 999999"
+
+[ViewDistanceQuality@0]
+Fort.Scalability.AIBudget="0,12"
+Fort.Scalability.TieUROToLODs=0
+Fort.Scalability.EnableAnimCurveOptimizations=1
+; Modifying SkeletalMeshLODBias affects AI animation updates
+r.SkeletalMeshLODBias=1
+r.ViewDistanceScale=0.5
+
+[ViewDistanceQuality@1]
+Fort.Scalability.AIBudget="8,16"
+Fort.Scalability.TieUROToLODs=1
+Fort.Scalability.EnableAnimCurveOptimizations=1
+; Modifying SkeletalMeshLODBias affects AI animation updates
+r.SkeletalMeshLODBias=0
+r.ViewDistanceScale=0.67
+
+[ViewDistanceQuality@2]
+Fort.Scalability.AIBudget="8,16"
+Fort.Scalability.TieUROToLODs=1
+Fort.Scalability.EnableAnimCurveOptimizations=1
+; Modifying SkeletalMeshLODBias affects AI animation updates
+r.SkeletalMeshLODBias=0
+r.ViewDistanceScale=0.83
+
+[ViewDistanceQuality@3]
+Fort.Scalability.AIBudget="8,16"
+Fort.Scalability.TieUROToLODs=1
+Fort.Scalability.EnableAnimCurveOptimizations=1
+; Modifying SkeletalMeshLODBias affects AI animation updates
+r.SkeletalMeshLODBias=0
+r.ViewDistanceScale=1.0
+
+[ViewDistanceQuality@Cine]
+Fort.Scalability.AIBudget="500"
+Fort.Scalability.TieUROToLODs=1
+Fort.Scalability.EnableAnimCurveOptimizations=0
+; Modifying SkeletalMeshLODBias affects AI animation updates
+r.SkeletalMeshLODBias=0
+r.ViewDistanceScale=10.0
+
+
+[EffectsQuality@0]
+Fort.Wind=0
+
+[EffectsQuality@1]
+Fort.Wind=0
+
+[EffectsQuality@2]
+Fort.Wind=1
+
+[EffectsQuality@3]
+Fort.Wind=1
+
+[EffectsQuality@Cine]
+Fort.Wind=1
+
+
+[ShadowQuality@0]
+; To avoid a light flickering problem when shadows are disabled, we set r.LightFunctionQuality=1. This issue needs to be properly addressed by the rendering team.
+r.LightFunctionQuality=1
+r.SimpleForwardShading=1
+
+[ShadowQuality@1]
+; We can not support DFAO/Shadowing at medium settings with our target machines
+r.DistanceFieldShadowing=0
+r.DistanceFieldAO=0
+r.SimpleForwardShading=0
+
+[ShadowQuality@2]
+r.DistanceFieldShadowing=1
+r.DistanceFieldAO=1
+r.SimpleForwardShading=0
+; Keeping MaxCascades low to save a little on perf
+r.Shadow.CSM.MaxCascades=2
+r.LightMaxDrawDistanceScale=.5
+
+[ShadowQuality@3]
+r.SimpleForwardShading=0
+
+[ShadowQuality@Cine]
+r.SimpleForwardShading=0
+
+
+[PostProcessQuality@0]
+r.LightShaftQuality=0
+
+[PostProcessQuality@1]
+r.LightShaftQuality=0
+
+[PostProcessQuality@2]
+r.LightShaftQuality=0
+
+[PostProcessQuality@3]
+r.LightShaftQuality=1
+
+[PostProcessQuality@Cine]
+r.LightShaftQV@KÝ/ÌN

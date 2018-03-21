@@ -1,0 +1,546 @@
+[/Script/Engine.PlayerInput]
+-DebugExecBindings=(Key=F1,Command="viewmode wireframe", bIgnoreShift=True)
+-DebugExecBindings=(Key=F2,Command="viewmode unlit")
+-DebugExecBindings=(Key=F3,Command="viewmode lit")
+-DebugExecBindings=(Key=F4,Command="viewmode lit_detaillighting")
+-DebugExecBindings=(Key=F5,Command="viewmode shadercomplexity")
+-DebugExecBindings=(Key=B,Command="ToggleSpeaking true | OnRelease ToggleSpeaking false")
+-DebugExecBindings=(Key=Escape,Command="CloseEditorViewport")
+
++DebugExecBindings=(Key=F1,Command="viewmode wireframe", Control=True)
++DebugExecBindings=(Key=F2,Command="viewmode unlit", Control=True)
++DebugExecBindings=(Key=F3,Command="viewmode lit", Control=True)
++DebugExecBindings=(Key=F4,Command="viewmode lit_detaillighting", Control=True)
++DebugExecBindings=(Key=F5,Command="viewmode shadercomplexity", Control=True)
++DebugExecBindings=(Key=RightBracket, Command="ToggleTargetInfoAI")
++DebugExecBindings=(Key=LeftBracket, Command="BugIt QuickBug")
++DebugExecBindings=(Key=Pause,Command="Pause")
++DebugExecBindings=(Key=Escape,Command="CloseEditorViewport", bIgnoreShift=True)
+
+; --- Debug camera binds
++DebugExecBindings=(Key=Delete,Command="Camera Default")
++DebugExecBindings=(Key=End,Command="Camera FirstPerson")
++DebugExecBindings=(Key=PageDown,Command="Camera ThirdPerson")
++DebugExecBindings=(Key=PageUp,Command="Camera Fixed")
++DebugExecBindings=(Key=Home,Command="Camera FixedTracking")
++DebugExecBindings=(Key=Insert,Command="Camera FreeCam")
+
+; --- Perf/Mem commands
+DebugExecBindings=(Key=Num0,Command="memreport")
+DebugExecBindings=(Key=Num.,Command="memreport -full")
+DebugExecBindings=(Key=Num1,Command="startfpschart")
+DebugExecBindings=(Key=Num2,Command="stopfpschart")
+DebugExecBindings=(Key=Num4,Command="stat startfile")
+DebugExecBindings=(Key=Num5,Command="cheat stat startfile")
+DebugExecBindings=(Key=Num7,Command="stat stopfile")
+DebugExecBindings=(Key=Num8,Command="cheat stat stopfile")
+
+
+[/Script/Engine.InputSettings]
+bAltEnterTogglesFullscreen=false
+
++AxisMappings=(AxisName="MoveForward", Key=W, Scale=1.f)
++AxisMappings=(AxisName="MoveForward", Key=S, Scale=-1.f)
++AxisMappings=(AxisName="MoveForward", Key=Up, Scale=1.f)
++AxisMappings=(AxisName="MoveForward", Key=Down, Scale=-1.f)
++AxisMappings=(AxisName="MoveForward_Gamepad", Key=Gamepad_LeftY, Scale=1.f)
+
++AxisMappings=(AxisName="MoveRight", Key=A, Scale=-1.f)
++AxisMappings=(AxisName="MoveRight", Key=D, Scale=1.f)
++AxisMappings=(AxisName="MoveRight", Key=Right, Scale=1.f)
++AxisMappings=(AxisName="MoveRight", Key=Left, Scale=-1.f)
++AxisMappings=(AxisName="MoveRight_Gamepad", Key=Gamepad_LeftX, Scale=1.f)
+
++AxisMappings=(AxisName="MoveUp", Key=Gamepad_LeftThumbstick, Scale=1.f)
++AxisMappings=(AxisName="MoveUp", Key=Gamepad_FaceButton_Bottom, Scale=1.f)
++AxisMappings=(AxisName="MoveUp", Key=SpaceBar, Scale=1.f)
+
++AxisMappings=(AxisName="Turn_Gamepad", Key=Gamepad_RightX, Scale=1.f)
++AxisMappings=(AxisName="Turn", Key=MouseX, Scale=1.f)
+
++AxisMappings=(AxisName="LookUp_Gamepad", Key=Gamepad_RightY, Scale=1.f)
++AxisMappings=(AxisName="LookUp", Key=MouseY, Scale=-1.f)
+
++AxisMappings=(AxisName="HoverDrone_MoveForward",Key=W,Scale=1.000000)
++AxisMappings=(AxisName="HoverDrone_MoveForward",Key=S,Scale=-1.000000)
++AxisMappings=(AxisName="HoverDrone_MoveForward",Key=Up,Scale=1.000000)
++AxisMappings=(AxisName="HoverDrone_MoveForward",Key=Down,Scale=-1.000000)
++AxisMappings=(AxisName="HoverDrone_MoveForward",Key=Gamepad_LeftY,Scale=0.500000)
++AxisMappings=(AxisName="HoverDrone_MoveRight",Key=A,Scale=-1.000000)
++AxisMappings=(AxisName="HoverDrone_MoveRight",Key=D,Scale=1.000000)
++AxisMappings=(AxisName="HoverDrone_MoveRight",Key=Left,Scale=-1.000000)
++AxisMappings=(AxisName="HoverDrone_MoveRight",Key=Right,Scale=1.000000)
++AxisMappings=(AxisName="HoverDrone_MoveRight",Key=Gamepad_LeftX,Scale=0.500000)
++AxisMappings=(AxisName="HoverDrone_TurnAccel",Key=Gamepad_RightX,Scale=0.350000)
++AxisMappings=(AxisName="HoverDrone_LookUpAccel",Key=Gamepad_RightY,Scale=0.350000)
++AxisMappings=(AxisName="HoverDrone_SlideUp_World",Key=Gamepad_RightTriggerAxis,Scale=0.500000)
++AxisMappings=(AxisName="HoverDrone_SlideUp_World",Key=Gamepad_LeftTriggerAxis,Scale=-0.500000)
++AxisMappings=(AxisName="HoverDrone_SlideUp_World",Key=E,Scale=1.000000)
++AxisMappings=(AxisName="HoverDrone_SlideUp_World",Key=Q,Scale=-1.000000)
+
++ActionMappings=(ActionName="ToggleSpectatorHUD",Key=H,bShift=False,bCtrl=False,bAlt=False,bCmd=False)
++ActionMappings=(ActionName="TogglePauseState",Key=Gamepad_FaceButton_Bottom,bShift=False,bCtrl=False,bAlt=False,bCmd=False)
++ActionMappings=(ActionName="ReplaySpeedIncrease",Key=Gamepad_DPad_Up,bShift=False,bCtrl=False,bAlt=False,bCmd=False)
++ActionMappings=(ActionName="ReplaySpeedDecrease",Key=Gamepad_DPad_Down,bShift=False,bCtrl=False,bAlt=False,bCmd=False)
++ActionMappings=(ActionName="ReplayScrubAhead",Key=Gamepad_DPad_Right,bShift=False,bCtrl=False,bAlt=False,bCmd=False)
++ActionMappings=(ActionName="ReplayScrubBack",Key=Gamepad_DPad_Left,bShift=False,bCtrl=False,bAlt=False,bCmd=False)
++ActionMappings=(ActionName="TriggerLightningFlash",Key=L,bShift=False,bCtrl=False,bAlt=False,bCmd=False)
+
+; Action mappings are now stored in the presets below
+DefaultTouchInterface=None
+DefaultViewportMouseCaptureMode=NoCapture
+bCaptureMouseOnLaunch=False
+
+[/Script/FortniteGame.FortPlayerInput]
+DefaultPresetName="ConfigD"
+
++FortPlayerInputSettingsNames="ConfigD"
++FortPlayerInputSettingsNames="ConfigE"
+
++InputActionTypeFriendlyNames=LOCTEXT("ButtonPress", "Press")
++InputActionTypeFriendlyNames=LOCTEXT("MouseClick", "Click")
++InputActionTypeFriendlyNames=LOCTEXT("ButtonHold", "Hold")
++InputActionTypeFriendlyNames=LOCTEXT("ButtonRelease", "Release")
+
+[ConfigD FortPlayerInputSettings]
+; Localized Strings
+FriendlyName=LOCTEXT("StandardControllerConfiguration", "Standard")
+
+; Settings
+bBuildingPickerOnlyChoosesCategories=true
+bWeaponPickerShowOnlySlottedItems=true
+bTrapPickerUsesRadial=true
+bRadialClosesOnRelease=true
+NumActiveTrapSlots=1
+bWeaponSlotsAreSharedWhenUsingGamepad=false
+bEditModeUsableFromCombatMode=true
+HoldInputTime=0.25
+HoldCraftAmmoTime=0.75
+
+; Gamepad Action Key Aliases
++ActionKeyAliases=(ActionName="SwitchQuickbar", KeyAlias=Gamepad_Facebutton_Right)
++ActionKeyAliases=(ActionName="HotbarKey1", KeyAlias=Gamepad_Facebutton_Top, InputActionType=Hold)
++ActionKeyAliases=(ActionName="HotbarKey2", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="HotbarKey3", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="HotbarKey4", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="HotbarKey5", KeyAlias=Gamepad_LeftShoulder)
++ActionKeyAliases=(ActionName="HotbarKey6", KeyAlias=Gamepad_RightShoulder)
++ActionKeyAliases=(ActionName="HotbarKeyF1", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="HotbarKeyF2", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="HotbarKeyF3", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="HotbarKeyF4", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="HotbarKeyF5", KeyAlias=Gamepad_Facebutton_Left)
++ActionKeyAliases=(ActionName="HotbarKeyF6", KeyAlias=Gamepad_Facebutton_Left)
++ActionKeyAliases=(ActionName="HotbarKeyF7", KeyAlias=Gamepad_Facebutton_Left)
++ActionKeyAliases=(ActionName="Use", KeyAlias=Gamepad_Facebutton_Left)
++ActionKeyAliases=(ActionName="Reload", KeyAlias=Gamepad_Facebutton_Left)
++ActionKeyAliases=(ActionName="SpotActor", KeyAlias=Gamepad_RightThumbstick)
++ActionKeyAliases=(ActionName="PerformBuildingImprovementInteraction", KeyAlias=Gamepad_RightThumbstick)
++ActionKeyAliases=(ActionName="PerformBuildingEditInteraction", KeyAlias=Gamepad_Facebutton_Right, InputActionType=Hold)
++ActionKeyAliases=(ActionName="TrapPicker", KeyAlias=Gamepad_Facebutton_Left)
++ActionKeyAliases=(ActionName="ToggleInventory", KeyAlias=Gamepad_Special_Left)
++ActionKeyAliases=(ActionName="Chat", KeyAlias=Gamepad_Special_Left, InputActionType=Hold)
+
+; Mouse & Keyboard Action Key Aliases
++ActionKeyAliases=(ActionName="Fire", Key=LeftMouseButton, InputActionType=Click)
++ActionKeyAliases=(ActionName="Target", Key=RightMouseButton, InputActionType=Click)
++ActionKeyAliases=(ActionName="BuildingEditReset", Key=RightMouseButton, InputActionType=Click)
++ActionKeyAliases=(ActionName="ChangeMaterial", Key=RightMouseButton, InputActionType=Click)
+
+; Shared Movement - ConfigD
++ActionMappings=(ActionName="Jump", Key=SpaceBar)
++ActionMappings=(ActionName="Jump", Key=Gamepad_FaceButton_Bottom)
+
++ActionMappings=(ActionName="Sprint", Key=LeftShift)
++ActionMappings=(ActionName="Sprint", Key=Gamepad_LeftThumbstick)
+
+; Combat - ConfigD
++ActionMappings=(ActionName="Reload", Key=R)
+
++ActionMappings=(ActionName="UseOrReload", Key=Gamepad_FaceButton_Left)
++ActionMappings=(ActionName="GamepadNextWeaponOrHarvestHold", Key=Gamepad_Facebutton_Top)
+
++ActionMappings=(ActionName="Target", Key=RightMouseButton)
++ActionMappings=(ActionName="Target", Key=Gamepad_LeftTrigger)
+
++ActionMappings=(ActionName="GamepadAbility1", Key=Gamepad_LeftShoulder)
++ActionMappings=(ActionName="GamepadAbility2", Key=Gamepad_RightShoulder)
+
++ActionMappings=(ActionName="HotbarKey8", Key=Gamepad_DPad_Left)
++ActionMappings=(ActionName="HotbarKey9", Key=Gamepad_DPad_Right)
+
++ActionMappings=(ActionName="HotbarKey1", Key=One)
++ActionMappings=(ActionName="HotbarKey2", Key=Two)
++ActionMappings=(ActionName="HotbarKey3", Key=Three)
++ActionMappings=(ActionName="HotbarKey4", Key=Four)
++ActionMappings=(ActionName="HotbarKey5", Key=Z)
++ActionMappings=(ActionName="HotbarKey6", Key=X)
++ActionMappings=(ActionName="HotbarKey7", Key=C)
++ActionMappings=(ActionName="HotbarKey8", Key=Five)
++ActionMappings=(ActionName="HotbarKey9", Key=Six)
+
++ActionMappings=(ActionName="GamepadImproveOrSpotActor", Key=Gamepad_RightThumbstick)
++ActionMappings=(ActionName="SpotActor", Key=MiddleMouseButton)
+
+; Combat & Building - ConfigD
++ActionMappings=(ActionName="Fire", Key=LeftMouseButton)
++ActionMappings=(ActionName="Fire", Key=Gamepad_RightTrigger)
+
++ActionMappings=(ActionName="Use", Key=E)
++ActionMappings=(ActionName="TrapPicker", Key=T)
+
++ActionMappings=(ActionName="PerformBuildingImprovementInteraction", Key=F)
++ActionMappings=(ActionName="PerformBuildingImprovementInteraction", Key=ThumbMouseButton2)
+
++ActionMappings=(ActionName="GamepadSwitchModeOrEditBuilding", Key=Gamepad_Facebutton_Right)
++ActionMappings=(ActionName="CompleteBuildingEditInteraction", Key=Gamepad_Facebutton_Right)
+
++ActionMappings=(ActionName="PerformBuildingEditInteraction", Key=G)
++ActionMappings=(ActionName="CompleteBuildingEditInteraction", Key=G)
+
++ActionMappings=(ActionName="SwitchQuickbar", Key=Q)
++ActionMappings=(ActionName="SwitchQuickbar", Key=ThumbMouseButton)
+
++ActionMappings=(ActionName="SlotUp", Key=MouseScrollDown)
++ActionMappings=(ActionName="SlotDown", Key=MouseScrollUp)
+
+; Building Only - ConfigD
++ActionMappings=(ActionName="GamepadNextBuilding", Key=Gamepad_Facebutton_Top)
++ActionMappings=(ActionName="GamepadUseOrTrapPicker", Key=Gamepad_Facebutton_Left)
+
++ActionMappings=(ActionName="RotatePrimitiveClockwise", Key=R)
++ActionMappings=(ActionName="RotatePrimitiveClockwise", Key=Gamepad_RightShoulder)
+
++ActionMappings=(ActionName="BuildingEditReset", Key=RightMouseButton)
++ActionMappings=(ActionName="BuildingEditReset", Key=Gamepad_RightThumbstick)
+
++ActionMappings=(ActionName="ChangeMaterial", Key=RightMouseButton)
++ActionMappings=(ActionName="ChangeMaterial", Key=Gamepad_LeftShoulder)
+
++ActionMappings=(ActionName="SwitchToSelectedBuildingType", Key=Gamepad_LeftTrigger)
++ActionMappings=(ActionName="SwitchToSelectedBuildingType", Key=V)
+
++ActionMappings=(ActionName="HotbarKeyF1", Key=F1)
++ActionMappings=(ActionName="HotbarKeyF2", Key=F2)
++ActionMappings=(ActionName="HotbarKeyF3", Key=F3)
++ActionMappings=(ActionName="HotbarKeyF4", Key=F4)
++ActionMappings=(ActionName="HotbarKeyF5", Key=F5)
++ActionMappings=(ActionName="HotbarKeyF6", Key=F6)
++ActionMappings=(ActionName="HotbarKeyF7", Key=F7)
+
+; Death - ConfigD
++ActionMappings=(ActionName="ResurrectHere", Key=LeftMouseButton)
++ActionMappings=(ActionName="ResurrectHere", Key=Gamepad_FaceButton_Bottom)
+
++ActionMappings=(ActionName="RespawnAtStart", Key=RightMouseButton)
++ActionMappings=(ActionName="RespawnAtStart", Key=Gamepad_FaceButton_Left)
+
+; Picker - ConfigD
++ActionMappings=(ActionName="PickerConfirm", Key=Gamepad_FaceButton_Bottom)
++ActionMappings=(ActionName="PickerConfirm", Key=Gamepad_RightTrigger)
++ActionMappings=(ActionName="PickerCancel", Key=Gamepad_FaceButton_Right)
++ActionMappings=(ActionName="PickerCancel", Key=Gamepad_DPad_Down)
+
++ActionMappings=(ActionName="PickerConfirm", Key=LeftMouseButton)
++ActionMappings=(ActionName="PickerCancel", Key=RightMouseButton)
++ActionMappings=(ActionName="PickerCancel", Key=B)
++ActionMappings=(ActionName="PickerCancel", Key=N)
++ActionMappings=(ActionName="PickerCancel", Key=T)
++ActionMappings=(ActionName="PickerCancel", Key=Escape)
+
++ActionMappings=(ActionName="PickerOption1", Key=One)
++ActionMappings=(ActionName="PickerOption2", Key=Two)
++ActionMappings=(ActionName="PickerOption3", Key=Three)
++ActionMappings=(ActionName="PickerOption4", Key=Four)
++ActionMappings=(ActionName="PickerOption5", Key=Five)
++ActionMappings=(ActionName="PickerOption6", Key=Six)
++ActionMappings=(ActionName="PickerOption7", Key=Seven)
++ActionMappings=(ActionName="PickerOption8", Key=Eight)
+
++ActionMappings=(ActionName="PickerNextOption", Key=MouseScrollUp)
++ActionMappings=(ActionName="PickerPreviousOption", Key=MouseScrollDown)
++ActionMappings=(ActionName="PickerNextOption", Key=Gamepad_RightShoulder)
++ActionMappings=(ActionName="PickerPreviousOption", Key=Gamepad_LeftShoulder)
+
+; PickerNull hides inputs by ignoring them while the Picker is up
++ActionMappings=(ActionName="PickerNull", Key=E)
++ActionMappings=(ActionName="PickerNull", Key=F)
++ActionMappings=(ActionName="PickerNull", Key=G)
++ActionMappings=(ActionName="PickerNull", Key=R)
++ActionMappings=(ActionName="PickerNull", Key=V)
++ActionMappings=(ActionName="PickerNull", Key=Q)
++ActionMappings=(ActionName="PickerNull", Key=F1)
++ActionMappings=(ActionName="PickerNull", Key=F2)
++ActionMappings=(ActionName="PickerNull", Key=F3)
++ActionMappings=(ActionName="PickerNull", Key=F4)
++ActionMappings=(ActionName="PickerNull", Key=F5)
++ActionMappings=(ActionName="PickerNull", Key=F6)
++ActionMappings=(ActionName="PickerNull", Key=F7)
++ActionMappings=(ActionName="PickerNull", Key=MiddleMouseButton)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_LeftTrigger)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_FaceButton_Top)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_FaceButton_Left)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_DPad_Up)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_DPad_Left)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_DPad_Right)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_RightThumbstick)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_LeftThumbstick)
+
+; Meta - ConfigD
++ActionMappings=(ActionName="Chat", Key=Enter)
++ActionMappings=(ActionName="ChatWithSlash", Key=Slash)
+
++ActionMappings=(ActionName="ChatPicker", Key=B)
++ActionMappings=(ActionName="NotePicker", Key=N)
++ActionMappings=(ActionName="SocialPicker", Key=Gamepad_DPad_Down)
+
++ActionMappings=(ActionName="EscapeKey", Key=Escape)
++ActionMappings=(ActionName="EscapeKey", Key=F10)
++ActionMappings=(ActionName="EscapeKey", Key=Gamepad_Special_Right)
+
++ActionMappings=(ActionName="ToggleInventory", Key=I)
++ActionMappings=(ActionName="InventoryOrChatHold", Key=Gamepad_Special_Left)
+
++ActionMappings=(ActionName="ToggleFullScreenMap", Key=M)
++ActionMappings=(ActionName="ToggleFullScreenMap", Key=Tab)
++ActionMappings=(ActionName="ToggleFullScreenMap", Key=Gamepad_DPad_Up)
+
++ActionMappings=(ActionName="MenuMoveLeft", Key=Left)
++ActionMappings=(ActionName="MenuMoveRight", Key=Right)
++ActionMappings=(ActionName="MenuMoveUp", Key=Up)
++ActionMappings=(ActionName="MenuMoveDown", Key=Down)
++ActionMappings=(ActionName="MenuSelectTile", Key=SpaceBar)
+
++ActionMappings=(ActionName="SkipCutscene", Key=SpaceBar)
++ActionMappings=(ActionName="SkipCutscene", Key=Escape)
++ActionMappings=(ActionName="SkipCutscene", Key=Gamepad_FaceButton_Bottom)
+
++ActionMappings=(ActionName="ToggleCursorMode", Key=LeftAlt)
++ActionMappings=(ActionName="ToggleCursorMode", Key=RightAlt)
+
++ActionMappings=(ActionName="LobbyCameraZoomOut", Key=MouseScrollDown)
++ActionMappings=(ActionName="LobbyCameraZoomIn", Key=MouseScrollUp)
+
+[ConfigE FortPlayerInputSettings]
+; Localized Strings
+FriendlyName=LOCTEXT("AlternateControllerConfiguration", "Quick Builder")
+
+; Settings
+bBuildingPickerOnlyChoosesCategories=true
+bWeaponPickerShowOnlySlottedItems=true
+bTrapPickerUsesRadial=true
+bRadialClosesOnRelease=true
+NumActiveTrapSlots=1
+bWeaponSlotsAreSharedWhenUsingGamepad=false
+bEditModeUsableFromCombatMode=true
+HoldInputTime=0.25
+HoldCraftAmmoTime=0.75
+bOnlyShowNextPrevBuildingSlotKeybinds=true
+
+; Gamepad Action Key Aliases
++ActionKeyAliases=(ActionName="SwitchQuickbar", KeyAlias=Gamepad_Facebutton_Right)
++ActionKeyAliases=(ActionName="HotbarKey1", KeyAlias=Gamepad_Facebutton_Top, InputActionType=Hold)
++ActionKeyAliases=(ActionName="HotbarKey2", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="HotbarKey3", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="HotbarKey4", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="HotbarKey5", KeyAlias=Gamepad_LeftShoulder)
++ActionKeyAliases=(ActionName="HotbarKey6", KeyAlias=Gamepad_RightShoulder)
++ActionKeyAliases=(ActionName="HotbarKeyF5", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="HotbarKeyF6", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="HotbarKeyF7", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="Use", KeyAlias=Gamepad_Facebutton_Left)
++ActionKeyAliases=(ActionName="Reload", KeyAlias=Gamepad_Facebutton_Left)
++ActionKeyAliases=(ActionName="SpotActor", KeyAlias=Gamepad_RightThumbstick)
++ActionKeyAliases=(ActionName="PerformBuildingImprovementInteraction", KeyAlias=Gamepad_RightThumbstick)
++ActionKeyAliases=(ActionName="PerformBuildingEditInteraction", KeyAlias=Gamepad_Facebutton_Right, InputActionType=Hold)
++ActionKeyAliases=(ActionName="ChangeMaterial", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="RotatePrimitiveClockwise", KeyAlias=Gamepad_RightThumbstick)
++ActionKeyAliases=(ActionName="TrapPicker", KeyAlias=Gamepad_Facebutton_Top)
++ActionKeyAliases=(ActionName="ToggleInventory", KeyAlias=Gamepad_Special_Left)
++ActionKeyAliases=(ActionName="Chat", KeyAlias=Gamepad_Special_Left, InputActionType=Hold)
+
+; Mouse & Keyboard Action Key Aliases
++ActionKeyAliases=(ActionName="Fire", Key=LeftMouseButton, InputActionType=Click)
++ActionKeyAliases=(ActionName="Target", Key=RightMouseButton, InputActionType=Click)
++ActionKeyAliases=(ActionName="BuildingEditReset", Key=RightMouseButton, InputActionType=Click)
++ActionKeyAliases=(ActionName="ChangeMaterial", Key=RightMouseButton, InputActionType=Click)
+
+; Shared Movement - ConfigE
++ActionMappings=(ActionName="Jump", Key=SpaceBar)
++ActionMappings=(ActionName="Jump", Key=Gamepad_FaceButton_Bottom)
+
+; Combat - ConfigE
+
+; Sprint is Combat Only in ConfigE
++ActionMappings=(ActionName="Sprint", Key=LeftShift)
++ActionMappings=(ActionName="Sprint", Key=Gamepad_LeftThumbstick)
+
++ActionMappings=(ActionName="Reload", Key=R)
+
++ActionMappings=(ActionName="UseOrReload", Key=Gamepad_FaceButton_Left)
++ActionMappings=(ActionName="GamepadNextWeaponOrHarvestHold", Key=Gamepad_Facebutton_Top)
+
++ActionMappings=(ActionName="Target", Key=RightMouseButton)
++ActionMappings=(ActionName="Target", Key=Gamepad_LeftTrigger)
+
++ActionMappings=(ActionName="GamepadAbility1", Key=Gamepad_LeftShoulder)
++ActionMappings=(ActionName="GamepadAbility2", Key=Gamepad_RightShoulder)
+
++ActionMappings=(ActionName="HotbarKey8", Key=Gamepad_DPad_Left)
++ActionMappings=(ActionName="HotbarKey9", Key=Gamepad_DPad_Right)
+
++ActionMappings=(ActionName="HotbarKey1", Key=One)
++ActionMappings=(ActionName="HotbarKey2", Key=Two)
++ActionMappings=(ActionName="HotbarKey3", Key=Three)
++ActionMappings=(ActionName="HotbarKey4", Key=Four)
++ActionMappings=(ActionName="HotbarKey5", Key=Z)
++ActionMappings=(ActionName="HotbarKey6", Key=X)
++ActionMappings=(ActionName="HotbarKey7", Key=C)
++ActionMappings=(ActionName="HotbarKey8", Key=Five)
++ActionMappings=(ActionName="HotbarKey9", Key=Six)
+
++ActionMappings=(ActionName="GamepadImproveOrSpotActor", Key=Gamepad_RightThumbstick)
++ActionMappings=(ActionName="SpotActor", Key=MiddleMouseButton)
+
+; Combat & Building - ConfigE
++ActionMappings=(ActionName="Fire", Key=LeftMouseButton)
++ActionMappings=(ActionName="Fire", Key=Gamepad_RightTrigger)
+
++ActionMappings=(ActionName="Use", Key=E)
++ActionMappings=(ActionName="TrapPicker", Key=T)
+
++ActionMappings=(ActionName="PerformBuildingImprovementInteraction", Key=F)
++ActionMappings=(ActionName="PerformBuildingImprovementInteraction", Key=ThumbMouseButton2)
+
++ActionMappings=(ActionName="GamepadSwitchModeOrEditBuilding", Key=Gamepad_Facebutton_Right)
++ActionMappings=(ActionName="CompleteBuildingEditInteraction", Key=Gamepad_Facebutton_Right)
+
++ActionMappings=(ActionName="PerformBuildingEditInteraction", Key=G)
++ActionMappings=(ActionName="CompleteBuildingEditInteraction", Key=G)
+
++ActionMappings=(ActionName="SwitchQuickbar", Key=Q)
++ActionMappings=(ActionName="SwitchQuickbar", Key=ThumbMouseButton)
+
++ActionMappings=(ActionName="SlotUp", Key=MouseScrollDown)
++ActionMappings=(ActionName="SlotDown", Key=MouseScrollUp)
+
+; Building Only - ConfigE
++ActionMappings=(ActionName="GamepadTrapPicker", Key=Gamepad_Facebutton_Top)
++ActionMappings=(ActionName="Use", Key=Gamepad_Facebutton_Left)
+
++ActionMappings=(ActionName="GamepadPreviousBuilding", Key=Gamepad_LeftShoulder)
++ActionMappings=(ActionName="GamepadNextBuilding", Key=Gamepad_RightShoulder)
+
++ActionMappings=(ActionName="GamepadImproveOrRotateBuildingPiece", Key=Gamepad_RightThumbstick)
+
++ActionMappings=(ActionName="RotatePrimitiveClockwise", Key=R)
+
++ActionMappings=(ActionName="BuildingEditReset", Key=RightMouseButton)
++ActionMappings=(ActionName="BuildingEditReset", Key=Gamepad_RightThumbstick)
+
++ActionMappings=(ActionName="ChangeMaterial", Key=RightMouseButton)
++ActionMappings=(ActionName="ChangeMaterial", Key=Gamepad_LeftThumbstick)
+
++ActionMappings=(ActionName="SwitchToSelectedBuildingType", Key=Gamepad_LeftTrigger)
++ActionMappings=(ActionName="SwitchToSelectedBuildingType", Key=V)
+
++ActionMappings=(ActionName="HotbarKeyF1", Key=F1)
++ActionMappings=(ActionName="HotbarKeyF2", Key=F2)
++ActionMappings=(ActionName="HotbarKeyF3", Key=F3)
++ActionMappings=(ActionName="HotbarKeyF4", Key=F4)
++ActionMappings=(ActionName="HotbarKeyF5", Key=F5)
++ActionMappings=(ActionName="HotbarKeyF6", Key=F6)
++ActionMappings=(ActionName="HotbarKeyF7", Key=F7)
+
+; Death - ConfigE
++ActionMappings=(ActionName="ResurrectHere", Key=LeftMouseButton)
++ActionMappings=(ActionName="ResurrectHere", Key=Gamepad_FaceButton_Bottom)
+
++ActionMappings=(ActionName="RespawnAtStart", Key=RightMouseButton)
++ActionMappings=(ActionName="RespawnAtStart", Key=Gamepad_FaceButton_Left)
+
+; Picker - ConfigE
++ActionMappings=(ActionName="PickerConfirm", Key=Gamepad_FaceButton_Bottom)
++ActionMappings=(ActionName="PickerConfirm", Key=Gamepad_RightTrigger)
++ActionMappings=(ActionName="PickerCancel", Key=Gamepad_FaceButton_Right)
++ActionMappings=(ActionName="PickerCancel", Key=Gamepad_DPad_Down)
+
++ActionMappings=(ActionName="PickerConfirm", Key=LeftMouseButton)
++ActionMappings=(ActionName="PickerCancel", Key=RightMouseButton)
++ActionMappings=(ActionName="PickerCancel", Key=B)
++ActionMappings=(ActionName="PickerCancel", Key=N)
++ActionMappings=(ActionName="PickerCancel", Key=T)
++ActionMappings=(ActionName="PickerCancel", Key=Escape)
+
++ActionMappings=(ActionName="PickerOption1", Key=One)
++ActionMappings=(ActionName="PickerOption2", Key=Two)
++ActionMappings=(ActionName="PickerOption3", Key=Three)
++ActionMappings=(ActionName="PickerOption4", Key=Four)
++ActionMappings=(ActionName="PickerOption5", Key=Five)
++ActionMappings=(ActionName="PickerOption6", Key=Six)
++ActionMappings=(ActionName="PickerOption7", Key=Seven)
++ActionMappings=(ActionName="PickerOption8", Key=Eight)
+
++ActionMappings=(ActionName="PickerNextOption", Key=MouseScrollUp)
++ActionMappings=(ActionName="PickerPreviousOption", Key=MouseScrollDown)
++ActionMappings=(ActionName="PickerNextOption", Key=Gamepad_RightShoulder)
++ActionMappings=(ActionName="PickerPreviousOption", Key=Gamepad_LeftShoulder)
+
+; PickerNull hides inputs by ignoring them while the Picker is up
++ActionMappings=(ActionName="PickerNull", Key=E)
++ActionMappings=(ActionName="PickerNull", Key=F)
++ActionMappings=(ActionName="PickerNull", Key=G)
++ActionMappings=(ActionName="PickerNull", Key=R)
++ActionMappings=(ActionName="PickerNull", Key=V)
++ActionMappings=(ActionName="PickerNull", Key=Q)
++ActionMappings=(ActionName="PickerNull", Key=F1)
++ActionMappings=(ActionName="PickerNull", Key=F2)
++ActionMappings=(ActionName="PickerNull", Key=F3)
++ActionMappings=(ActionName="PickerNull", Key=F4)
++ActionMappings=(ActionName="PickerNull", Key=F5)
++ActionMappings=(ActionName="PickerNull", Key=F6)
++ActionMappings=(ActionName="PickerNull", Key=F7)
++ActionMappings=(ActionName="PickerNull", Key=MiddleMouseButton)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_LeftTrigger)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_FaceButton_Top)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_FaceButton_Left)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_DPad_Up)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_DPad_Left)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_DPad_Right)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_RightThumbstick)
++ActionMappings=(ActionName="PickerNull", Key=Gamepad_LeftThumbstick)
+
+; Meta - ConfigE
++ActionMappings=(ActionName="Chat", Key=Enter)
++ActionMappings=(ActionName="ChatWithSlash", Key=Slash)
+
++ActionMappings=(ActionName="ChatPicker", Key=B)
++ActionMappings=(ActionName="NotePicker", Key=N)
++ActionMappings=(ActionName="SocialPicker", Key=Gamepad_DPad_Down)
+
++ActionMappings=(ActionName="EscapeKey", Key=Escape)
++ActionMappings=(ActionName="EscapeKey", Key=F10)
++ActionMappings=(ActionName="EscapeKey", Key=Gamepad_Special_Right)
+
++ActionMappings=(ActionName="ToggleInventory", Key=I)
++ActionMappings=(ActionName="InventoryOrChatHold", Key=Gamepad_Special_Left)
+
++ActionMappings=(ActionName="ToggleFullScreenMap", Key=M)
++ActionMappings=(ActionName="ToggleFullScreenMap", Key=Tab)
++ActionMappings=(ActionName="ToggleFullScreenMap", Key=Gamepad_DPad_Up)
+
++ActionMappings=(ActionName="MenuMoveLeft", Key=Left)
++ActionMappings=(ActionName="MenuMoveRight", Key=Right)
++ActionMappings=(ActionName="MenuMoveUp", Key=Up)
++ActionMappings=(ActionName="MenuMoveDown", Key=Down)
++ActionMappings=(ActionName="MenuSelectTile", Key=SpaceBar)
+
++ActionMappings=(ActionName="SkipCutscene", Key=SpaceBar)
++ActionMappings=(ActionName="SkipCutscene", Key=Escape)
++ActionMappings=(ActionName="SkipCutscene", Key=Gamepad_FaceButton_Bottom)
+
++ActionMappings=(ActionName="ToggleCursorMode", Key=LeftAlt)
++ActionMappings=(ActionName="ToggleCursorMode", Key=RightAlt)
+
++ActionMappings=(ActionName="LobbyCameraZoomOut", Key=MouseScrollDown)
++ActionMappings=(ActionName="LobbyCameraZoomIn", Key=MouseSKX9×yK‚úÙ

@@ -1,0 +1,996 @@
+[/Script/EngineSettings.GameMapsSettings]
+GameInstanceClass=/Script/FortniteGame.FortGameInstance
+GameDefaultMap=/Game/Maps/Frontend
+ServerDefaultMap=/Game/Maps/FortniteEmptyDedicated
+GlobalDefaultGameMode=/Script/FortniteGame.FortGameModeZone
+GlobalDefaultServerGameMode=/Script/FortniteGame.FortGameModeEmptyDedicated
+TransitionMap=/Game/Maps/FortniteTransition
+LocalMapOptions=
+EditorStartupMap=
++GameModeClassAliases=(Name="ded",GameMode="/Script/FortniteGame.FortGameModeEmptyDedicated")
++GameModeClassAliases=(Name="zone",GameMode="/Script/FortniteGame.FortGameModeZone")
++GameModeClassAliases=(Name="keep",GameMode="/Script/FortniteGame.FortGameModeKeep")
++GameModeClassAliases=(Name="manor",GameMode="/Script/FortniteGame.FortGameModeManor")
++GameModeClassAliases=(Name="outpost",GameMode="/Script/FortniteGame.FortGameModeOutpost")
++GameModeClassAliases=(Name="pvp",GameMode="/Game/PvP/BaseDestructionGame/BaseDestruction_Game.BaseDestruction_Game_C")
++GameModeClassAliases=(Name="FrontEnd",GameMode="/Script/FortniteGame.FortGameModeFrontEnd")
+
+[BuildConfiguration]
+bAllowHotReloadFromIDE=false
+
+[Core.Log]
+LogHttp=warning
+LogXmpp=warning
+LogOnline=log
+LogOnlineParty=verbose
+LogParty=verbose
+LogOnlineGame=log
+LogOnlineChat=log
+LogTemp=warning
+LogSourceControl=Warning
+LogLootTables=Warning
+
+[LogFiles]
+MaxLogFilesOnDisk=300
+
+[Core.System]
+ZeroEngineVersionWarning=False
+
+[/Script/Engine.GarbageCollectionSettings]
+gc.MaxObjectsNotConsideredByGC=1
+gc.SizeOfPermanentObjectPool=0
+gc.FlushStreamingOnGC=True
+gc.UseDisregardForGCOnDedicatedServers=True
+
+[/Script/Engine.StreamingSettings]
+s.WarnIfTimeLimitExceeded=False
+s.PriorityAsyncLoadingExtraTime=50.0 ; While loading, keep a frame rate of around 20 fps
+; intentional merge conflict...we will turn on EDL for fortnite with in dev-core...which should merge to main on...even though there may be a merge from main disabling the EDL
+s.EventDrivenLoaderEnabled=true
+; intentional merge conflict...we will turn on EDL for fortnite with in dev-core...which should merge to main on...even though there may be a merge from main disabling the EDL
+
+[HTTP]
+HttpTimeout=60
+
+[DeviceProfileManager]
+-DeviceProfileSelectionModule=ExampleDeviceProfileSelector
+
+[CoreRedirects]
++PropertyRedirects=(OldName="FortItemDefinition.Tooltip", NewName="FortItemDefinition.TooltipClass")
++PropertyRedirects=(OldName="FortExpeditionItemDefinition.MaxTargetPowerRating", NewName="FortItemDefinition.BaseTargetPowerRating")
++FunctionRedirects=(OldName="FortUIBlueprintFunctionLibrary.GetSmallItemDefinitionPreviewImageBrush", NewName="FortUIBlueprintFunctionLibrary.GetItemDefinitionSmallPreviewImageBrush")
++FunctionRedirects=(OldName="FortUIBlueprintFunctionLibrary.GetSmallItemPreviewImageBrush", NewName="FortUIBlueprintFunctionLibrary.GetItemSmallPreviewImageBrush")
++ClassRedirects=(OldName="FortEnemyTargetedWidget", NewName="FortHUDTargetUnderReticleWidget")
++ClassRedirects=(OldName="FortPlayerAnimGraphInstance", NewName="FortPlayerAnimInstance")
++FunctionRedirects=(OldName="FortUIBlueprintFunctionLibrary.GetSmallItemPreviewImageBrush", NewName="FortUIBlueprintFunctionLibrary.GetItemSmallPreviewImageBrush")
++FunctionRedirects=(OldName="FortItemPickerBase.CommitSelectedItem", NewName="FortItemPickerBase.TryCommitSelectedItem")
+
+[/Script/Engine.Engine]
+GameEngine=/Script/FortniteGame.FortEngine
+UnrealEdEngine=/Script/FortniteEditor.FortUnrealEdEngine
+EditorEngine=/Script/FortniteEditor.FortUnrealEdEngine
+GameViewportClientClassName=/Script/FortniteGame.FortGameViewportClient
+WorldSettingsClassName=/Script/FortniteGame.FortWorldSettings
+NavigationSystemClassName=/Script/FortniteGame.FortNavSystem
+LocalPlayerClassName=/Script/FortniteGame.FortLocalPlayer
+GameSingletonClassName=/Script/FortniteGame.FortGlobals
+AssetManagerClassName=/Script/FortniteGame.FortAssetManager
+LevelScriptActorClassName=/Script/FortniteGame.FortLevelScriptActor
+GameUserSettingsClassName=/Script/FortniteGame.FortGameUserSettings
+ConsoleClassName=/Script/FortniteGame.FortConsole
+bSmoothFrameRate=false ; Off until we fix stalls
+bCanBlueprintsTickByDefault=false
+DurationOfErrorsAndWarningsOnHUD=0 ; no onscreen warnings
+
+; Redirect deleted specific-AI-type code classes to base FortAIPawn just in case any references were missed somewhere!
++ActiveClassRedirects=(OldClassName="FortPawn_Husk",NewClassName="FortAIPawn")
++ActiveClassRedirects=(OldClassName="FortPawn_Smasher",NewClassName="FortAIPawn")
++ActiveClassRedirects=(OldClassName="FortPawn_Troll",NewClassName="FortAIPawn")
+
+; Time Of Day redirectors
++ActiveClassRedirects=(OldClassName="FortDayNightLightingAndFog", NewClassName="FortTimeOfDayManager")
++K2FieldRedirects=(OldFieldName="FortGameState.GetDayPhaseHandler",NewFieldName="FortGameState.GetTimeOfDayManager")
+
+; Rename spawn points pacing difficulty option to a shorter name
++ActiveClassRedirects=(OldClassName="FortDifficultyOptionCategoryEncounter_SpawnPointsPercentageCurveSequence",NewClassName="/Script/FortniteGame.FortDifficultyOptionCategoryEncounter_SpawnPointsCurve")
++ActiveClassRedirects=(OldClassName="FortDifficultyOptionEncounter_SpawnPointsPercentageCurveSequence",NewClassName="/Script/FortniteGame.FortDifficultyOptionEncounter_SpawnPointsCurve")
+
+; Redirect engine classes to fortnite subsets
++ActiveClassRedirects=(OldClassName="StaticMeshActor",NewClassName="/Script/FortniteGame.FortStaticMeshActor",InstanceOnly="true")
++ActiveClassRedirects=(OldClassName="LevelScriptActor",NewClassName="/Script/FortniteGame.FortLevelScriptActor")
+
++EnumRedirects=(EnumName="EFortTargetSelectionFilter",OldEnumEntry="EFortTargetSelectionFilter::Husks",NewEnumEntry="EFortTargetSelectionFilter::AIPawns")
++EnumRedirects=(EnumName="EFortTargetSelectionFilter",OldEnumEntry="EFortTargetSelectionFilter::Smashers",NewEnumEntry="EFortTargetSelectionFilter::AIPawns")
+
++EnumRedirects=(EnumName="EBoundingBoxSlotDirectionCalculation",OldEnumEntry="EBoundingBoxSlotDirectionCalculation::AlongWalls",NewEnumEntry="EBoundingBoxSlotDirectionCalculation::FaceWall")
++EnumRedirects=(EnumName="EBoundingBoxSlotDirectionCalculation",OldEnumEntry="EBoundingBoxSlotDirectionCalculation::FacingCenter",NewEnumEntry="EBoundingBoxSlotDirectionCalculation::FaceCenter")
+
++ActiveClassRedirects=(OldClassName="EVaultContentSortType",NewClassName="/Script/FortniteGame.EInventoryContentSortType")
++ActiveClassRedirects=(OldClassName="EBangType",NewClassName="/Script/FortniteGame.EFortBangType")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Invalid",NewEnumEntry="EFortBangType::Invalid")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Custom",NewEnumEntry="EFortBangType::Custom")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Play",NewEnumEntry="EFortBangType::PlayTab")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Hero",NewEnumEntry="EFortBangType::HeroesTab")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Vault",NewEnumEntry="EFortBangType::VaultTab")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Store",NewEnumEntry="EFortBangType::StoreTab")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Friends",NewEnumEntry="EFortBangType::FriendsButton")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::PartyInvite",NewEnumEntry="EFortBangType::PartyInviteButton")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::DailyReward",NewEnumEntry="EFortBangType::DailyRewardsButton")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Quest",NewEnumEntry="EFortBangType::QuestsButton")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Schematics",NewEnumEntry="EFortBangType::VaultSchematics")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Personnel",NewEnumEntry="EFortBangType::VaultPersonnel")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Resources",NewEnumEntry="EFortBangType::VaultResources")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Melee",NewEnumEntry="EFortBangType::VaultMelee")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Ranged",NewEnumEntry="EFortBangType::VaultRanged")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Consumables",NewEnumEntry="EFortBangType::VaultConsumables")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Ingredients",NewEnumEntry="EFortBangType::VaultIngredients")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="EBangType::Traps",NewEnumEntry="EFortBangType::VaultTraps")
+
+; Duplicates needed for BP pins
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="Play",NewEnumEntry="EFortBangType::PlayTab")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="Hero",NewEnumEntry="EFortBangType::HeroesTab")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="Vault",NewEnumEntry="EFortBangType::VaultTab")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="Store",NewEnumEntry="EFortBangType::StoreTab")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="Friends",NewEnumEntry="EFortBangType::FriendsButton")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="PartyInvite",NewEnumEntry="EFortBangType::PartyInviteButton")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="DailyReward",NewEnumEntry="EFortBangType::DailyRewardsButton")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="Quest",NewEnumEntry="EFortBangType::QuestsButton")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="Schematics",NewEnumEntry="EFortBangType::VaultSchematics")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="Personnel",NewEnumEntry="EFortBangType::VaultPersonnel")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="Resources",NewEnumEntry="EFortBangType::VaultResources")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="Melee",NewEnumEntry="EFortBangType::VaultMelee")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="Ranged",NewEnumEntry="EFortBangType::VaultRanged")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="Consumables",NewEnumEntry="EFortBangType::VaultConsumables")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="Ingredients",NewEnumEntry="EFortBangType::VaultIngredients")
++EnumRedirects=(EnumName="EFortBangType",OldEnumEntry="Traps",NewEnumEntry="EFortBangType::VaultTraps")
+
+; Redirects for UI-related things
++ActiveClassRedirects=(OldClassName="FortMasterWidget",NewClassName="FortUILayerManagerWidget")
++TaggedPropertyRedirects=(ClassName="FortUILayerManagerWidget", OldPropertyName="Slots", NewPropertyName="UILayerSlots")
++ActiveClassRedirects=(OldClassName="FortMasterSlot",NewClassName="FortUILayerSlot")
++ActiveClassRedirects=(OldClassName="FortUIState",NewClassName="/Script/FortniteUI.FortUIStateWidget")
++ActiveClassRedirects=(OldClassName="FortUIState_HomeBase",NewClassName="/Script/FortniteUI.FortUIStateWidget_FrontEnd")
++TaggedPropertyRedirects=(ClassName="FortUIStateManager", OldPropertyName="StateDataPath", NewPropertyName="StateWidgetsDataPath")
++K2FieldRedirects=(OldFieldName="FortUIStateManager.GetCurrentState",NewFieldName="FortUIStateManager.GetCurrentStateWidget")
++K2FieldRedirects=(OldFieldName="FortUserWidget.GetUIState",NewFieldName="FortUserWidget.GetCurrentStateWidget")
++ActiveClassRedirects=(OldClassName="FortUIStateData",NewClassName="/Script/FortniteUI.FortUIStateWidgetsData")
++TaggedPropertyRedirects=(ClassName="FortUIStateWidgetsData", OldPropertyName="WidgetEntries", NewPropertyName="StateWidgets")
++ActiveStructRedirects=(OldStructName="WidgetDataEntry", NewStructName="/Script/FortniteUI.StateWidgetDataEntry")
++TaggedPropertyRedirects=(ClassName="StateWidgetDataEntry", OldPropertyName="Widget", NewPropertyName="StateWidget")
++K2ParamRedirects=(NodeName="/Script/BlueprintGraph.K2Node_CallFunction", OldParamName="FortPartyContext.GetActiveFriendsList.Result", NewParamName="OutActiveFriends")
++K2ParamRedirects=(NodeName="/Script/BlueprintGraph.K2Node_CallFunction", OldParamName="FortPartyContext.GetPartyInvites.Result", NewParamName="OutPartyInvites")
++ActiveClassRedirects=(OldClassName="QuestObjectiveInfo",NewClassName="/Script/FortniteGame.FortQuestObjectiveInfo")
++ActiveClassRedirects=(OldClassName="FortQuestReward",NewClassName="/Script/FortniteGame.FortItemInstanceQuantityPair")
++ActiveClassRedirects=(OldClassName="BlueprintContextBase",NewClassName="/Script/BlueprintContext.BlueprintContextBase")
++ActiveClassRedirects=(OldClassName="BlueprintContextLibrary",NewClassName="/Script/BlueprintContext.BlueprintContextLibrary")
++ActiveClassRedirects=(OldClassName="EFortFrontendInventoryFilter",NewClassName="/Script/FortniteGame.EFortFrontendInventoryFilter")
+
+; Spelling error fix for mission placement struct
++TaggedPropertyRedirects=(ClassName="FortMissionPlacementFoundationItem",OldPropertyName="ItemIndentifyingTags",NewPropertyName="ItemIdentifyingTags")
+
+// Remove FortniteServer
++ActiveClassRedirects=(OldClassName="FortGameModeFOB",NewClassName="/Script/FortniteGame.FortGameModeFOB")
++ActiveClassRedirects=(OldClassName="FortGameModeKeep",NewClassName="/Script/FortniteGame.FortGameModeKeep")
++ActiveClassRedirects=(OldClassName="FortGameModeManor",NewClassName="/Script/FortniteGame.FortGameModeManor")
++ActiveClassRedirects=(OldClassName="FortGameModeOutpost",NewClassName="/Script/FortniteGame.FortGameModeOutpost")
++ActiveClassRedirects=(OldClassName="FortGameModeZone",NewClassName="/Script/FortniteGame.FortGameModeZone")
++ActiveClassRedirects=(OldClassName="FortGamePvPBase",NewClassName="/Script/FortniteGame.FortGamePvPBase")
++ActiveClassRedirects=(OldClassName="FortGamePvPBaseDestruction",NewClassName="/Script/FortniteGame.FortGamePvPBaseDestruction")
++ActiveClassRedirects=(OldClassName="EPvPGameEndReasons",NewClassName="/Script/FortniteGame.EPvPGameEndReasons")
++ActiveClassRedirects=(OldClassName="FCachedPlayerFOBInformation",NewClassName="/Script/FortniteGame.FCachedPlayerFOBInformation")
++ActiveClassRedirects=(OldClassName="FTeamFOBRequiredTags",NewClassName="/Script/FortniteGame.FTeamFOBRequiredTags")
+
++TaggedPropertyRedirects=(ClassName="AIHotSpotSlotGenerator_OnBoundingBox",OldPropertyName="MaxBBExtent",NewPropertyName="MaxExtent")
++TaggedPropertyRedirects=(ClassName="AIHotSpotSlotGenerator_OnBoundingBox",OldPropertyName="bLimitBBSize",NewPropertyName="bLimitMaxExtent")
++TaggedPropertyRedirects=(ClassName="AIHotSpotSlotGenerator_OnBoundingBox",OldPropertyName="ExpandOrShrinkByDistance",NewPropertyName="ExpandBy")
+
++TaggedPropertyRedirects=(ClassName="FortWorkerType",OldPropertyName="BuildingSynergyTag",NewPropertyName="ManagerSynergyTag")
+
++K2FieldRedirects=(OldFieldName="FortMission.GetMissionFortPlayerControllers",NewFieldName="FortMission.GetParticipatingMissionControllers")
++K2ParamRedirects=(NodeName="/Script/BlueprintGraph.K2Node_CallFunction", OldParamName="FortMissionLibrary.StartNotification.bIsLatent", NewParamName="bWaitForClients")
++K2ParamRedirects=(NodeName="/Script/BlueprintGraph.K2Node_CallFunction", OldParamName="FortMissionLibrary.StartTutorialNotification.bIsLatent", NewParamName="bWaitForClients")
++K2ParamRedirects=(NodeName="/Script/BlueprintGraph.K2Node_CallFunction", OldParamName="FortObjectiveBase.StartMissionNotification.bIsLatent", NewParamName="bWaitForClients")
++K2ParamRedirects=(NodeName="/Script/BlueprintGraph.K2Node_CallFunction", OldParamName="FortMission.StartMissionNotification.bIsLatent", NewParamName="bWaitForClients")
++TaggedPropertyRedirects=(ClassName="FortMissionEventName", OldPropertyName="MissionName", NewPropertyName="CategoryName")
+; redirect for allowing some of the strategic building functionality to be re-used elsewhere
++ActiveClassRedirects=(OldClassName="EFortStrategicBuildingProximityGEApplicationType",NewClassName="/Script/FortniteGame.EFortProximityBasedGEApplicationType")
++EnumRedirects=(EnumName="EFortProximityBasedGEApplicationType",OldEnumEntry="EFortStrategicBuildingProximityGEApplicationType::ApplyOnProximityPulse",NewEnumEntry="EFortProximityBasedGEApplicationType::ApplyOnProximityPulse")
++EnumRedirects=(EnumName="EFortProximityBasedGEApplicationType",OldEnumEntry="EFortStrategicBuildingProximityGEApplicationType::ApplyOnProximityTouch",NewEnumEntry="EFortProximityBasedGEApplicationType::ApplyOnProximityTouch")
++EnumRedirects=(EnumName="EFortProximityBasedGEApplicationType",OldEnumEntry="EFortStrategicBuildingProximityGEApplicationType::ApplyOnlyDuringProximityTouch",NewEnumEntry="EFortProximityBasedGEApplicationType::ApplyOnlyDuringProximityTouch")
++ActiveClassRedirects=(OldClassName="FProximityBasedGEDeliveryInfo",NewClassName="/Script/FortniteGame.FProximityBasedGEDeliveryInfo")
++K2FieldRedirects=(OldFieldName="FortKismetLibrary.K2_DoesPlayerHaveItem",NewFieldName="FortKismetLibrary.K2_GetItemQuantityOnPlayer")
++TaggedPropertyRedirects=(ClassName="BuildingContainer",OldPropertyname="QuotaLevel", NewPropertyName="MaximumQuotaLevelBound")
+
++TaggedPropertyRedirects=(ClassName="AFortSaveFileBuildingInstructionsHandler",OldPropertyName="bDespawnOnLoad",NewPropertyName="bDespawnOnBuildingsSpawned")
+
++TaggedPropertyRedirects=(ClassName="FortPlacementActorFinderEntry",OldPropertyName="BuildingClassToReplace",NewPropertyName="BuildingClassToFind")
++TaggedPropertyRedirects=(ClassName="FortPlayerPawn",OldPropertyName="DeniedByCoolDownMontage",NewPropertyName="UnableToPerformActionMontage")
+
++ActiveStructRedirects=(OldStructName="FortTaggedDeployableBaseNeighborhoodLootUnlock",NewStructName="FortTaggedDeployableBaseLootUnlock")
+
++ActiveClassRedirects=(OldClassName="EnvQueryGenerator_ActorsOfClass",NewClassName="/Script/FortniteGame.FortQueryGenerator_ActorsAround")
+
+!NetDriverDefinitions=ClearArray
++NetDriverDefinitions=(DefName="GameNetDriver",DriverClassName="/Script/OnlineSubsystemUtils.IpNetDriver",DriverClassNameFallback="/Script/OnlineSubsystemUtils.IpNetDriver")
++NetDriverDefinitions=(DefName="BeaconNetDriver",DriverClassName="/Script/OnlineSubsystemUtils.IpNetDriver",DriverClassNameFallback="/Script/OnlineSubsystemUtils.IpNetDriver")
++NetDriverDefinitions=(DefName="DemoNetDriver",DriverClassName="/Script/Engine.DemoNetDriver",DriverClassNameFallback="/Script/Engine.DemoNetDriver")
+
+[/Script/OnlineSubsystemUtils.OnlineBeaconHost]
+BeaconConnectionInitialTimeout=48.0
+BeaconConnectionTimeout=49.0
+
+[/Script/AndroidRuntimeSettings.AndroidRuntimeSettings]
+bEnableGooglePlaySupport=true
+
+[/Script/FortniteGame.FortPartyBeaconClient]
+BeaconConnectionInitialTimeout=10.0
+BeaconConnectionTimeout=15.0 ; This is just the initial session setup
+ReconnectionInitialTimeout=100.0 ; Map loading occurs here
+ReconnectionTimeout=52.0
+
+[/Script/FortniteGame.FortLobbyBeaconClient]
+BeaconConnectionInitialTimeout=50.0
+BeaconConnectionTimeout=45.0
+
+[/Script/Qos.QosRegionManager]
+bUseOldQosServers=false
+NumTestsPerRegion=5
+PingTimeout=3.0
+!Datacenters=ClearArray
++Datacenters=(DisplayName=NSLOCTEXT("MMRegion", "North America", "North America"), RegionId="NA", Servers[0]=(Address="104.197.43.234", Port=22222), Servers[1]=(Address="104.154.69.32", Port=22222), Servers[2]=(Address="54.80.227.49", Port=22222), Servers[3]=(Address="52.207.149.112", Port=22222))
++Datacenters=(DisplayName=NSLOCTEXT("MMRegion", "Europe", "Europe"), RegionId="EU", Servers[0]=(Address="130.211.73.167", Port=22222), Servers[1]=(Address="146.148.11.96", Port=22222), Servers[2]=(Address="52.28.126.110", Port=22222), Servers[3]=(Address="52.58.171.172", Port=22222))
++Datacenters=(DisplayName=NSLOCTEXT("MMRegion", "Oceania", "Oceania"), RegionId="OCE", Servers[0]=(Address="52.63.66.90", Port=22222), Servers[1]=(Address="52.63.3.189", Port=22222), Servers[2]=(Address="52.63.211.194", Port=22222), Servers[3]=(Address="52.63.164.167", Port=22222))
++Datacenters=(DisplayName=NSLOCTEXT("MMRegion", "Asia", "Asia"), RegionId="ASIA", bEnabled=false, bVisible=false, bBeta=true, Servers[0]=(Address="52.79.116.125", Port=22222), Servers[1]=(Address="52.79.186.69", Port=22222), Servers[2]=(Address="52.79.170.81", Port=22222), Servers[3]=(Address="52.79.99.47", Port=22222))
++Datacenters=(DisplayName=NSLOCTEXT("MMRegion", "Singapore", "Singapore"), RegionId="SG", bEnabled=false, bVisible=false, bBeta=true, Servers[0]=(Address="146.148.54.11", Port=22222))
+
+[Engine.StartupPackages]
++Package=/Game/Sounds/SoundClassesAndModes/Ambient
++Package=/Game/Sounds/SoundClassesAndModes/Default
++Package=/Game/Sounds/SoundClassesAndModes/Loud
++Package=/Game/Sounds/SoundClassesAndModes/Master
++Package=/Game/Sounds/SoundClassesAndModes/Quick
++Package=/Game/Sounds/SoundClassesAndModes/Quiet
++Package=/Game/Sounds/SoundClassesAndModes/Slow
+
+[/Script/UnrealEd.EditorEngine]
+LocalPlayerClassName=/Script/FortniteGame.FortLocalPlayer
+bAllowMultiplePIEWorlds=1
+
+[/Script/UnrealEd.UnrealEdEngine]
+bOnlinePIEEnabled=false
+-TemplateMapInfos=(ThumbnailTexture=Texture2D'/Engine/Maps/Templates/Thumbnails/Default.Default',Map="/Engine/Maps/Templates/Template_Default")
+-TemplateMapInfos=(ThumbnailTexture=Texture2D'/Engine/Maps/Templates/Thumbnails/EmptyWithLighting.EmptyWithLighting',Map="/Engine/Maps/Templates/Template_EmptyWithLighting")
+-TemplateMapInfos=(ThumbnailTexture=Texture2D'/Engine/Maps/Templates/Thumbnails/Primitives.Primitives',Map="/Engine/Maps/Templates/Template_Primitives")
+-TemplateMapInfos=(ThumbnailTexture=Texture2D'/Engine/Maps/Templates/Thumbnails/VR-Basic.VR-Basic',Map="/Engine/Maps/Templates/VR-Basic")
++TemplateMapInfos=(ThumbnailTexture=Texture2D'/Game/UI/EditorTemplates/Builder_Grid_Plane.Builder_Grid_Plane',Map="/Game/Maps/Test_Maps/EditorTemplates/Builder_Grid_Plane")
++TemplateMapInfos=(ThumbnailTexture=Texture2D'/Game/UI/EditorTemplates/3x3_Building.3x3_Building',Map="/Game/Maps/Test_Maps/EditorTemplates/3x3_Building")
++TemplateMapInfos=(ThumbnailTexture=Texture2D'/Game/UI/EditorTemplates/5x5_Building.5x5_Building',Map="/Game/Maps/Test_Maps/EditorTemplates/5x5_Building")
++TemplateMapInfos=(ThumbnailTexture=Texture2D'/Game/UI/EditorTemplates/Tile_Outer.Tile_Outer',Map="/Game/Maps/Test_Maps/EditorTemplates/Tile_Outer")
++TemplateMapInfos=(ThumbnailTexture=Texture2D'/Game/UI/EditorTemplates/Mission_Testbed.Mission_Testbed',Map="/Game/Maps/Test_Maps/EditorTemplates/Mission_Testbed")
+
+[ProcessLimits]
+; 8 GB by default, just to prevent runaway instances from making healthy ones go OOM
+VirtualMemoryLimitInKB=8388608
+
+[SystemSettings]
+; NOTE THAT ANY ITEMS IN THIS SECTION WILL AFFECT ALL PLATFORMS!!!
+r.AllowStaticLighting=False
+r.Shadow.CacheWPOPrimitives=1
+r.CapsuleIndirectShadowMinVisibility=.5	
+r.CapsuleIndirectConeAngle=.2
+r.AOSpecularOcclusionMode=0
+r.SupportSimpleForwardShading=1
+r.StaticMesh.UpdateMeshLODGroupSettingsAtLoad=1
+p.BatchPhysXTasksSize=8
+
+; For low end compatibility
+Compat.MAX_GPUSKIN_BONES=75
+r.setres=1280x720
+
+r.Mac.OpenGLDisabled=1
+rhi.Metal.AllowStencils=0
+rhi.Metal.RuntimeDebugLevel=0
+
+Slate.TickInvisibleWidgets=0
+
+net.ProcessQueuedBunchesMillisecondLimit=0
+
+Fort.AutomaticReplayRecording=1
+Fort.MaxDesiredReplayRecordTimeMS=1.0
+
+InGamePerformanceTracking.Enabled=1
+InGamePerformanceTracking.HistorySize=240
+
+; Allow QueryOnly actors to be marked as simulation disabled
+p.DisableQueryOnlyActors=1
+
+; Temporarily disable PSO cache for now since it is causing a crash when loading an existing one.
+D3D12.EnablePSOCache=0
+
+; Disabling EnsureOnNaNFail for now since we do not want to surface NaN issues in various development branches. 
+;EnsureOnNaNFail=1
+
+[SystemSettingsEditor]
+r.setres=1280x720
+
+[Voice]
+bEnabled=false
+
+[OnlineSubsystem]
+bHasVoiceEnabled=false
+DefaultPlatformService=MCP
+PollingIntervalInMs=20
+bUseBuildIdOverride=false
+BuildIdOverride=0
+PartyPendingCreateResponseTimeout=0
+PartyPendingJoinResponseTimeout=20
+PartyPendingLeaveResponseTimeout=10
+PartyPendingKickResponseTimeout=10
+PartyPendingJoinRequestTimeout=20
+
+[OnlineSubsystemMcp.McpProfile]
+McpClientCommandUrl=/api/game/v2/profile/`accountId/client/`fname?profileId=`profileId
+McpDedicatedServerCommandUrl=/api/game/v2/profile/`accountId/dedicated_server/`fname?profileId=`profileId
+McpPublicCommandUrl=/api/game/v2/profile/`accountId/public/`fname?profileId=`profileId
+
+[/Script/McpProfileSys.McpProfileGroup]
+ProfileWriteLockTimeoutSecs=120
+ProfileNotificationsStompTopic=/topic/fn/profile/`accountid`/`app`
+
+[/Script/FortniteGame.FortMcpProfileAccount]
+ListCatalogEntriesUrl=/api/storefront/v2/catalog
+
+[OnlineSubsystemMcp]
+bEnabled=true
+bEnableXmpp=true
+bEnableNotificationHandler=true
+bEnableNotificationTransportManager=true
+bEnableNotificationTransportXmpp=true
+bEnableDefaultServiceTracker=true
++StompTopics="twitch|/topic/fn/twitch/%0/`app`"
+
+[OnlineSubsystemMcp.BaseServiceMcp]
+HttpRetryLimit=4
++HttpRetryResponseCodes=429
++HttpRetryResponseCodes=503
++HttpRetryResponseCodes=504
+
+[OnlineSubsystemMcp.OnlineIdentityMcp]
+bShouldReconnectXmpp=true
+bOfflineAccountToken=true
+bOfflineClientToken=true
++HttpRetryResponseCodes=408
+
+[OnlineSubsystemMcp.OnlineWaitingRoomMcp]
+bEnabled=true
+RetryConfigUrl="https://s3-us-west-1.amazonaws.com/launcher-resources/waitingroom/"
+
+[OnlineSubsystemMcp.OnlineSessionMcp]
+HttpRetryLimit=10
++HttpRetryResponseCodes=409
+
+[OnlineSubsystemMcp.OnlineStoreMcp]
+StoreNamespace=fn
+
+[OnlineSubsystemMcp.Xmpp]
+bPrivateChatFriendsOnly=true
+
+[OnlineSubsystemTwitch]
+bEnabled=true
+ClientId=bs3mowbbusifs5b0rm43e9adg2k3nq
+
+[OnlineSubsystemTwitch.OnlineIdentityTwitch]
+LoginRedirectUrl="https://accounts.epicgames-gamedev.ol.epicgames.net/OAuthAuthorized"
+ScopeFields=user_read
++ScopeFields=channel_subscriptions
+
+[/Script/Hotfix.OnlineHotfixManager]
+HotfixManagerClassName=/Script/FortniteGame.FortHotfixManager
+
+[GameFeedback]
+DefaultLogHeadSizeKb=64
+DefaultLogTailSizeKb=1984
+FeedbackUploadPath=/api/feedback
+FeedbackUploadTopic=usertext
+
+[/Script/Engine.Player]
+ConfiguredInternetSpeed=30000
+ConfiguredLanSpeed=30000
+
+[/Script/OnlineSubsystemUtils.IpNetDriver]
+bNoTimeouts=false
+ConnectionTimeout=90.0
+InitialConnectTimeout=45.0
+MaxClientRate=30000
+MaxInternetClientRate=20000
+NetServerMaxTickRate=20
+
+[/Script/Engine.NavCollision]
+bGatherConvexGeometry=true
+; bIsDynamicObstacle=true  ; Do NOT set this to true, because then static geo and floors (among many other things) would be dynamic obstacles and would not generate nav mesh on top of them!
+
+[/Script/Engine.PathFollowingComponent]
+bUseVisibilityTestsSimplification=false
+
+[/Script/FortniteGame.FortNavArea_StoneWall]
+DrawColor=(R=211,G=211,B=211,A=164)
+DefaultCost=50
+
+[/Script/FortniteGame.FortNavArea_WoodenWall]
+DrawColor=(R=219,G=97,B=57,A=164)
+DefaultCost=35
+
+[/Script/FortniteGame.FortNavComponent]
+bDoAsyncPathfinding=false
+bDoHierarchicalPathfinding=false
+bDoPathOffsetting=true
+bSearchFromGoalWhenOutOfNodes=false
+
+[/Script/FortniteGame.FortNavSystem]
+bUseStaticMeshLinks=false
+bUseStaticWorldLinksDown=true
+bUseStaticWorldLinksUp=true
+bUseJumpLinkActors=true
+DirtyAreasUpdateFreqInactive=0.200000
++SupportedAgents=(Name="Husk",Color=(B=175,G=64,R=0,A=160),DefaultQueryExtent=(X=278.000000,Y=278.000000,Z=250.000000),NavigationDataClassName=/Script/FortniteGame.FortNavMesh,AgentRadius=34.000000,AgentHeight=110.000000,AgentStepHeight=-1.000000,NavWalkingSearchHeightScale=0.500000,PreferredNavData=Class'/Script/FortniteGame.FortNavMesh',bCanCrouch=False,bCanJump=False,bCanWalk=False,bCanSwim=False,bCanFly=False)
++SupportedAgents=(Name="Smasher",Color=(B=160,G=0,R=64,A=160),DefaultQueryExtent=(X=278.000000,Y=278.000000,Z=250.000000),NavigationDataClassName=/Script/FortniteGame.FortNavMesh,AgentRadius=70.000000,AgentHeight=180.000000,AgentStepHeight=-1.000000,NavWalkingSearchHeightScale=0.500000,PreferredNavData=Class'/Script/FortniteGame.FortNavMesh',bCanCrouch=False,bCanJump=False,bCanWalk=False,bCanSwim=False,bCanFly=False)
++SupportedAgents=(Name="Graph",Color=(B=255,G=255,R=0,A=160),DefaultQueryExtent=(X=512.000000,Y=512.000000,Z=250.000000),NavigationDataClassName=/Script/FortniteGame.FortNavigationGraph,AgentRadius=100000.000000,AgentHeight=0.000000,AgentStepHeight=-1.000000,NavWalkingSearchHeightScale=0.500000,PreferredNavData=Class'/Script/FortniteGame.FortNavigationGraph',bCanCrouch=False,bCanJump=False,bCanWalk=False,bCanSwim=False,bCanFly=False)
+
+[Kismet]
+AllowDerivedBlueprints=true
+bCanSuppressAccessViolation=true
+
+[Audio]
+DeferStartupPrecache=true
+UseAudioThread=true
+
+[/Script/Engine.SoundGroups]
+!SoundGroupProfiles=ClearArray
++SoundGroupProfiles=(SoundGroup=SOUNDGROUP_Default, bAlwaysDecompressOnLoad=false, DecompressedDuration=2)
++SoundGroupProfiles=(SoundGroup=SOUNDGROUP_Effects, bAlwaysDecompressOnLoad=false, DecompressedDuration=2)
++SoundGroupProfiles=(SoundGroup=SOUNDGROUP_UI, bAlwaysDecompressOnLoad=false, DecompressedDuration=2)
++SoundGroupProfiles=(SoundGroup=SOUNDGROUP_Music, bAlwaysDecompressOnLoad=false, DecompressedDuration=0)
++SoundGroupProfiles=(SoundGroup=SOUNDGROUP_Voice, bAlwaysDecompressOnLoad=false, DecompressedDuration=0)
+
+[Analytics]
+APIServerET="https://datarouter.ol.epicgames.com/"
+
+[EnvironmentQueryEd]
+EnableEnvironmentQueryEd=true
+
+[BehaviorTreesEd]
+BehaviorTreeEditorEnabled=true
+BehaviorTreeNewAssetsEnabled=true
+
+[Plugins]
+-EnabledPlugins=BlankPlugin
+-EnabledPlugins=UObjectPlugin
+-EnabledPlugins=EpicSurvey
+-EnabledPlugins=OculusRift
+-EnabledPlugins=MessagingDebugger
+-EnabledPlugins=SubversionSourceControl
+-EnabledPlugins=WindowsMoviePlayer
+-EnabledPlugins=CableComponent
+
+// Uncomment to add simulated lag
+//[PacketSimulationSettings] 
+//PktLoss=1
+//PktOrder=0 
+//PktDup=0 
+//PktLag=75 
+//PktLagVariance=20 
+
+[/Script/Engine.AISystemBase]
+AISystemModuleName=AIModule
+AISystemClassName=/Script/FortniteGame.FortAISystem
+
+[/Script/AIModule.AISystem]
+HotSpotManagerClassName=/Script/FortniteGame.FortAIHotSpotManager
+PerceptionSystemClassName=/Script/FortniteGame.FortAIPerceptionSystem
+bEnableBTAITasks=true
+
+[/Script/AIModule.AISense_Sight]
+bAutoRegisterNewPawnsAsSources=false
+
+[ConsoleVariables]
+net.AllowAsyncLoading=1
+net.DelayUnmappedRPCs=1
+net.MaxRPCPerNetUpdate=10
+OSS.VerboseSessionInPayloads=0
+OSS.VerboseSessionOutPayloads=0
+OSS.VerboseIdentityPayloads=0
+QOS.UseDefaultRegion=1
+httpReplay.ChunkUploadDelayInSeconds=20
+demo.CheckpointUploadDelayInSeconds=60
+demo.ForceDisableAsyncPackageMapLoading=0
+gpad.LeftStickInnerDeadzone=0.24
+gpad.LeftStickOuterDeadzone=0.01
+gpad.RightStickInnerDeadzone=0.27
+gpad.RightStickOuterDeadzone=0.01
+demo.UseNetRelevancy=1
+demo.CullDistanceOverride=3000
+demo.RecordHzWhenNotRelevant=2
+
+; Reduced to improve perf at a minor hit to visuals
+r.AOGlobalDFStartDistance=100
+
+[DerivedDataBackendGraph]
+Shared=(Type=FileSystem, ReadOnly=false, Clean=false, Flush=false, DeleteUnused=true, UnusedFileAge=10, FoldersToClean=10, MaxFileChecksPerSec=1, Path=\\ddc-01.epicgames.net\DDC, EnvPathOverride=UE-SharedDataCachePath)
+Boot=(Type=Boot, Filename="%GAMEDIR%DerivedDataCache/Boot.ddc", MaxCacheSize=784)
+
+[AssetRegistry]
+bUseAssetRegistryTagsWhitelistInsteadOfBlacklist=true
++CookedTagsWhitelist=(Class=CustomCharacterPart,Tag=CharacterPartType)
++CookedTagsWhitelist=(Class=CustomCharacterPart,Tag=SkeletalMesh)
++CookedTagsWhitelist=(Class=CustomCharacterPart,Tag=GenderPermitted)
++CookedTagsWhitelist=(Class=CustomCharacterPart,Tag=BodyTypesPermitted)
++CookedTagsWhitelist=(Class=FortItemDefinition,Tag=DisplayName)
++CookedTagsWhitelist=(Class=FortItemDefinition,Tag=ItemType)
++CookedTagsWhitelist=(Class=FortItemDefinition,Tag=bNeverPersisted)
++CookedTagsWhitelist=(Class=FortEmoteItemDefinition,Tag=CommandName)
++CookedTagsWhitelist=(Class=FortSchematicItemDefinition,Tag=Result)
++CookedTagsWhitelist=(Class=FortMissionInfo,Tag=MissionTags)
++CookedTagsWhitelist=(Class=Blueprint,Tag=BuildingType)
++CookedTagsWhitelist=(Class=Blueprint,Tag=bIsPlayerBuildable)
++CookedTagsWhitelist=(Class=Blueprint,Tag=CurrentBuildingLevel)
++CookedTagsWhitelist=(Class=Blueprint,Tag=ActionEnvironment)
+
+[/Script/Engine.AutomationTestSettings]
++EditorTestModules=StaticMeshEditor
++EditorTestModules=LandscapeEditor
++EditorTestModules=GameProjectGeneration
++TestLevelFolders=TestMaps
++TestLevelFolders=Test_Maps
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Environments/Props/Bedroom/Meshes/Bedroom_Dresser_03.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Characters/Player/Male/Male_Avg_Base/Fortnite_M_Avg_Player_AnimBlueprint.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Animation/Game/MainPlayer/Montages/Rifle/AssaultRifle_Reload.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Characters/M_Avg_Base_Skeleton/Aim_Offset_Pistol_Downsights_LC.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Characters/M_Avg_Base_Skeleton/AimOffsets/PistolDownsights.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Animation/Game/MainPlayer/Combat/Guns/AssaultRifle/Aim_AssaultRifle_DownS.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Animation/Game/MainPlayer/Locomotion/Small/Sprint/SprintLeanAdditive.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Building/ActorBlueprints/Prop/Bathroom_ToiletBowl01.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Macros/Advancement/E_ClassDamageValue.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Effects/Fort_Effects/Creatures/Elemental/Ice/IceShard.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/UI/DefaultFont.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Packages/Fortress_SharedMaterials/SubSurfaceProfile/SS_MistMonster_01.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Packages/Fortress_SharedMaterials/Base_Material/CharacterShader.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Packages/Fortress_SharedMaterials/Base_Material_Functions/BaseShaderMaterialFunction.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Environments/Props/Boxes/Materials/Boxes.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Environments/Hexmap/ParamCollection/DifficultyColors.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Characters/Enemies/Husk/Mesh/Husk/MorphTargets/BreathIn.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Effects/Fort_Effects/Effects/Atlas/P_ActivationWave.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/FortressPhysicalMaterials/Car.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Characters/Enemies/Husk/Mesh/Husk/Base_Husk_Physics.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Sounds/Reverb_Presets/OutdoorTown_01_Reverb.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Characters/Enemies/Husk/Mesh/Husk/Base_Husk.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Characters/Enemies/Husk/Mesh/Husk/Base_Husk_Skeleton.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Loot/Badges/MissionBadges/Art/Badge_General_Brush.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/UI/Styles/BlackButton_Glass.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Sounds/Attenuation/Fort_Critical_Hit_Close_Att.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Sounds/FortSoundClassesAndModes/Fort_Explosives_Large_PSM.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Sounds/Fort_UI_Sounds/FrontEnd/Fort_UI_Ablity_Unlock_Cue.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Sounds/FortSoundClassesAndModes/BandPass.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Sounds/Foley_Loot/Ingredients/Energy/Battery_Collect.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Packages/FortNite_Gameplay_Props/FORT_Grill.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Environments/Sets/Barn/Textures/T_Farm_Roof_Wood_Shingle_1.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Tools/Turntable/LightingScenarios/FortniteEvening/Textures/PanoHDR/FortniteEveningTargetCube_Tex.uasset"),bSkipTestWhenUnAttended=False)
++TestAssetsToOpen=(AssetToOpen=(FilePath="../../../FortniteGame/Content/Tools/Turntable/Textures/T_componentReflectiveTarget.uasset"),bSkipTestWhenUnAttended=False)
++ImportExportTestDefinitions=(ImportFilePath=(FilePath="../../../FortniteGame/Content/Developers/QA/AutomationAssets/chamferboxtestsimpleNormalsOff.FBX"),ExportFileExtension=,bSkipExport=False,FactorySettings=)
++ImportExportTestDefinitions=(ImportFilePath=(FilePath="../../../FortniteGame/Content/Developers/QA/AutomationAssets/chamferboxtestsimpleNormalsOn.FBX"),ExportFileExtension=,bSkipExport=False,FactorySettings=)
++ImportExportTestDefinitions=(ImportFilePath=(FilePath="../../../FortniteGame/Content/Developers/QA/AutomationAssets/Prop_Wood_Crate_01_D.tga"),ExportFileExtension="BMP",bSkipExport=False,FactorySettings=)
+
+[NavMeshRenderingComponent]
+bForceDisableNavmeshRendering=false
+
+[/Script/Engine.NavigationSystem]
+bInitialBuildingLocked=True
+bSkipAgentHeightCheckWhenPickingNavData=True
+DirtyAreasUpdateFreq=1.000000
+
+[/Script/FortniteGame.FortNavMesh]
+bForceRebuildOnLoad=true
+
+[/Script/Engine.RecastNavMesh]
+bDistinctlyDrawTilesBeingBuilt=True
+DrawOffset=10.000000
+bFixedTilePoolSize=False
+TilePoolSize=1024
+TileSizeUU=1000.f
+TileSizeUU=1024.000000
+CellSize=19.f
+CellSize=17.000000
+CellHeight=10.f
+CellHeight=16.000000
+AgentMaxSlope=44.f
+AgentMaxSlope=44.509998
+AgentMaxStepHeight=35.f
+AgentMaxStepHeight=45.000000
+MergeRegionSize=400.f
+MergeRegionSize=340.000000
+MaxSimplificationError=0.990000
+DefaultMaxSearchNodes=2048.000000
+DefaultMaxHierarchicalSearchNodes=2048.000000
+RegionPartitioning=ChunkyMonotone
+LayerPartitioning=Monotone
+RegionChunkSplits=2
+LayerChunkSplits=2
+bSortNavigationAreasByCost=True
+bPerformVoxelFiltering=False
+bMarkLowHeightAreas=False
+bUseVirtualFilters=False
+bUseVoxelCache=False
+HeuristicScale=0.999000
+RuntimeGeneration=Dynamic
+
+[/Script/Engine.RendererSettings]
+r.MobileHDR=True
+r.AllowOcclusionQueries=True
+r.MinScreenRadiusForLights=0.030000
+r.MinScreenRadiusForDepthPrepass=0.030000
+r.PrecomputedVisibilityWarning=False
+r.TextureStreaming=True
+r.NormalMapsForStaticLighting=False
+r.GenerateMeshDistanceFields=True
+r.GenerateLandscapeGIData=True
+r.DistanceFieldBuild.Compress=True
+r.DistanceFieldBuild.EightBit=True
+r.TessellationAdaptivePixelsPerTriangle=48.000000
+r.SeparateTranslucency=True
+r.TranslucentSortPolicy=0
+TranslucentSortAxis=(X=0.000000,Y=-1.000000,Z=0.000000)
+r.CustomDepth=3
+r.DefaultFeature.Bloom=True
+r.DefaultFeature.AmbientOcclusion=True
+r.DefaultFeature.AmbientOcclusionStaticFraction=False
+r.DefaultFeature.AutoExposure=True
+r.DefaultFeature.MotionBlur=True
+r.DefaultFeature.LensFlare=False
+r.DefaultFeature.AntiAliasing=2
+r.EarlyZPass=2
+r.EarlyZPassMovable=True
+r.DBuffer=False
+r.ClearSceneMethod=1
+r.BasePassOutputsVelocity=True
+r.WireframeCullThreshold=5.000000
+r.LightShaftRenderToSeparateTranslucency=1
+r.EarlyZPassOnlyMaterialMasking=True
+r.VertexFoggingForOpaque=False
+r.SelectiveBasePassOutputs=True
+r.TonemapperFilm=1
+
+[/Script/MacTargetPlatform.MacTargetSettings]
+-TargetedRHIs=GLSL_150_MAC
+-TargetedRHIs=SF_METAL_SM4
++CachedShaderFormats=SF_METAL_SM5
+MaxShaderLanguageVersion=2
+
+[/Script/UnrealEd.CookerSettings]
+bCompileBlueprintsInDevelopmentMode=False
+bUseAssetRegistryForIteration=True
+
+[/Script/Engine.UserInterfaceSettings]
+RenderFocusRule=Never
+DefaultCursor=/Game/UI/Foundation/SoftwareCursors/InvisibleCursorWidget.InvisibleCursorWidget_C
+ApplicationScale=1.000000
+UIScaleRule=Vertical
+CustomScalingRuleClass=None
+UIScaleCurve=(EditorCurveData=(PreInfinityExtrap=RCCE_Constant,PostInfinityExtrap=RCCE_Constant,Keys=((Time=540.000000,Value=0.500000),(Time=1080.000000,Value=1.000000),(Time=2160.000000,Value=2.000000)),DefaultValue=340282346638528860000000000000000000000.000000),ExternalCurve=None)
+bLoadWidgetsOnDedicatedServer=False
+
+[/Script/SignificanceManager.SignificanceManager]
+SignificanceManagerClassName=/Script/FortniteGame.FortSignificanceManager
+
+[/Script/Engine.NetworkSettings]
+n.VerifyPeer=true
+
+[NetworkReplayStreaming]
+;DefaultFactoryName=NullNetworkReplayStreaming
+DefaultFactoryName=FortniteReplayStreamer
+
+[HttpNetworkReplayStreaming]
+ServerURL="https://fortnitereplay-public-service-gamedev.ol.epicgames.net/replay/v2/"
+
+[/Script/FortniteEditor.FortUnrealEdEngine]
+ClientEventDataStr=/Game/UI/ClientEvents/ClientEventData.ClientEventData
+
+[/Script/Engine.AudioSettings]
+DefaultSoundClassName=/Game/Sounds/FortSoundClassesAndModes/Master.Master
+DefaultSoundConcurrencyName=None
+DefaultBaseSoundMix=/Game/Sounds/FortSoundClassesAndModes/Fort_Default_Mix.Fort_Default_Mix
+VoiPSoundClass=/Game/Sounds/FortSoundClassesAndModes/Fort_01_VOIP.Fort_01_VOIP
+LowPassFilterResonance=0.900000
+MaximumConcurrentStreams=10
++QualityLevels=(DisplayName=NSLOCTEXT("AudioSettings", "DefaultSettingsName", "Default"),MaxChannels=32)
++QualityLevels=(DisplayName=NSLOCTEXT("", "9B9FE4744AF7846DB6CF50AC91F8EE51", "Low"),MaxChannels=20)
+bAllowVirtualizedSounds=True
+bDisableMasterEQ=True
+DialogueFilenameFormat="{DialogueGuid}_{ContextId}"
+bAllowCenterChannel3DPanning=True
+
+[/Script/WindowsTargetPlatform.WindowsTargetSettings]
+DefaultStackSize=1048576
+DefaultStackSizeCommit=0
+
+[/Script/PS4MediaFactory.PS4MediaSettings]
+NativeAudioOut=True
+
+[/Script/WmfMediaFactory.WmfMediaSettings]
+NativeAudioOut=True
+
+[StaticMeshLODSettings]
+-LevelArchitecture=(NumLODs=4,LightMapResolution=32,LODPercentTriangles=50,SilhouetteImportance=4,Name=LOCTEXT("LevelArchitectureLOD","Level Architecture"))
+-SmallProp=(NumLODs=4,LODPercentTriangles=50,Name=LOCTEXT("SmallPropLOD","Small Prop"))
+-LargeProp=(NumLODs=4,LODPercentTriangles=50,Name=LOCTEXT("LargePropLOD","Large Prop"))
+-Deco=(NumLODs=4,LODPercentTriangles=50,Name=LOCTEXT("DecoLOD","Deco"))
+-Vista=(NumLODs=1,Name=LOCTEXT("VistaLOD","Vista"))
+-Foliage=(NumLODs=1,Name=LOCTEXT("FoliageLOD","Foliage"))
++Default=(NumLODs=3,LODPercentTriangles=50,PixelError=30,SilhouetteImportance=5,Name=LOCTEXT("DefaultLOD","Default"))
+
+[FortStaticMeshLODSettings]
++LODGroupExclusionNames=_NoLOD
++LODGroupExclusionNames=S_DomPoint
+LODGroupMinTriangles=256
+
+[EngineSessionManager]
+UseWatchdogMTBF=false
+
+[PacketHandlerComponents]
+EncryptionComponent=AESHandlerComponent
+
+[OodleHandlerComponent]
+bEnableOodle=true
+Mode=Release
+PacketLogFile=PacketDump
+bUseDictionaryIfPresent=true
+ServerDictionary=Content/Oodle/FortniteGameOutput.udic
+ClientDictionary=Content/Oodle/FortniteGameInput.udic
+
+[/Script/Engine.CollisionProfile]
+-Profiles=(Name="NoCollision",CollisionEnabled=NoCollision,ObjectTypeName="WorldStatic",CustomResponses=((Channel="Visibility",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Ignore)),HelpMessage="No collision",bCanModify=False)
+-Profiles=(Name="BlockAll",CollisionEnabled=QueryAndPhysics,ObjectTypeName="WorldStatic",CustomResponses=,HelpMessage="WorldStatic object that blocks all actors by default. All new custom channels will use its own default response. ",bCanModify=False)
+-Profiles=(Name="OverlapAll",CollisionEnabled=QueryOnly,ObjectTypeName="WorldStatic",CustomResponses=((Channel="WorldStatic",Response=ECR_Overlap),(Channel="Pawn",Response=ECR_Overlap),(Channel="Visibility",Response=ECR_Overlap),(Channel="WorldDynamic",Response=ECR_Overlap),(Channel="Camera",Response=ECR_Overlap),(Channel="PhysicsBody",Response=ECR_Overlap),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Destructible",Response=ECR_Overlap)),HelpMessage="WorldStatic object that overlaps all actors by default. All new custom channels will use its own default response. ",bCanModify=False)
+-Profiles=(Name="BlockAllDynamic",CollisionEnabled=QueryAndPhysics,ObjectTypeName="WorldDynamic",CustomResponses=,HelpMessage="WorldDynamic object that blocks all actors by default. All new custom channels will use its own default response. ",bCanModify=False)
+-Profiles=(Name="OverlapAllDynamic",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="WorldStatic",Response=ECR_Overlap),(Channel="Pawn",Response=ECR_Overlap),(Channel="Visibility",Response=ECR_Overlap),(Channel="WorldDynamic",Response=ECR_Overlap),(Channel="Camera",Response=ECR_Overlap),(Channel="PhysicsBody",Response=ECR_Overlap),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Destructible",Response=ECR_Overlap)),HelpMessage="WorldDynamic object that overlaps all actors by default. All new custom channels will use its own default response. ",bCanModify=False)
+-Profiles=(Name="IgnoreOnlyPawn",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="Pawn",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Ignore)),HelpMessage="WorldDynamic object that ignores Pawn and Vehicle. All other channels will be set to default.",bCanModify=False)
+-Profiles=(Name="OverlapOnlyPawn",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="Pawn",Response=ECR_Overlap),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Camera",Response=ECR_Ignore)),HelpMessage="WorldDynamic object that overlaps Pawn, Camera, and Vehicle. All other channels will be set to default. ",bCanModify=False)
+-Profiles=(Name="Pawn",CollisionEnabled=QueryAndPhysics,ObjectTypeName="Pawn",CustomResponses=((Channel="Visibility",Response=ECR_Ignore)),HelpMessage="Pawn object. Can be used for capsule of any playerable character or AI. ",bCanModify=False)
+-Profiles=(Name="Spectator",CollisionEnabled=QueryOnly,ObjectTypeName="Pawn",CustomResponses=((Channel="WorldStatic",Response=ECR_Block),(Channel="Pawn",Response=ECR_Ignore),(Channel="Visibility",Response=ECR_Ignore),(Channel="WorldDynamic",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Ignore),(Channel="Destructible",Response=ECR_Ignore)),HelpMessage="Pawn object that ignores all other actors except WorldStatic.",bCanModify=False)
+-Profiles=(Name="CharacterMesh",CollisionEnabled=QueryOnly,ObjectTypeName="Pawn",CustomResponses=((Channel="Pawn",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Ignore),(Channel="Visibility",Response=ECR_Ignore)),HelpMessage="Pawn object that is used for Character Mesh. All other channels will be set to default.",bCanModify=False)
+-Profiles=(Name="PhysicsActor",CollisionEnabled=QueryAndPhysics,ObjectTypeName="PhysicsBody",CustomResponses=,HelpMessage="Simulating actors",bCanModify=False)
+-Profiles=(Name="Destructible",CollisionEnabled=QueryAndPhysics,ObjectTypeName="Destructible",CustomResponses=,HelpMessage="Destructible actors",bCanModify=False)
+-Profiles=(Name="InvisibleWall",CollisionEnabled=QueryAndPhysics,ObjectTypeName="WorldStatic",CustomResponses=((Channel="Visibility",Response=ECR_Ignore)),HelpMessage="WorldStatic object that is invisible.",bCanModify=False)
+-Profiles=(Name="InvisibleWallDynamic",CollisionEnabled=QueryAndPhysics,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="Visibility",Response=ECR_Ignore)),HelpMessage="WorldDynamic object that is invisible.",bCanModify=False)
+-Profiles=(Name="Trigger",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="WorldStatic",Response=ECR_Overlap),(Channel="Pawn",Response=ECR_Overlap),(Channel="Visibility",Response=ECR_Ignore),(Channel="WorldDynamic",Response=ECR_Overlap),(Channel="Camera",Response=ECR_Overlap),(Channel="PhysicsBody",Response=ECR_Overlap),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Destructible",Response=ECR_Overlap)),HelpMessage="WorldDynamic object that is used for trigger. All other channels will be set to default.",bCanModify=False)
+-Profiles=(Name="Ragdoll",CollisionEnabled=QueryAndPhysics,ObjectTypeName="PhysicsBody",CustomResponses=((Channel="Pawn",Response=ECR_Ignore)),HelpMessage="Simulating Skeletal Mesh Component. All other channels will be set to default.",bCanModify=False)
+-Profiles=(Name="Vehicle",CollisionEnabled=QueryAndPhysics,ObjectTypeName="Vehicle",CustomResponses=,HelpMessage="Vehicle object that blocks Vehicle, WorldStatic, and WorldDynamic. All other channels will be set to default.",bCanModify=False)
+-Profiles=(Name="UI",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="WorldStatic",Response=ECR_Overlap),(Channel="Pawn",Response=ECR_Overlap),(Channel="Visibility",Response=ECR_Block),(Channel="WorldDynamic",Response=ECR_Overlap),(Channel="Camera",Response=ECR_Overlap),(Channel="PhysicsBody",Response=ECR_Overlap),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Destructible",Response=ECR_Overlap)),HelpMessage="WorldStatic object that overlaps all actors by default. All new custom channels will use its own default response. ",bCanModify=False)
++Profiles=(Name="NoCollision",CollisionEnabled=NoCollision,ObjectTypeName="WorldStatic",CustomResponses=((Channel="Visibility",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Ignore)),HelpMessage="No collision",bCanModify=False)
++Profiles=(Name="OverlapAll",CollisionEnabled=QueryOnly,ObjectTypeName="WorldStatic",CustomResponses=((Channel="WorldStatic",Response=ECR_Overlap),(Channel="Pawn",Response=ECR_Overlap),(Channel="Visibility",Response=ECR_Overlap),(Channel="WorldDynamic",Response=ECR_Overlap),(Channel="Camera",Response=ECR_Overlap),(Channel="PhysicsBody",Response=ECR_Overlap),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Destructible",Response=ECR_Overlap)),HelpMessage="WorldStatic object that overlaps all actors by default. All new custom channels will use its own default response. ",bCanModify=False)
++Profiles=(Name="OverlapAllDynamic",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="WorldStatic",Response=ECR_Overlap),(Channel="Pawn",Response=ECR_Overlap),(Channel="Visibility",Response=ECR_Overlap),(Channel="WorldDynamic",Response=ECR_Overlap),(Channel="Camera",Response=ECR_Overlap),(Channel="PhysicsBody",Response=ECR_Overlap),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Destructible",Response=ECR_Overlap)),HelpMessage="WorldDynamic object that overlaps all actors by default. All new custom channels will use its own default response. ",bCanModify=False)
++Profiles=(Name="IgnoreOnlyPawn",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="Pawn",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Ignore)),HelpMessage="WorldDynamic object that ignores Pawn and Vehicle. All other channels will be set to default.",bCanModify=False)
++Profiles=(Name="OverlapOnlyPawn",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="Pawn",Response=ECR_Overlap),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Camera",Response=ECR_Ignore)),HelpMessage="WorldDynamic object that overlaps Pawn, Camera, and Vehicle. All other channels will be set to default. ",bCanModify=False)
++Profiles=(Name="CharacterMesh",CollisionEnabled=QueryOnly,ObjectTypeName="Pawn",CustomResponses=((Channel="Pawn",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Ignore),(Channel="Visibility",Response=ECR_Ignore)),HelpMessage="Pawn object that is used for Character Mesh. All other channels will be set to default.",bCanModify=False)
++Profiles=(Name="Trigger",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="WorldStatic",Response=ECR_Overlap),(Channel="Pawn",Response=ECR_Overlap),(Channel="Visibility",Response=ECR_Ignore),(Channel="WorldDynamic",Response=ECR_Overlap),(Channel="Camera",Response=ECR_Overlap),(Channel="PhysicsBody",Response=ECR_Overlap),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Destructible",Response=ECR_Overlap)),HelpMessage="WorldDynamic object that is used for trigger. All other channels will be set to default.",bCanModify=False)
++Profiles=(Name="UI",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="WorldStatic",Response=ECR_Overlap),(Channel="Pawn",Response=ECR_Overlap),(Channel="Visibility"),(Channel="WorldDynamic",Response=ECR_Overlap),(Channel="Camera",Response=ECR_Overlap),(Channel="PhysicsBody",Response=ECR_Overlap),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Destructible",Response=ECR_Overlap)),HelpMessage="WorldStatic object that overlaps all actors by default. All new custom channels will use its own default response. ",bCanModify=False)
++Profiles=(Name="BlockAll",CollisionEnabled=QueryOnly,ObjectTypeName="WorldStatic",CustomResponses=,HelpMessage="WorldStatic object that blocks all actors by default. All new custom channels will use its own default response. ",bCanModify=False)
++Profiles=(Name="BlockAllDynamic",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=,HelpMessage="WorldDynamic object that blocks all actors by default. All new custom channels will use its own default response. ",bCanModify=False)
++Profiles=(Name="Pawn",CollisionEnabled=QueryOnly,ObjectTypeName="Pawn",CustomResponses=((Channel="Visibility",Response=ECR_Ignore)),HelpMessage="Pawn object. Can be used for capsule of any playerable character or AI. ",bCanModify=False)
++Profiles=(Name="PhysicsActor",CollisionEnabled=QueryOnly,ObjectTypeName="PhysicsBody",CustomResponses=,HelpMessage="Simulating actors",bCanModify=False)
++Profiles=(Name="Destructible",CollisionEnabled=QueryOnly,ObjectTypeName="Destructible",CustomResponses=,HelpMessage="Destructible actors",bCanModify=False)
++Profiles=(Name="InvisibleWall",CollisionEnabled=QueryOnly,ObjectTypeName="WorldStatic",CustomResponses=((Channel="Visibility",Response=ECR_Ignore)),HelpMessage="WorldStatic object that is invisible.",bCanModify=False)
++Profiles=(Name="InvisibleWallDynamic",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="Visibility",Response=ECR_Ignore)),HelpMessage="WorldDynamic object that is invisible.",bCanModify=False)
++Profiles=(Name="Ragdoll",CollisionEnabled=QueryOnly,ObjectTypeName="PhysicsBody",CustomResponses=((Channel="Pawn",Response=ECR_Ignore)),HelpMessage="Simulating Skeletal Mesh Component. All other channels will be set to default.",bCanModify=False)
++Profiles=(Name="Vehicle",CollisionEnabled=QueryOnly,ObjectTypeName="Vehicle",CustomResponses=,HelpMessage="Vehicle object that blocks Vehicle, WorldStatic, and WorldDynamic. All other channels will be set to default.",bCanModify=False)
++Profiles=(Name="Spectator",CollisionEnabled=QueryOnly,ObjectTypeName="Pawn",CustomResponses=((Channel="WorldStatic"),(Channel="Pawn",Response=ECR_Ignore),(Channel="Visibility",Response=ECR_Ignore),(Channel="WorldDynamic",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Ignore),(Channel="Destructible",Response=ECR_Ignore)),HelpMessage="Pawn object that ignores all other actors except WorldStatic.",bCanModify=False)
++Profiles=(Name="FortPawnCapsule",CollisionEnabled=QueryOnly,ObjectTypeName="Pawn",CustomResponses=((Channel="Camera",Response=ECR_Ignore),(Channel="Destructible",Response=ECR_Ignore),(Channel="FCC_Trace_WeaponCapsule"),(Channel="FCC_Object_PawnAI"),(Channel="FCC_Object_Projectile"),(Channel="FCC_Object_ProjectileIgnoreAI"),(Channel="FCC_Query_PawnCapsule")),HelpMessage="Use for capsules of player or neutral pawns, or things that should behave like them",bCanModify=True)
++Profiles=(Name="FortAIPawnCapsule",CollisionEnabled=QueryOnly,ObjectTypeName="Pawn",CustomResponses=((Channel="Camera",Response=ECR_Ignore),(Channel="Destructible",Response=ECR_Ignore),(Channel="FCC_Trace_WeaponCapsule"),(Channel="FCC_Object_Projectile"),(Channel="FCC_Query_PawnCapsule")),HelpMessage="DEPRECATED! Use for capsules of enemy pawns, or things that should behave like them",bCanModify=True)
++Profiles=(Name="FortPawnMesh",CollisionEnabled=QueryOnly,ObjectTypeName="Pawn",CustomResponses=((Channel="WorldStatic",Response=ECR_Ignore),(Channel="Pawn",Response=ECR_Ignore),(Channel="Visibility"),(Channel="WorldDynamic"),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Ignore),(Channel="Destructible",Response=ECR_Ignore),(Channel="FCC_Trace_Weapon"),(Channel="FCC_Trace_WeaponMulti",Response=ECR_Overlap)),HelpMessage="Use for any skeletal meshes attached to pawns",bCanModify=True)
++Profiles=(Name="FortBlockingCapsule",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="Camera",Response=ECR_Ignore),(Channel="FCC_Trace_Interaction"),(Channel="FCC_Trace_WeaponCapsule"),(Channel="FCC_Object_PawnAI"),(Channel="FCC_Trace_Weapon"),(Channel="FCC_Trace_WeaponMulti"),(Channel="FCC_Object_Projectile"),(Channel="FCC_Object_ProjectileIgnoreAI")),HelpMessage="Use for capsules of interactive objects that should block weapons and interaction ",bCanModify=True)
++Profiles=(Name="FortTriggerDefault",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="WorldStatic",Response=ECR_Ignore),(Channel="WorldDynamic",Response=ECR_Ignore),(Channel="Pawn",Response=ECR_Overlap),(Channel="Visibility",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Destructible",Response=ECR_Ignore),(Channel="FCC_Trace_Interaction",Response=ECR_Overlap),(Channel="FCC_Trace_WeaponCapsule"),(Channel="FCC_Object_PawnAI",Response=ECR_Overlap),(Channel="FCC_Trace_Weapon"),(Channel="FCC_Object_Projectile",Response=ECR_Overlap),(Channel="FCC_Object_ProjectileIgnoreAI",Response=ECR_Overlap)),HelpMessage="Use for objects that block weapons, interaction, and overlap most things",bCanModify=True)
++Profiles=(Name="FortTriggerOnlyWeapons",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="WorldStatic",Response=ECR_Ignore),(Channel="WorldDynamic",Response=ECR_Ignore),(Channel="Pawn",Response=ECR_Ignore),(Channel="Visibility",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Ignore),(Channel="Destructible",Response=ECR_Ignore),(Channel="FCC_Trace_WeaponCapsule"),(Channel="FCC_Trace_Weapon"),(Channel="FCC_Trace_WeaponMulti",Response=ECR_Overlap),(Channel="FCC_Object_Projectile",Response=ECR_Overlap),(Channel="FCC_Object_ProjectileIgnoreAI",Response=ECR_Overlap)),HelpMessage="Use for objects that should be shootable, but have no other collision.",bCanModify=True)
++Profiles=(Name="FortTriggerOnlyPawns",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="WorldStatic",Response=ECR_Ignore),(Channel="WorldDynamic",Response=ECR_Ignore),(Channel="Pawn",Response=ECR_Overlap),(Channel="Visibility",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Destructible",Response=ECR_Ignore),(Channel="FCC_Object_PawnAI",Response=ECR_Overlap)),HelpMessage="Use for objects that should overlap pawns, but have no other collision.",bCanModify=True)
++Profiles=(Name="FortTriggerOnlyInteractions",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="WorldStatic",Response=ECR_Ignore),(Channel="WorldDynamic",Response=ECR_Ignore),(Channel="Pawn",Response=ECR_Ignore),(Channel="Visibility",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Ignore),(Channel="Destructible",Response=ECR_Ignore),(Channel="FCC_Trace_Interaction")),HelpMessage="Use for objects that should be interactible, but have no other collision.",bCanModify=True)
++Profiles=(Name="FortOverlapDynamicAndDestructible",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="WorldStatic",Response=ECR_Ignore),(Channel="WorldDynamic",Response=ECR_Overlap),(Channel="Pawn",Response=ECR_Overlap),(Channel="Visibility",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Destructible",Response=ECR_Overlap),(Channel="FCC_Object_PawnAI",Response=ECR_Overlap)),HelpMessage="Use for objects that should overlap pawns, but have no other collision.",bCanModify=True)
++Profiles=(Name="FortWeakSpot",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="WorldStatic",Response=ECR_Ignore),(Channel="WorldDynamic",Response=ECR_Ignore),(Channel="Pawn",Response=ECR_Ignore),(Channel="Visibility",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Ignore),(Channel="Destructible",Response=ECR_Ignore),(Channel="FCC_Trace_WeakSpot")),HelpMessage="Use only for weak points, don\'t set in editor.",bCanModify=True)
++Profiles=(Name="FortStaticMesh",CollisionEnabled=QueryOnly,ObjectTypeName="WorldStatic",CustomResponses=((Channel="FCC_Trace_WeaponCapsule"),(Channel="FCC_Trace_Interaction"),(Channel="FCC_Object_PawnAI"),(Channel="FCC_Trace_NonDestructible"),(Channel="FCC_Trace_Weapon"),(Channel="FCC_Trace_WeaponMulti"),(Channel="FCC_Object_Projectile"),(Channel="FCC_Object_ProjectileIgnoreAI"),(Channel="FCC_Trace_World")),HelpMessage="Use for static meshes that never move and cannot be interacted with",bCanModify=True)
++Profiles=(Name="FortBuildingMesh",CollisionEnabled=QueryOnly,ObjectTypeName="WorldStatic",CustomResponses=((Channel="FCC_Trace_Interaction"),(Channel="FCC_Trace_WeaponCapsule"),(Channel="FCC_Object_PawnAI"),(Channel="FCC_Trace_Weapon"),(Channel="FCC_Trace_WeaponMulti"),(Channel="FCC_Object_Projectile"),(Channel="FCC_Object_ProjectileIgnoreAI"),(Channel="FCC_Trace_World")),HelpMessage="Use for potentially interactive meshes that do not move",bCanModify=True)
++Profiles=(Name="FortDynamicMesh",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="FCC_Trace_Interaction"),(Channel="FCC_Trace_WeaponCapsule"),(Channel="FCC_Object_PawnAI"),(Channel="FCC_Trace_Weapon"),(Channel="FCC_Trace_WeaponMulti"),(Channel="FCC_Object_Projectile"),(Channel="FCC_Object_ProjectileIgnoreAI"),(Channel="FCC_Trace_World")),HelpMessage="Use for meshes that can move, but need to be interactive and shootable",bCanModify=True)
++Profiles=(Name="FortDynamicMeshIgnoreCamera",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="Camera",Response=ECR_Ignore),(Channel="FCC_Trace_Interaction"),(Channel="FCC_Trace_WeaponCapsule"),(Channel="FCC_Object_PawnAI"),(Channel="FCC_Trace_Weapon"),(Channel="FCC_Trace_WeaponMulti"),(Channel="FCC_Object_Projectile"),(Channel="FCC_Object_ProjectileIgnoreAI"),(Channel="FCC_Trace_World")),HelpMessage="Same as FortDynamicMesh, but ignores camera collision",bCanModify=True)
++Profiles=(Name="FortDynamicMeshOverlapPawn",CollisionEnabled=QueryOnly,ObjectTypeName="WorldDynamic",CustomResponses=((Channel="Camera",Response=ECR_Ignore),(Channel="FCC_Trace_Interaction"),(Channel="FCC_Trace_WeaponCapsule"),(Channel="FCC_Object_PawnAI"),(Channel="FCC_Trace_Weapon"),(Channel="FCC_Trace_WeaponMulti"),(Channel="FCC_Object_Projectile"),(Channel="FCC_Object_ProjectileIgnoreAI"),(Channel="FCC_Trace_World"),(Channel="Pawn",Response=ECR_Overlap)),HelpMessage="Same as FortDynamicMeshIgnoreCamera, but do not block pawns",bCanModify=True)
++Profiles=(Name="FortProjectileHitAllPawns",CollisionEnabled=QueryOnly,ObjectTypeName="FCC_Object_Projectile",CustomResponses=((Channel="Visibility",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Overlap),(Channel="FCC_Object_PawnAI")),HelpMessage="Projectile that stops when hitting any pawn or the world",bCanModify=True)
++Profiles=(Name="FortProjectileHitPlayersOnly",CollisionEnabled=QueryOnly,ObjectTypeName="FCC_Object_ProjectileIgnoreAI",CustomResponses=((Channel="Visibility",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Overlap)),HelpMessage="Projectile that stops when hitting player pawns or the world",bCanModify=True)
++Profiles=(Name="FortProjectileHitPlayersAndWeapon",CollisionEnabled=QueryOnly,ObjectTypeName="FCC_Object_ProjectileIgnoreAI",CustomResponses=((Channel="FCC_Trace_Weapon"),(Channel="FCC_Trace_WeaponMulti"),(Channel="Visibility",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Overlap)),HelpMessage="Projectile that stops when hitting player pawns or the world",bCanModify=True)
++Profiles=(Name="FortProjectileOverlapPawns",CollisionEnabled=QueryOnly,ObjectTypeName="FCC_Object_Projectile",CustomResponses=((Channel="Pawn",Response=ECR_Overlap),(Channel="FCC_Object_PawnAI",Response=ECR_Overlap),(Channel="Visibility",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Overlap),(Channel="Vehicle",Response=ECR_Ignore)),HelpMessage="Projectile that only stops when hitting the world",bCanModify=True)
++Profiles=(Name="FortAIPawnCapsuleOverlapPawns",CollisionEnabled=QueryOnly,ObjectTypeName="FCC_Object_PawnAI",CustomResponses=((Channel="Camera",Response=ECR_Ignore),(Channel="Destructible",Response=ECR_Ignore),(Channel="FCC_Object_PawnAI",Response=ECR_Overlap),(Channel="FCC_Object_Projectile"),(Channel="FCC_Query_PawnCapsule")),HelpMessage="Use for capsules of enemy pawns, disabled collisions with other pawns",bCanModify=True)
++Profiles=(Name="FortAIPawnEnemyCapsuleLowLOD",CollisionEnabled=QueryOnly,ObjectTypeName="FCC_Object_PawnAI",CustomResponses=((Channel="WorldStatic",Response=ECR_Ignore),(Channel="WorldDynamic",Response=ECR_Overlap),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Ignore),(Channel="Destructible",Response=ECR_Ignore),(Channel="FCC_Object_PawnAI",Response=ECR_Overlap),(Channel="FCC_Object_Projectile"),(Channel="FCC_Query_PawnCapsule")),HelpMessage="Use for capsules of enemy pawns, disabled collisions with world and other pawns",bCanModify=True)
++Profiles=(Name="FortAIPawnFriendlyCapsuleLowLOD",CollisionEnabled=QueryOnly,ObjectTypeName="Pawn",CustomResponses=((Channel="WorldStatic",Response=ECR_Ignore),(Channel="WorldDynamic",Response=ECR_Overlap),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Ignore),(Channel="Destructible",Response=ECR_Ignore),(Channel="FCC_Object_PawnAI",Response=ECR_Overlap),(Channel="FCC_Object_Projectile"),(Channel="FCC_Object_ProjectileIgnoreAI"),(Channel="FCC_Query_PawnCapsule")),HelpMessage="Use for capsules of friendly pawns, disabled collisions with world and other pawns",bCanModify=True)
++Profiles=(Name="FortAIPawnCapsuleGhost",CollisionEnabled=QueryOnly,ObjectTypeName="FCC_Object_PawnAI",CustomResponses=((Channel="WorldStatic",Response=ECR_Ignore),(Channel="WorldDynamic",Response=ECR_Overlap),(Channel="Pawn",Response=ECR_Overlap),(Channel="Camera",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Ignore),(Channel="Vehicle",Response=ECR_Ignore),(Channel="Destructible",Response=ECR_Ignore),(Channel="FCC_Trace_WeaponCapsule"),(Channel="FCC_Object_PawnAI",Response=ECR_Overlap),(Channel="FCC_Object_Projectile"),(Channel="FCC_Query_PawnCapsule")),HelpMessage="Use for capsule of ghost-like enemies that pass through walls",bCanModify=True)
++Profiles=(Name="FortWater",CollisionEnabled=QueryAndPhysics,ObjectTypeName="WorldStatic",CustomResponses=((Channel="WorldStatic",Response=ECR_Overlap),(Channel="WorldDynamic",Response=ECR_Overlap),(Channel="Pawn",Response=ECR_Overlap),(Channel="Visibility",Response=ECR_Ignore),(Channel="PhysicsBody",Response=ECR_Overlap),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Destructible",Response=ECR_Overlap),(Channel="EngineTraceChannel1",Response=ECR_Overlap),(Channel="EngineTraceChannel2",Response=ECR_Overlap),(Channel="EngineTraceChannel3",Response=ECR_Overlap),(Channel="EngineTraceChannel4",Response=ECR_Overlap),(Channel="EngineTraceChannel5",Response=ECR_Overlap),(Channel="EngineTraceChannel6",Response=ECR_Overlap),(Channel="FCC_Trace_WeaponCapsule",Response=ECR_Overlap),(Channel="FCC_Object_PawnAI",Response=ECR_Overlap),(Channel="FCC_Trace_WeaponMulti",Response=ECR_Overlap),(Channel="FCC_Object_Projectile",Response=ECR_Overlap),(Channel="FCC_Trace_World",Response=ECR_Overlap),(Channel="GameTraceChannel12",Response=ECR_Overlap),(Channel="GameTraceChannel13",Response=ECR_Overlap),(Channel="GameTraceChannel14",Response=ECR_Overlap),(Channel="GameTraceChannel15",Response=ECR_Overlap),(Channel="GameTraceChannel16",Response=ECR_Overlap),(Channel="GameTraceChannel17",Response=ECR_Overlap),(Channel="GameTraceChannel18",Response=ECR_Overlap)),HelpMessage="Use on all bodies of water. Blocks cameras and overlaps with other elements.",bCanModify=True)
++DefaultChannelResponses=(Channel=ECC_GameTraceChannel1,Name="FCC_Trace_Interaction",DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False)
++DefaultChannelResponses=(Channel=ECC_GameTraceChannel2,Name="FCC_Trace_WeakSpot",DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False)
++DefaultChannelResponses=(Channel=ECC_GameTraceChannel3,Name="FCC_Trace_WeaponCapsule",DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False)
++DefaultChannelResponses=(Channel=ECC_GameTraceChannel4,Name="FCC_Object_PawnAI",DefaultResponse=ECR_Ignore,bTraceType=False,bStaticObject=False)
++DefaultChannelResponses=(Channel=ECC_GameTraceChannel5,Name="FCC_Trace_WeaponMulti",DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False)
++DefaultChannelResponses=(Channel=ECC_GameTraceChannel6,Name="FCC_Trace_NonDestructible",DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False)
++DefaultChannelResponses=(Channel=ECC_GameTraceChannel7,Name="FCC_Trace_Weapon",DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False)
++DefaultChannelResponses=(Channel=ECC_GameTraceChannel8,Name="FCC_Object_Projectile",DefaultResponse=ECR_Ignore,bTraceType=False,bStaticObject=False)
++DefaultChannelResponses=(Channel=ECC_GameTraceChannel9,Name="FCC_Object_ProjectileIgnoreAI",DefaultResponse=ECR_Ignore,bTraceType=False,bStaticObject=False)
++DefaultChannelResponses=(Channel=ECC_GameTraceChannel10,Name="FCC_Query_PawnCapsule",DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False)
++DefaultChannelResponses=(Channel=ECC_GameTraceChannel11,Name="FCC_Trace_World",DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False)
++EditProfiles=(Name="BlockAll",CustomResponses=((Channel="FCC_Trace_WeaponCapsule"),(Channel="FCC_Trace_Weapon"),(Channel="FCC_Trace_WeaponMulti"),(Channel="FCC_Object_Projectile"),(Channel="FCC_Object_ProjectileIgnoreAI"),(Channel="FCC_Object_PawnAI")))
++EditProfiles=(Name="BlockAllDynamic",CustomResponses=((Channel="FCC_Trace_WeaponCapsule"),(Channel="FCC_Trace_Weapon"),(Channel="FCC_Trace_WeaponMulti"),(Channel="FCC_Object_Projectile"),(Channel="FCC_Object_ProjectileIgnoreAI"),(Channel="FCC_Object_PawnAI")))
++EditProfiles=(Name="OverlapAll",CustomResponses=((Channel="FCC_Object_Projectile",Response=ECR_Overlap),(Channel="FCC_Object_ProjectileIgnoreAI",Response=ECR_Overlap),(Channel="FCC_Object_PawnAI",Response=ECR_Overlap)))
++EditProfiles=(Name="OverlapAllDynamic",CustomResponses=((Channel="FCC_Object_Projectile",Response=ECR_Overlap),(Channel="FCC_Object_ProjectileIgnoreAI",Response=ECR_Overlap),(Channel="FCC_Object_PawnAI",Response=ECR_Overlap)))
++EditProfiles=(Name="IgnoreOnlyPawn",CustomResponses=((Channel="FCC_Trace_Weapon"),(Channel="FCC_Trace_WeaponMulti",Response=ECR_Overlap)))
++EditProfiles=(Name="Pawn",CustomResponses=((Channel="FCC_Object_Projectile"),(Channel="FCC_Object_ProjectileIgnoreAI"),(Channel="FCC_Trace_WeaponCapsule"),(Channel="FCC_Query_PawnCapsule"),(Channel="FCC_Object_PawnAI")))
++EditProfiles=(Name="Spectator",CustomResponses=((Channel="FCC_Query_PawnCapsule")))
++EditProfiles=(Name="Trigger",CustomResponses=((Channel="FCC_Object_Projectile",Response=ECR_Overlap),(Channel="FCC_Object_ProjectileIgnoreAI",Response=ECR_Overlap),(Channel="FCC_Object_PawnAI",Response=ECR_Overlap),(Channel="WorldStatic",Response=ECR_Overlap),(Channel="WorldDynamic",Response=ECR_Overlap),(Channel="Pawn",Response=ECR_Overlap),(Channel="Visibility",Response=ECR_Ignore),(Channel="Camera",Response=ECR_Overlap),(Channel="PhysicsBody",Response=ECR_Overlap),(Channel="Vehicle",Response=ECR_Overlap),(Channel="Destructible",Response=ECR_Overlap)))
++EditProfiles=(Name="OverlapOnlyPawn",CustomResponses=((Channel="FCC_Object_PawnAI",Response=ECR_Overlap)))
++EditProfiles=(Name="PhysicsActor",CustomResponses=((Channel="FCC_Object_PawnAI")))
++EditProfiles=(Name="Destructible",CustomResponses=((Channel="FCC_Object_PawnAI")))
++EditProfiles=(Name="InvisibleWall",CustomResponses=((Channel="FCC_Object_PawnAI")))
++EditProfiles=(Name="InvisibleWallDynamic",CustomResponses=((Channel="FCC_Object_PawnAI")))
++EditProfiles=(Name="Vehicle",CustomResponses=((Channel="FCC_Object_PawnAI")))
+-ProfileRedirects=(OldName="BlockingVolume",NewName="InvisibleWall")
+-ProfileRedirects=(OldName="InterpActor",NewName="IgnoreOnlyPawn")
+-ProfileRedirects=(OldName="StaticMeshComponent",NewName="BlockAllDynamic")
+-ProfileRedirects=(OldName="SkeletalMeshActor",NewName="PhysicsActor")
+-ProfileRedirects=(OldName="InvisibleActor",NewName="InvisibleWallDynamic")
++ProfileRedirects=(OldName="BlockingVolume",NewName="InvisibleWall")
++ProfileRedirects=(OldName="InterpActor",NewName="IgnoreOnlyPawn")
++ProfileRedirects=(OldName="StaticMeshComponent",NewName="BlockAllDynamic")
++ProfileRedirects=(OldName="SkeletalMeshActor",NewName="PhysicsActor")
++ProfileRedirects=(OldName="InvisibleActor",NewName="InvisibleWallDynamic")
++ProfileRedirects=(OldName="FortCarriedWeapon",NewName="NoCollision")
++ProfileRedirects=(OldName="FortBuildingSMA",NewName="FortBuildingMesh")
++ProfileRedirects=(OldName="FortRift",NewName="FortBlockingCapsule")
++ProfileRedirects=(OldName="FortGeneratorCapsule",NewName="FortTriggerDefault")
++ProfileRedirects=(OldName="FortCTFFlag",NewName="FortTriggerDefault")
++ProfileRedirects=(OldName="FortProjectileIgnorePawns",NewName="FortProjectileOverlapPawns")
++ProfileRedirects=(OldName="FortAIPawnCapsuleIgnorePawns",NewName="FortAIPawnCapsuleOverlapPawns")
++ProfileRedirects=(OldName="FortAIPawnCapsuleTakerSwoop",NewName="FortAIPawnCapsuleOverlapPawns")
++ProfileRedirects=(OldName="Water",NewName="FortWater")
+-CollisionChannelRedirects=(OldName="Static",NewName="WorldStatic")
+-CollisionChannelRedirects=(OldName="Dynamic",NewName="WorldDynamic")
+-CollisionChannelRedirects=(OldName="VehicleMovement",NewName="Vehicle")
+-CollisionChannelRedirects=(OldName="PawnMovement",NewName="Pawn")
++CollisionChannelRedirects=(OldName="Static",NewName="WorldStatic")
++CollisionChannelRedirects=(OldName="Dynamic",NewName="WorldDynamic")
++CollisionChannelRedirects=(OldName="VehicleMovement",NewName="Vehicle")
++CollisionChannelRedirects=(OldName="PawnMovement",NewName="Pawn")
+
+[/Script/Engine.AnimationSettings]
+DefaultCompressionAlgorithm=Class'/Script/Engine.AnimCompress_PerTrackCompression'
+
+[/Script/GameplayDebugger.GameplayDebuggerConfig]
++Categories=(CategoryName="BehaviorTree",SlotIdx=2,ActiveInGame=Disable)
+
+[/Script/XboxOnePlatformEditor.XboxOneTargetSettings]
+bEnablePIXProfiling=True
+bBuildForD3D12=True
+DefaultStackSize=1048576
+DefaultStackSizeCommit=0
+ApplicationForegroundColor=Dark
+ApplicationBackgroundColor=(B=64,G=0,R=0,A=255)
+SplashScreenBackgroundColor=(B=0,G=0,R=0,A=255)
+CultureStringResources=(PackageDisplayName="",PublisherDisplayName="",PackageDescription="",ApplicationDisplayName="",ApplicationShortName="",ApplicationDescription="")
+CultureImageResources=()
++PerCultureResources=(StageId="en",CultureId="en-US",CultureStringResources=(PackageDisplayName="",PublisherDisplayName="",PackageDescription="",ApplicationDisplayName="",ApplicationShortName="",ApplicationDescription=""),CultureImageResources=())
++PerCultureResources=(StageId="de",CultureId="de-DE",CultureStringResources=(PackageDisplayName="",PublisherDisplayName="",PackageDescription="",ApplicationDisplayName="",ApplicationShortName="",ApplicationDescription=""),CultureImageResources=())
++PerCultureResources=(StageId="fr",CultureId="fr-FR",CultureStringResources=(PackageDisplayName="",PublisherDisplayName="",PackageDescription="",ApplicationDisplayName="",ApplicationShortName="",ApplicationDescription=""),CultureImageResources=())
++PerCultureResources=(StageId="es-419",CultureId="es-MX",CultureStringResources=(PackageDisplayName="",PublisherDisplayName="",PackageDescription="",ApplicationDisplayName="",ApplicationShortName="",ApplicationDescription=""),CultureImageResources=())
++PerCultureResources=(StageId="es",CultureId="es-ES",CultureStringResources=(PackageDisplayName="",PublisherDisplayName="",PackageDescription="",ApplicationDisplayName="",ApplicationShortName="",ApplicationDescription=""),CultureImageResources=())
++PerCultureResources=(StageId="it",CultureId="it-IT",CultureStringResources=(PackageDisplayName="",PublisherDisplayName="",PackageDescription="",ApplicationDisplayName="",ApplicationShortName="",ApplicationDescription=""),CultureImageResources=())
++PerCultureResources=(StageId="pl",CultureId="pl-PL",CultureStringResources=(PackageDisplayName="",PublisherDisplayName="",PackageDescription="",ApplicationDisplayName="",ApplicationShortName="",ApplicationDescription=""),CultureImageResources=())
++PerCultureResources=(StageId="pt-BR",CultureId="pt-BR",CultureStringResources=(PackageDisplayName="",PublisherDisplayName="",PackageDescription="",ApplicationDisplayName="",ApplicationShortName="",ApplicationDescription=""),CultureImageResources=())
++PerCultureResources=(StageId="ru",CultureId="ru-RU",CultureStringResources=(PackageDisplayName="",PublisherDisplayName="",PackageDescription="",ApplicationDisplayName="",ApplicationShortName="",ApplicationDescription=""),CultureImageResources=())
++Rating=ESRB:T
++Rating=PEGI:12
++Rating=PEGI-PT:12
++Rating=USK:12
++Rating=PCBP:12
++Rating=COB-AU:M
++Rating=OFLC-NZ:M
++Rating=DJCTQ:12
+bContentRestrictions=False
+PackageVersion=1.0.0.0
+bIncludeEngineVersionInPackageVersion=True
+bUseShortNameForLogo=False
+bUseShortNameForWideLogo=False
+bRequireXboxLive=True
+TitleId=0FF4B5BD
+PrimaryServiceConfigId=93ac0100-efec-488c-af85-e5850ff4b5bd
++SecureSocketDescriptions=(SecureSocketName="GameSocketUdp",bAvailableInShippingBuilds=True,SecureSocketProtocol=Udp,SecureSocketPortRange="0",bCanInitiateConnections=True,bCanAcceptConnections=False,bCanSendChatData=False,bCanReceiveChatData=False,bCanSendGameData=False,bCanReceiveGameData=False,bCanSendDebugData=False,bCanReceiveDebugData=False,bCanSendInsecureData=True,bCanReceiveInsecureData=True)
++SecureSocketDescriptions=(SecureSocketName="QosPingUdp",bAvailableInShippingBuilds=True,SecureSocketProtocol=Udp,SecureSocketPortRange="22222",bCanInitiateConnections=True,bCanAcceptConnections=False,bCanSendChatData=False,bCanReceiveChatData=False,bCanSendGameData=False,bCanReceiveGameData=False,bCanSendDebugData=False,bCanReceiveDebugData=False,bCanSendInsecureData=True,bCanReceiveInsecureData=True)
+bInternetClientServer=True
+bPrivateNetworkClientServer=False
+ProductId=cb6fbdda-c872-476d-80bc-5c3d6cd5e6ea
+ContentId=5def7292-5441-4080-8f06-6819f0ea5e6b
+PersistentLocalStorage=256
+PackageName=Fortnite
+PublisherName=CN=Epic Games\2C Inc.
+MinimumOSVersion=6.2
+MaximumOSVersion=6.2
+bSuspendTrialOnConstrain=False
+bSuppressMultipleConfigWarnings=True
+bEnableGameChat=True
++InProcessServers=(DLLName="Microsoft.Xbox.Services.dll",ActivatableClass=((ActivatableClassId="Microsoft.Xbox.Services.XboxLiveContext"),(ActivatableClassId="Microsoft.Xbox.Services.TitleStorage.TitleStorageBlobMetadata"),(ActivatableClassId="Microsoft.Xbox.Services.Multiplayer.MultiplayerQualityOfServiceMeasurements"),(ActivatableClassId="Microsoft.Xbox.Services.Multiplayer.MultiplayerSession"),(ActivatableClassId="Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference"),(ActivatableClassId="Microsoft.Xbox.Services.Social.SocialGroupConstants"),(ActivatableClassId="Microsoft.Xbox.Services.Configuration"),(ActivatableClassId="Microsoft.Xbox.Services.Presence.PresenceData")))
++InProcessServers=(DLLName="Microsoft.Xbox.GameChat.dll",ActivatableClass=((ActivatableClassId="Microsoft.Xbox.GameChat.ChatManager")))
+bRequiresAudioBackgroundTask=False
+bRequiresControlChannelBackgroundTask=False
+bRequiresSystemEventBackgroundTask=False
+bRequiresTimerBackgroundTask=False
+bRequiresPushNotificationBackgroundTask=False
+bEnableKinect=False
+bUseStaticGPUAllocation=False
+bKinectRequired=False
+bKinectVision=False
+bKinectAudio=True
+bKinectExpressions=False
+bKinectFace=False
+bUseVersionLockedNUIPipeline=False
+AudioPipelineVersion=
+VisionPipelineVersion=
+SpeechPipelineVersion=
+bBlockGameDVR=False
+bBlockBroadcasting=False
+DefaultServerSandboxId=EPCC.0
+GameSessionTemplateName=MultiplayerGameSession
+
+[/Script/Engine.PhysicsSettings]
+DefaultGravityZ=-2800.000000
+DefaultTerminalVelocity=4000.000000
+DefaultFluidFriction=0.300000
+SimulateScratchMemorySize=262144
+RagdollAggregateThreshold=4
+TriangleMeshTriangleMinAreaThreshold=5.000000
+bEnableAsyncScene=False
+bEnableShapeSharing=False
+bEnablePCM=False
+bWarnMissingLocks=True
+bEnable2DPhysics=False
+LockedAxis=Invalid
+DefaultDegreesOfFreedom=Full3D
+BounceThresholdVelocity=200.000000
+FrictionCombineMode=Average
+RestitutionCombineMode=Average
+MaxAngularVelocity=3600.000000
+MaxDepenetrationVelocity=0.000000
+ContactOffsetMultiplier=0.010000
+MinContactOffset=0.000100
+MaxContactOffset=1.000000
+bSimulateSkeletalMeshOnDedicatedServer=False
+DefaultShapeComplexity=CTF_UseSimpleAndComplex
+bDefaultHasComplexCollision=True
+bSuppressFaceRemapTable=False
+bSupportUVFromHitResults=False
+bDisableActiveActors=False
+bDisableCCD=False
+MaxPhysicsDeltaTime=0.033333
+bSubstepping=False
+bSubsteppingAsync=False
+MaxSubstepDeltaTime=0.016667
+MaxSubsteps=6
+SyncSceneSmoothingFactor=0.000000
+AsyncSceneSmoothingFactor=0.990000
+InitialAverageFrameRate=0.016667
+PhysXTreeRebuildRate=100
++PhysicalSurfaces=(Type=SurfaceType1,Name="Wood")
++PhysicalSurfaces=(Type=SurfaceType2,Name="Stone")
++PhysicalSurfaces=(Type=SurfaceType3,Name="Metal")
++PhysicalSurfaces=(Type=SurfaceType4,Name="HumanFlesh")
++PhysicalSurfaces=(Type=SurfaceType5,Name="HumanOppositionFlesh")
++PhysicalSurfaces=(Type=SurfaceType6,Name="HuskFlesh")
++PhysicalSurfaces=(Type=SurfaceType7,Name="PurpleFlesh")
++PhysicalSurfaces=(Type=SurfaceType8,Name="Water")
++PhysicalSurfaces=(Type=SurfaceType9,Name="Grass")
++PhysicalSurfaces=(Type=SurfaceType10,Name="Dirt")
++PhysicalSurfaces=(Type=SurfaceType11,Name="Explosive")
++PhysicalSurfaces=(Type=SurfaceType12,Name="WeakSpot")
++PhysicalSurfaces=(Type=SurfaceType13,Name="Objective")
++PhysicalSurfaces=(Type=SurfaceType14,Name="WeakSpot_Wood")
++PhysicalSurfaces=(Type=SurfaceType15,Name="WeakSpot_Stone")
++PhysicalSurfaces=(Type=SurfaceType16,Name="WeakSpot_Metal")
++PhysicalSurfaces=(Type=SurfaceType17,Name="TakerFlesh")
++PhysicalSurfaces=(Type=SurfaceType18,Name="Glass")
+†7Û

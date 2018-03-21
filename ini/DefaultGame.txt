@@ -1,0 +1,849 @@
+[/Script/EngineSettings.GeneralProjectSettings]
+ProjectID=(A=-2011270876,B=1182903154,C=-965786730,D=-1399474123)
+ProjectName=Fortnite
+ProjectDisplayedTitle=Fortnite
+ProjectVersion=1.0.0
+CompanyName=Epic Games, Inc.
+CompanyDistinguishedName="CN=Epic Games, O=Epic Games, L=Cary, S=North Carolina, C=US"
+CopyrightNotice=Copyright 1998-2017 Epic Games, Inc. All Rights Reserved.
+
+[/Script/Engine.HUD]
+bShowHUD=true
+
+[/Script/Engine.GameNetworkManager]
+TotalNetBandwidth=200000
+MaxDynamicBandwidth=40000
+MinDynamicBandwidth=20000
+ClientAuthorativePosition=false
+ClientErrorUpdateRateLimit=0.015f
+MAXCLIENTUPDATEINTERVAL=0.25f
+MaxMoveDeltaTime=0.125f
+bMovementTimeDiscrepancyDetection=true
+bMovementTimeDiscrepancyResolution=true
+MovementTimeDiscrepancyMaxTimeMargin=0.25f
+MovementTimeDiscrepancyMinTimeMargin=-0.25f
+MovementTimeDiscrepancyResolutionRate=1.0f
+MovementTimeDiscrepancyDriftAllowance=0.05f
+bMovementTimeDiscrepancyForceCorrectionsDuringResolution=true
+
+[/Script/FortniteGame.FortGameMode]
+bKickIdlers=true
+MaxIdleTime=600.0
+GameplayServerHitchThreshold=0.08f
+MovementTimeDiscrepancyHitchCooldown=5.0f
+
+[/Script/FortniteGame.FortGameModeZone]
+bCriticalMissionEligible=true
+
+[/Script/FortniteGame.FortGameStateZone]
+UnplayableHitchThresholdInMs=500
+MaxUnplayableHitchesToTolerate=2
+
+[/Script/FortniteGame.FortGamePvPBase]
+bCriticalMissionEligible=false
+
+[/Script/FortniteGame.FortGameModeOutpost]
+bCriticalMissionEligible=false
+
+[/Script/FortniteGame.FortOnlineAccount]
+bShouldRequestGeneralChatRooms=true
+bShouldJoinGlobalChat=true
+bShouldJoinFounderChat=true
+RecommendChatBackendFailureDelay=1200
+RecommendChatAllRoomsFullDelay=600
+bShouldGrantFreeAccess=false
+bUseGameSubAccessRedemption=true
+bShouldCheckIfPlatformAllowed=true
+
+[/Script/Account.OnlineAccountCommon]
+EulaKey="fn"
+bRequireLightswitchAtStartup=true
+!WebCreateEpicAccountUrl=ClearArray
++WebCreateEpicAccountUrl=(Environment="ci",Url="https://accounts.epicgames-ci.ol.epicgames.net/tos?productName=fortnite")
++WebCreateEpicAccountUrl=(Environment="gamedev",Url="https://accounts.epicgames-gamedev.ol.epicgames.net/tos?productName=fortnite")
++WebCreateEpicAccountUrl=(Environment="stage",Url="https://accounts.epicgames-stage.ol.epicgames.com/tos?productName=fortnite")
++WebCreateEpicAccountUrl=(Environment="prod",Url="https://accounts.epicgames.com/tos?productName=fortnite")
+
+[/Script/FortniteGame.FortLobbyBeaconState]
+WaitForPlayersTimeRemaining=20.0
+
+[/Script/FortniteGame.FortPlayerController]
+bUseBackpackByDefault=false
+; Possible choices:
+; EFortJumpStaminaCost::None
+; EFortJumpStaminaCost::Trigger
+; EFortJumpStaminaCost::SprintTrigger
+; EFortJumpStaminaCost::SprintAir
+JumpStaminaCost=EFortJumpStaminaCost::SprintAir
+CameraPrototypeName=MPR
+
+[/Script/FortniteGame.FortPawn]
+
+[/Script/FortniteGame.FortGameInstance]
+UIManagerClassPath=/game/UI/Foundation/UIManager.UIManager_C
+
+[/Script/FortniteGame.FortPlayerPawn]
+NavLocationValidityDistance=500
+MoveSoundStimulusBroadcastInterval=0.5
+bCharacterPartsCastIndirectShadows=true
+
+[/Script/FortniteUI.FortUIDataConfiguration]
+DefaultUIDataConfigurationPath=/Game/UI/Foundation/Config/DefaultUIDataConfiguration.DefaultUIDataConfiguration_C
+
+[/Script/FortniteGame.FortAssetManager]
+GameDataName=/Game/Balance/DefaultGameData.DefaultGameData
+ActiveTheaterListPath=/Game/World/ActiveTheaterList.ActiveTheaterList
+TestTheaterListPath=/Game/World/TestTheaterList.TestTheaterList
+
+; Set up primary asset types to load, in priority order
+[/Script/Engine.AssetManagerSettings]
++AssetPathRedirects=(Old="/Game/Building/PlaceholderQuickbarData/BuildingItemData_Floor.BuildingItemData_Floor",New="/Game/Items/Weapons/BuildingTools/BuildingItemData_Floor.BuildingItemData_Floor")
++AssetPathRedirects=(Old="/Game/Building/PlaceholderQuickbarData/BuildingItemData_RoofS.BuildingItemData_RoofS",New="/Game/Items/Weapons/BuildingTools/BuildingItemData_RoofS.BuildingItemData_RoofS")
++AssetPathRedirects=(Old="/Game/Building/PlaceholderQuickbarData/BuildingItemData_Stair_W.BuildingItemData_Stair_W",New="/Game/Items/Weapons/BuildingTools/BuildingItemData_Stair_W.BuildingItemData_Stair_W")
++AssetPathRedirects=(Old="/Game/Building/PlaceholderQuickbarData/BuildingItemData_Wall.BuildingItemData_Wall",New="/Game/Items/Weapons/BuildingTools/BuildingItemData_Wall.BuildingItemData_Wall")
+
+!PrimaryAssetTypesToScan=ClearArray
++PrimaryAssetTypesToScan=(PrimaryAssetType="FortGameData",AssetBaseClass=/Script/FortniteGame.FortGameData,bHasBlueprintClasses=False,bIsEditorOnly=False,SpecificAssets=("/Game/Balance/DefaultGameData.DefaultGameData"),Rules=(Priority=1000,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="FortUIManager",AssetBaseClass=/Script/FortniteUI.FortUIManagerWidget_NUI,bHasBlueprintClasses=true,bIsEditorOnly=True,SpecificAssets=("/Game/UI/Foundation/UIManager.UIManager"),Rules=(Priority=100,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="FortUIDataConfiguration",AssetBaseClass=/Script/FortniteUI.FortUIDataConfiguration,bHasBlueprintClasses=True,bIsEditorOnly=False,Directories=((Path="/Game/UI/Foundation/Config")),Rules=(Priority=90,ChunkId=0))
+
++PrimaryAssetTypesToScan=(PrimaryAssetType="FortFeedbackBank",AssetBaseClass=/Script/FortniteGame.FortFeedbackBank,bHasBlueprintClasses=False,bIsEditorOnly=True,Directories=((Path="/Game/Characters/Feedback")),Rules=(Priority=30))
++PrimaryAssetTypesToScan=(PrimaryAssetType="PlayerBuildingClass",AssetBaseClass=/Script/FortniteGame.BuildingActor,bHasBlueprintClasses=True,bIsEditorOnly=False,Directories=((Path="/Game/Building/ActorBlueprints/Player")),Rules=(Priority=30,CookRule=AlwaysCook,ChunkId=0))
+
+; Scanning WorldItem first as it will scan the Item subdirectories as well
++PrimaryAssetTypesToScan=(PrimaryAssetType="WorldItem",AssetBaseClass=/Script/FortniteGame.FortWorldItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="AccountResource",AssetBaseClass=/Script/FortniteGame.FortPersistentResourceItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/PersistentResources")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Alteration",AssetBaseClass=/Script/FortniteGame.FortAlterationItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Alterations")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Ammo",AssetBaseClass=/Script/FortniteGame.FortAmmoItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Ammo")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="CardPack",AssetBaseClass=/Script/FortniteGame.FortCardPackItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/CardPacks")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="CharacterCosmetic",AssetBaseClass=/Script/FortniteGame.FortCharacterCosmeticItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/CharacterCosmetics")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="ConsumableAccountItem",AssetBaseClass=/Script/FortniteGame.FortConsumableAccountItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/AccountConsumables")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="ConversionControl",AssetBaseClass=/Script/FortniteGame.FortConversionControlItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/DirectedAcquisition/ConversionControl")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Currency",AssetBaseClass=/Script/FortniteGame.FortCurrencyItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Currency")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Defender",AssetBaseClass=/Script/FortniteGame.FortDefenderItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Defenders")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="DeployableBaseCloudSave",AssetBaseClass=/Script/FortniteGame.FortDeployableBaseCloudSaveItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/DeployableBases")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Emote",AssetBaseClass=/Script/FortniteGame.FortEmoteItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Emotes")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Expedition",AssetBaseClass=/Script/FortniteGame.FortExpeditionItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Expeditions")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Food",AssetBaseClass=/Script/FortniteGame.FortConsumableItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Consumables")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Gadget",AssetBaseClass=/Script/FortniteGame.FortGadgetItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Gadgets"),(Path="/Game/Abilities")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="GameplayModifier",AssetBaseClass=/Script/FortniteGame.FortGameplayModifierItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/GameplayModifiers")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Hero",AssetBaseClass=/Script/FortniteGame.FortHeroType,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Heroes")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Ingredient",AssetBaseClass=/Script/FortniteGame.FortIngredientItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Ingredients")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Outpost",AssetBaseClass=/Script/FortniteGame.FortOutpostItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Outposts")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Quest",AssetBaseClass=/Script/FortniteGame.FortQuestItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Quests")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Quota",AssetBaseClass=/Script/FortniteGame.FortQuotaItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Balance/Quotas")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Schematic",AssetBaseClass=/Script/FortniteGame.FortSchematicItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Schematics")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Token",AssetBaseClass=/Script/FortniteGame.FortTokenType,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Tokens")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="CodeToken",AssetBaseClass=/Script/FortniteGame.FortCodeTokenItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/CodeTokens")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="DailyRewardScheduleToken",AssetBaseClass=/Script/FortniteGame.FortTokenType,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Tokens")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Trap",AssetBaseClass=/Script/FortniteGame.FortTrapItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Traps")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Weapon",AssetBaseClass=/Script/FortniteGame.FortWeaponItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Weapons"),(Path="/Game/Abilities/Player/Generic/UtilityItems")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Worker",AssetBaseClass=/Script/FortniteGame.FortWorkerType,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/Workers")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Buff",AssetBaseClass=/Script/FortniteGame.FortAccountBuffItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/AccountBuffs")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="BuffCredit",AssetBaseClass=/Script/FortniteGame.FortAccountBuffCreditItemDefinition,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Items/AccountBuffs")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
+
++PrimaryAssetTypesToScan=(PrimaryAssetType="FortMtxOfferData",AssetBaseClass=/Script/FortniteUI.FortMtxOfferData,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Catalog/DisplayAssets")),Rules=(Priority=20,CookRule=AlwaysCook,ChunkId=0))
+
++PrimaryAssetTypesToScan=(PrimaryAssetType="FortAISpawnGroup",AssetBaseClass=/Script/FortniteGame.FortAISpawnGroup,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/AIDirector/SpawnGroups")),Rules=(Priority=20))
++PrimaryAssetTypesToScan=(PrimaryAssetType="FortHeroSpecialization",AssetBaseClass=/Script/FortniteGame.FortHeroSpecialization,bHasBlueprintClasses=False,bIsEditorOnly=False,Directories=((Path="/Game/Heroes")),Rules=(Priority=20))
+
++PrimaryAssetTypesToScan=(PrimaryAssetType="FortMissionGenerator",AssetBaseClass=/Script/FortniteGame.FortMissionGenerator,bHasBlueprintClasses=True,bIsEditorOnly=True,Directories=((Path="/Game/World/MissionGens")),Rules=(Priority=10,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="FortMissionInfo",AssetBaseClass=/Script/FortniteGame.FortMissionInfo,bHasBlueprintClasses=False,bIsEditorOnly=True,Directories=((Path="/Game/Blueprints/Adventures"),(Path="/Game/Missions"),(Path="/Game/PvP")),Rules=(Priority=10,ChunkId=1))
++PrimaryAssetTypesToScan=(PrimaryAssetType="FortZoneTheme",AssetBaseClass=/Script/FortniteGame.FortZoneTheme,bHasBlueprintClasses=True,bIsEditorOnly=False,Directories=((Path="/Game/World/ZoneThemes")),Rules=(Priority=5,ChunkId=0))
++PrimaryAssetTypesToScan=(PrimaryAssetType="Map",AssetBaseClass=/Script/Engine.World,bHasBlueprintClasses=False,bIsEditorOnly=True,Directories=((Path="/Game")),Rules=(Priority=5,ChunkId=1))
+
++PrimaryAssetTypesToScan=(PrimaryAssetType="CharacterPart",AssetBaseClass=/Script/FortniteGame.CustomCharacterPart,bHasBlueprintClasses=False,bIsEditorOnly=True,Directories=((Path="/Game/Characters/CharacterParts")))
++PrimaryAssetTypesToScan=(PrimaryAssetType="CustomColorSwatch",AssetBaseClass=/Script/FortniteGame.CustomColorSwatch,bHasBlueprintClasses=False,bIsEditorOnly=True,Directories=((Path="/Game/Characters/CharacterColorSwatches")))
++PrimaryAssetTypesToScan=(PrimaryAssetType="FortMission",AssetBaseClass=/Script/FortniteGame.FortMission,bHasBlueprintClasses=True,bIsEditorOnly=True,Directories=((Path="/Game/Blueprints/Adventures"),(Path="/Game/Missions"),(Path="/Game/PvP")))
++PrimaryAssetTypesToScan=(PrimaryAssetType="FortMissionManager",AssetBaseClass=/Script/FortniteGame.FortMissionManager,bHasBlueprintClasses=True,bIsEditorOnly=True,Directories=((Path="/Game/Blueprints"),(Path="/Game/Missions"),(Path="/Game/PvP")))
+
++PrimaryAssetTypesToScan=(PrimaryAssetType="PrimaryAssetLabel",AssetBaseClass=/Script/Engine.PrimaryAssetLabel,bHasBlueprintClasses=False,bIsEditorOnly=True,Directories=((Path="/Game/Labels"),(Path="/Game/L10N")))
+
+; Startup and transition maps should be in chunk0. Priority must be higher than any other primary asset that might move assets out of chunk0
++PrimaryAssetRules=(PrimaryAssetId="Map:/Game/Maps/Frontend",Rules=(Priority=15,ChunkId=0))
++PrimaryAssetRules=(PrimaryAssetId="Map:/Game/Maps/FortniteEmptyDedicated",Rules=(Priority=15,ChunkId=0))
++PrimaryAssetRules=(PrimaryAssetId="Map:/Game/Maps/FortniteTransition",Rules=(Priority=15,ChunkId=0))
+
+; The farmstead and the first outpost should both be in chunk0, all other missions/maps are in chunk 1
++PrimaryAssetRules=(PrimaryAssetId="Map:/Game/Maps/Zones/TheFarmstead/Zone_Onboarding_FarmsteadFort",Rules=(Priority=15,ChunkId=0))
++PrimaryAssetRules=(PrimaryAssetId="Map:/Game/Maps/Zones/Outpost/Zone_Outpost_Stonewood",Rules=(Priority=15,ChunkId=0))
++PrimaryAssetRules=(PrimaryAssetId="FortMissionInfo:OB_FarmsteadFort",Rules=(Priority=10,ChunkId=0))
++PrimaryAssetRules=(PrimaryAssetId="FortMissionInfo:MissionInfo_Outpost_PvE_01",Rules=(Priority=10,ChunkId=0))
++PrimaryAssetRules=(PrimaryAssetId="FortMissionInfo:CollectionBadges",Rules=(Priority=10,ChunkId=0))
+
+[/Script/FortniteGame.FortGlobals]
+DefaultCullObjectSize=450
+DefaultCullDistance=18000.0
+MinCullObjectSize=64.0
+MinCullDistance=6000.0
+MaxCullObjectSize=1024.0
+MaxCullDistance=24000.0
+bShowSkillTreeMovies=false
+bEnableNewRewardFlow=true
+bAccountLinkingEnabled=false
+bAccountLinkingUIEnabled=false
+bTwitchEnabled=false
+bTwitchHeartbeatEnabled=false
+bTwitchAllowDisplayViewernames=false
+MinTwitchHeartbeatInterval=30.0
+MaxTwitchViewerNamesToCache=1000
+TwitchViewerNameExpirationMinutes=30
+TwitchAccountInformationRefreshInterval=0
+
+[/Script/GameplayAbilities.AbilitySystemGlobals]
+AbilitySystemGlobalsClassName=/Script/FortniteGame.FortAbilitySystemGlobals
+GlobalGameplayCueManagerName=/Game/Abilities/FortGameplayCueManager.FortGameplayCueManager
+PredictTargetGameplayEffects=false
++GlobalAttributeSetDefaultsTableNames=/Game/Balance/DataTables/AttributesHeroScaling.AttributesHeroScaling
++GlobalAttributeSetDefaultsTableNames=/Game/Balance/DataTables/AttributesHeroNonScaling.AttributesHeroNonScaling
++GlobalAttributeSetDefaultsTableNames=/Game/Balance/DataTables/AttributesDefenderScaling.AttributesDefenderScaling
++GlobalAttributeSetDefaultsTableNames=/Game/Balance/DataTables/AttributesDefenderNonScaling.AttributesDefenderNonScaling
++GlobalAttributeSetDefaultsTableNames=/Game/Balance/DataTables/AttributesBuildingProps.AttributesBuildingProps
++GlobalAttributeSetDefaultsTableNames=/Game/Balance/DataTables/AttributesBuildingSection.AttributesBuildingSection
++GameplayCueNotifyPaths="/Game/GameplayCueNotifies"
++GameplayCueNotifyPaths="/Game/Abilities"
+
+[/Script/Engine.GameSession]
+MaxPlayers=4
+MaxSpectators=0
+; Always-on voice chat is used for console clients. This value is used by the server for ClientEnableNetworkVoice, 
+; clients don't read this config value directly, so setting it in the console config files doesn't help.
+; Voice chat remains disabled on desktop platforms via the bHasVoiceEnabled=false setting in DefaultEngine.ini.
+bRequiresPushToTalk=false
+
+[/Script/FortniteGame.FortGameSessionDedicated]
+IdleResetTimer=14400 ; 4 hours
+IdleResetVariance=300 ; 5 minutes, random variance added to above
+IdleResetShortTimer=60 ; 1 minute, used for a quick restart
+
+[FortniteGame.TakeHomeSurvey]
+WebURL=www.surveymonkey.com/s/93YGFVZ
+
+[/Script/FortniteGame.FortBTAI]
+GoalInfoUpdateRate=0.1
+
+[/Script/AIModule.AIPerceptionComponent]
+DominantSense=Sight
+
+[/Script/AIModule.EnvQueryManager]
+; Env Query manager is only allowed 3 ms per frame for testing/generation.
+MaxAllowedTestingTime=0.003
+; Env Query manager should test using depth, not breadth
+bTestQueriesUsingBreadth=false
+; Env Query manager should report when we have more than 200 queries
+QueryCountWarningThreshold=200
+; Env Query manager should report the warning threshold every 15 seconds
+QueryCountWarningInterval=60
+
+[/Script/Engine.WorldSettings]
+DynamicIndirectShadowsSelfShadowingIntensity=.25
+
+[/Script/FortniteGame.FortWorldSettings]
+DefaultWorldTimeOfDayManager=/Game/TimeOfDay/TODM/TODM_A.TODM_A_C
+
+[/Script/FortniteGame.HeartbeatManager]
+ServerMetricsLOD=3
+
+[/Script/FortniteGame.FortFastLoadConfig]
+bDisableStreamInBuildings=true
+bDisableStartupAIDirector=true
+bDisableNonDefaultFakeHeroesAtStartup=true
+bDisableUpgradePlayerBuildingClasses=true
+bUseMinimalPlayerBuildingClasses=true
+bDisableStartingMissions=true
+bUseFastLoadDefaultInventory=true
+bDisableColorSwatches=true
+bDisableNavAgentCostData=true
+bDisableThreatVisualsManager=true
+bDisablePreLoadAssets=true
+
+[/Script/FortniteGame.FortParty]
+DefaultMaxPartySize=4
+
+[EpicPurchaseFlow]
+CI="https://launcher-ci.ol.epicgames.net/purchase"
+GameDev="https://launcher-gamedev.ol.epicgames.net/purchase"
+Stage="https://launcher-stage.ol.epicgames.net/purchase"
+Prod="https://launcher-website-prod07.ol.epicgames.com/purchase"
+
+[EpicContentService]
+CI="https://fortnitecontent-website-ci.ol.epicgames.net/content/api/pages/fortnite-game"
+GameDev="https://fortnitecontent-website-gamedev.ol.epicgames.net/content/api/pages/fortnite-game"
+;Stage="https://fortnitecontent-website-stage.ol.epicgames.net/content/api/pages/fortnite-game"
+Prod="https://fortnitecontent-website-prod07.ol.epicgames.com/content/api/pages/fortnite-game"
+
+[BuildDX12PSO]
+ReplayId=3c53007966e440e28e338e10c9bf6641
+
+[/Script/FortniteUI.FortAccountLinkingWindow]
+FoundersPackStoreCategory=FOUNDERSPACKS
+bPSPlusHasFreeAccess=false
+
+[/Script/FortniteGame.FortMatchmakingContext]
+NormalConfig=(ChanceToHostOverride=40.f,MaxSearchResultsOverride=30,MaxProcessedSearchResults=5,ChanceToHostIncrease=5.f)
+CriticalConfig=(ChanceToHostOverride=40.f,MaxSearchResultsOverride=30,MaxProcessedSearchResults=5,ChanceToHostIncrease=5.f)
+OnboardingConfig=(ChanceToHostOverride=40.f,MaxSearchResultsOverride=30,MaxProcessedSearchResults=5,ChanceToHostIncrease=5.f)
+OutpostConfig=(ChanceToHostOverride=40.f,MaxSearchResultsOverride=30,MaxProcessedSearchResults=5,ChanceToHostIncrease=5.f)
+PvPConfig=(ChanceToHostOverride=10.f,MaxSearchResultsOverride=30,MaxProcessedSearchResults=5,ChanceToHostIncrease=5.f)
+
+; Cheat scripts, execute with "CheatScript SectionName"
+
+[CheatScript.MMDebug]
++Cmd="displayclear"
++Cmd="displayall fortmatchmakingpolicy currentparams"
++Cmd="displayall FortSearchPass CurrentSearchParams"
++Cmd="displayall FortSearchPass CurrentSearchPassState"
++Cmd="displayall fortpartybeaconclient connectionstate"
++Cmd="displayall netconnection lastreceivetime"
+
+[CheatScript.PartyDebug]
++Cmd="displayclear"
++Cmd="displayall fortparty bLeavingPersistentParty"
++Cmd="displayall fortparty bTutorialCompleted"
++Cmd="displayall fortpartygamestate OwningUserId"
++Cmd="displayall fortpartygamestate bDebugAcceptingMembers"
++Cmd="displayall fortpartygamestate PartyState"
++Cmd="displayall fortpartymemberstate UniqueId"
++Cmd="displayall fortpartymemberstate DisplayName"
++Cmd="displayall fortpartymemberstate MemberState"
++Cmd="displayall fortpartymemberstate HeroType"
++Cmd="displayall fortlobbybeaconplayerstate partyowneruniqueid"
++Cmd="displayall fortplayerstate partyowneruniqueid"
+
+[CheatScript.QosDebug]
++Cmd="displayclear"
++Cmd="displayall qosevaluator searchstate"
++Cmd="displayall qosevaluator currentsearchpass"
++Cmd="displayall qosevaluator qosbeaconclient"
+
+[CheatScript.LobbyDebug]
++Cmd="displayclear"
++Cmd="displayall netconnection lastreceivetime"
++Cmd="displayall netdriver initialconnecttimeout"
++Cmd="displayall netdriver connectiontimeout"
++Cmd="displayall fortlobbybeaconstate players"
++Cmd="displayall fortlobbybeaconstate bLobbyStarted"
++Cmd="displayall fortlobbybeaconstate WaitForPlayersTimeRemaining"
++Cmd="displayall fortlobbybeaconstate matchmakinglevel"
++Cmd="displayall fortlobbybeaconplayerstate heroid"
++Cmd="displayall fortlobbybeaconplayerstate herotype"
++Cmd="displayall fortlobbybeaconplayerstate charactergender"
++Cmd="displayall fortlobbybeaconplayerstate matchmakinglevel"
++Cmd="displayall fortlobbybeaconplayerstate LobbyTimeRemaining"
++Cmd="displayall fortlobbybeaconplayerstate bInLobby"
++Cmd="displayall fortlobbybeaconplayerstate owner"
++Cmd="displayall fortlobbybeaconplayerstate partyowneruniqueid"
++Cmd="displayall fortplayerstate partyowneruniqueid"
++Cmd="displayall fortpartybeaconclient connectionstate"
++Cmd="displayall fortlobbybeaconclient connectionstate"
+
+[CheatScript.Badass]
++Cmd="cheat giveweapon \"Edged_Sword_Medium_SR_Ore_T04\" 40 1"
++Cmd="cheat giveweapon \"Harvest_Pickaxe_SR_T05\" 1 1"
++Cmd="cheat giveweapon \"Pistol_Bolt_SR_Ore_T04\" 40 1"
++Cmd="cheat giveweapon \"Sniper_BoltAction_Scope_SR_Ore_T04\" 40 1"
++Cmd="cheat giveweapon \"Shotgun_Auto_SR_Ore_T04\" 40 1"
++Cmd="cheat god"
++Cmd="cheat buildfree"
++Cmd="cheat toggleinfiniteammo"
++Cmd="cheat toggleinfinitedurability"
++Cmd="cheat toggleinfinitestamina"
++Cmd="cheat toggleskillcooldown"
++Cmd="cheat giveweapon \"Assault_Auto_SR_Ore_T04\" 40 1"
++Cmd="cheat giveweapon \"Edged_Scythe_Laser_SR_Ore_T04\" 40 1"
+
+
+[CheatScript.GiveGoodWeapons]
++Cmd="cheat giveweapon \"Edged_Sword_Medium_R_Ore_T01\" 5 1"
++Cmd="cheat giveweapon \"Assault_Auto_R_Ore_T01\" 5 1"
++Cmd="cheat giveweapon \"Shotgun_Standard_R_Ore_T01\" 5 1"
++Cmd="cheat giveammo energy 1000"
++Cmd="cheat giveweapon \"Pistol_SemiAuto_R_Ore_T01\" 5 1"
++Cmd="cheat giveweapon \"Sniper_BoltAction_Scope_R_Ore_T01\" 5 1"
++Cmd="cheat giveammo heavy 1000"
++Cmd="cheat giveammo light 3000"
++Cmd="cheat giveammo medium 1500"
++Cmd="cheat giveammo shells 1000"
++Cmd="cheat giveweapon \"Edged_Axe_Medium_R_Ore_T01\" 5 1"
++Cmd="cheat giveweapon \"Blunt_Hammer_Heavy_R_Ore_T01\" 5 1"
+
+
+[CheatScript.GiveUltimateWeapons]
++Cmd="cheat giveweapon \"Edged_Sword_Medium_SR_Ore_T05\" 50 1"
++Cmd="cheat giveweapon \"Assault_Auto_SR_Ore_T05\" 50 1"
++Cmd="cheat giveweapon \"Shotgun_Standard_SR_Ore_T05\" 50 1"
++Cmd="cheat giveammo energy 1000"
++Cmd="cheat giveweapon \"Pistol_SemiAuto_SR_Ore_T05\" 1 1"
++Cmd="cheat giveweapon \"Sniper_BoltAction_Scope_SR_Ore_T05\" 1 1"
++Cmd="cheat giveammo heavy 1000"
++Cmd="cheat giveammo light 3000"
++Cmd="cheat giveammo medium 1500"
++Cmd="cheat giveammo shells 1000"
++Cmd="cheat giveweapon \"Edged_Axe_Medium_SR_Ore_T05\" 50 1"
++Cmd="cheat giveweapon \"Blunt_Hammer_Heavy_SR_Ore_T05\" 50 1"
+
+[CheatScript.GiveNewGadgets]
++Cmd="cheat givegadget \"SupplyDrop\" 1"
++Cmd="cheat givegadget \"Proximity Mine\" 1"
++Cmd="cheat givegadget \"Teleporter\" 1"
++Cmd="cheat givegadget \"Banner\" 1"
++Cmd="cheat givegadget \"BotTurret\" 1"
++Cmd="cheat givegadget \"AdrenalineRush\" 1"
++Cmd="cheat givegadget \"AirStrike\" 1"
++Cmd="cheat givegadget \"SlowField\" 1"
++Cmd="cheat givegadget \"HomeBaseLevelScaler\" 1"
+
+[CheatScript.TestAllWorkers]
++Cmd="cheat McpGrantItem Worker.ManagerDoctor_C"
++Cmd="cheat McpGrantItem Worker.ManagerDoctor_R"
++Cmd="cheat McpGrantItem Worker.ManagerDoctor_SR"
++Cmd="cheat McpGrantItem Worker.ManagerDoctor_SR_kingsly"
++Cmd="cheat McpGrantItem Worker.ManagerDoctor_SR_noctor"
++Cmd="cheat McpGrantItem Worker.ManagerDoctor_SR_treky"
++Cmd="cheat McpGrantItem Worker.ManagerDoctor_UC"
++Cmd="cheat McpGrantItem Worker.ManagerDoctor_VR"
++Cmd="cheat McpGrantItem Worker.ManagerEngineer_C"
++Cmd="cheat McpGrantItem Worker.ManagerEngineer_R"
++Cmd="cheat McpGrantItem Worker.ManagerEngineer_SR"
++Cmd="cheat McpGrantItem Worker.ManagerEngineer_SR_countess"
++Cmd="cheat McpGrantItem Worker.ManagerEngineer_SR_maths"
++Cmd="cheat McpGrantItem Worker.ManagerEngineer_SR_sobs"
++Cmd="cheat McpGrantItem Worker.ManagerEngineer_UC"
++Cmd="cheat McpGrantItem Worker.ManagerEngineer_VR"
++Cmd="cheat McpGrantItem Worker.ManagerExplorer_C"
++Cmd="cheat McpGrantItem Worker.ManagerExplorer_R"
++Cmd="cheat McpGrantItem Worker.ManagerExplorer_SR"
++Cmd="cheat McpGrantItem Worker.ManagerExplorer_SR_birdie"
++Cmd="cheat McpGrantItem Worker.ManagerExplorer_SR_eagle"
++Cmd="cheat McpGrantItem Worker.ManagerExplorer_SR_spacebound"
++Cmd="cheat McpGrantItem Worker.ManagerExplorer_UC"
++Cmd="cheat McpGrantItem Worker.ManagerExplorer_VR"
++Cmd="cheat McpGrantItem Worker.ManagerGadgeteer_C"
++Cmd="cheat McpGrantItem Worker.ManagerGadgeteer_R"
++Cmd="cheat McpGrantItem Worker.ManagerGadgeteer_SR"
++Cmd="cheat McpGrantItem Worker.ManagerGadgeteer_SR_fixer"
++Cmd="cheat McpGrantItem Worker.ManagerGadgeteer_SR_flak"
++Cmd="cheat McpGrantItem Worker.ManagerGadgeteer_SR_zapps"
++Cmd="cheat McpGrantItem Worker.ManagerGadgeteer_UC"
++Cmd="cheat McpGrantItem Worker.ManagerGadgeteer_VR"
++Cmd="cheat McpGrantItem Worker.ManagerInventor_C"
++Cmd="cheat McpGrantItem Worker.ManagerInventor_R"
++Cmd="cheat McpGrantItem Worker.ManagerInventor_SR"
++Cmd="cheat McpGrantItem Worker.ManagerInventor_SR_frequency"
++Cmd="cheat McpGrantItem Worker.ManagerInventor_SR_rad"
++Cmd="cheat McpGrantItem Worker.ManagerInventor_SR_square"
++Cmd="cheat McpGrantItem Worker.ManagerInventor_UC"
++Cmd="cheat McpGrantItem Worker.ManagerInventor_VR"
++Cmd="cheat McpGrantItem Worker.ManagerMartialArtist_C"
++Cmd="cheat McpGrantItem Worker.ManagerMartialArtist_R"
++Cmd="cheat McpGrantItem Worker.ManagerMartialArtist_SR"
++Cmd="cheat McpGrantItem Worker.ManagerMartialArtist_SR_dragon"
++Cmd="cheat McpGrantItem Worker.ManagerMartialArtist_SR_samurai"
++Cmd="cheat McpGrantItem Worker.ManagerMartialArtist_SR_tiger"
++Cmd="cheat McpGrantItem Worker.ManagerMartialArtist_UC"
++Cmd="cheat McpGrantItem Worker.ManagerMartialArtist_VR"
++Cmd="cheat McpGrantItem Worker.ManagerSoldier_C"
++Cmd="cheat McpGrantItem Worker.ManagerSoldier_R"
++Cmd="cheat McpGrantItem Worker.ManagerSoldier_SR"
++Cmd="cheat McpGrantItem Worker.ManagerSoldier_SR_malcolm"
++Cmd="cheat McpGrantItem Worker.ManagerSoldier_SR_princess"
++Cmd="cheat McpGrantItem Worker.ManagerSoldier_SR_ramsie"
++Cmd="cheat McpGrantItem Worker.ManagerSoldier_UC"
++Cmd="cheat McpGrantItem Worker.ManagerSoldier_VR"
++Cmd="cheat McpGrantItem Worker.ManagerTrainer_C"
++Cmd="cheat McpGrantItem Worker.ManagerTrainer_R"
++Cmd="cheat McpGrantItem Worker.ManagerTrainer_SR"
++Cmd="cheat McpGrantItem Worker.ManagerTrainer_SR_jumpy"
++Cmd="cheat McpGrantItem Worker.ManagerTrainer_SR_raider"
++Cmd="cheat McpGrantItem Worker.ManagerTrainer_SR_yoglattes"
++Cmd="cheat McpGrantItem Worker.ManagerTrainer_UC"
++Cmd="cheat McpGrantItem Worker.ManagerTrainer_VR"
++Cmd="cheat McpGrantItem Worker.WorkerBasic_C"
++Cmd="cheat McpGrantItem Worker.WorkerBasic_R"
++Cmd="cheat McpGrantItem Worker.WorkerBasic_SR"
++Cmd="cheat McpGrantItem Worker.WorkerBasic_UC"
++Cmd="cheat McpGrantItem Worker.WorkerBasic_VR"
+
+
+[CheatScript.TestGod]
++Cmd="cheat toggleskillcooldown"
++Cmd="cheat buildfree"
++Cmd="cheat buildwith metal 3"
++Cmd="cheat giveweapon \"TestGod\" 1 1"
++Cmd="cheat god"
++Cmd="cheat toggleinfiniteammo"
++Cmd="cheat toggleinfinitedurability"
++Cmd="cheat toggleinfinitestamina"
+
+[CheatScript.TestPvP]
++Cmd="cheat giveweapon \"Assault_Auto_T04\" 1 1"
++Cmd="cheat giveammo medium 150"
++Cmd="cheat giveammo shells 50"
++Cmd="cheat giveweapon \"Melee_Edged_Axe_T04\" 1 1"
++Cmd="cheat giveweapon \"Melee_Edged_Sword_T04\" 1 1"
++Cmd="cheat giveweapon \"Melee_Impact_Pickaxe_T01\" 1 1"
++Cmd="cheat giveweapon \"Pistol_SemiAuto_T04\" 1 1"
++Cmd="cheat giveweapon \"Rifle_Standard_T04\" 1 1"
++Cmd="cheat giveweapon \"Shotgun_Auto_T04\" 1 1"
++Cmd="cheat giveammo heavy 50"
++Cmd="cheat giveammo light 400"
++Cmd="McpSetAllHeroLevels 20"
+
+[CheatScript.TestWeapons]
++Cmd="cheatscript givegoodweapons"
++Cmd="cheat ToggleInfiniteDurability"
++Cmd="cheat ToggleShotLogging"
++Cmd="cheat ToggleInfiniteAmmo"
+
+[CheatScript.EnginePerfCheat]
++Cmd="cheat GiveResources 450"
++Cmd="cheat TeleportToActor BP_Atlas_C"
++Cmd="cheat GiveBluGlo 10"
++Cmd="cheatscript GiveGoodWeapons"
++Cmd="cheat god"
+
+
+[CheatScript.TestPvPSchematics]
++Cmd="cheat McpGrantItem Schematic.SID_Edged_Sword_Medium_R_Ore_T01"
++Cmd="cheat McpGrantItem Schematic.SID_Edged_Sword_Medium_R_Ore_T02"
++Cmd="cheat McpGrantItem Schematic.SID_Edged_Sword_Medium_R_Ore_T03"
++Cmd="cheat McpGrantItem Schematic.SID_Edged_Sword_Medium_R_Ore_T04"
++Cmd="cheat McpGrantItem Schematic.SID_Pistol_SemiAuto_R_Ore_T01"
++Cmd="cheat McpGrantItem Schematic.SID_Pistol_SemiAuto_R_Ore_T02"
++Cmd="cheat McpGrantItem Schematic.SID_Pistol_SemiAuto_R_Ore_T03"
++Cmd="cheat McpGrantItem Schematic.SID_Pistol_SemiAuto_R_Ore_T04"
++Cmd="cheat McpGrantItem Schematic.SID_Sniper_BoltAction_Scope_R_Ore_T01"
++Cmd="cheat McpGrantItem Schematic.SID_Sniper_BoltAction_Scope_R_Ore_T02"
++Cmd="cheat McpGrantItem Schematic.SID_Sniper_BoltAction_Scope_R_Ore_T03"
++Cmd="cheat McpGrantItem Schematic.SID_Sniper_BoltAction_Scope_R_Ore_T04"
++Cmd="cheat McpGrantItem Schematic.SID_Shotgun_Standard_R_Ore_T01"
++Cmd="cheat McpGrantItem Schematic.SID_Shotgun_Standard_R_Ore_T02"
++Cmd="cheat McpGrantItem Schematic.SID_Shotgun_Standard_R_Ore_T03"
++Cmd="cheat McpGrantItem Schematic.SID_Shotgun_Standard_R_Ore_T04"
++Cmd="cheat McpGrantItem Schematic.SID_Assault_Auto_R_Ore_T01"
++Cmd="cheat McpGrantItem Schematic.SID_Assault_Auto_R_Ore_T02"
++Cmd="cheat McpGrantItem Schematic.SID_Assault_Auto_R_Ore_T03"
++Cmd="cheat McpGrantItem Schematic.SID_Assault_Auto_R_Ore_T04"
++Cmd="cheat McpGrantItem Schematic.SID_Edged_Axe_Medium_R_Ore_T01"
++Cmd="cheat McpGrantItem Schematic.SID_Edged_Axe_Medium_R_Ore_T02"
++Cmd="cheat McpGrantItem Schematic.SID_Edged_Axe_Medium_R_Ore_T03"
++Cmd="cheat McpGrantItem Schematic.SID_Edged_Axe_Medium_R_Ore_T04"
++Cmd="cheat McpGrantItem Schematic.SID_Blunt_Hammer_Heavy_R_Ore_T01"
++Cmd="cheat McpGrantItem Schematic.SID_Blunt_Hammer_Heavy_R_Ore_T02"
++Cmd="cheat McpGrantItem Schematic.SID_Blunt_Hammer_Heavy_R_Ore_T03"
++Cmd="cheat McpGrantItem Schematic.SID_Blunt_Hammer_Heavy_R_Ore_T04"
+
+
+[CheatScript.TestGadgets]
++Cmd="Cheat GiveGadgets \"BottleRocket\" 50 5"
++Cmd="Cheat GiveGadgets \"M80\" 50 5"
++Cmd="Cheat GiveGadgets \"ProximityMines\" 50 5"
++Cmd="Cheat GiveWeapon \"SpacePistol\" 5 1"
++Cmd="Cheat giveammo energycell 1000"
+
+[CheatScript.PerfMemStart]
++Cmd="Stat StartFile"
++Cmd="StartFPSChart"
+
+[CheatScript.PerfMemStop]
++Cmd="StopFPSChart"
++Cmd="Stat StopFile"
++Cmd="memreport -full"
+
+[CheatScript.PerfMemStartServer]
++Cmd="Cheat Stat StartFile"
++Cmd="Cheat NetProfile Enable"
+
+[CheatScript.PerfMemStopServer]
++Cmd="Cheat Stat StopFile"
++Cmd="Cheat NetProfile Disable"
++Cmd="Cheat memreport -full"
+
+[CheatScript.PerfMemIngredients]
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Planks.Ingredient_Planks" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Twine_T04.Ingredient_Twine_T04" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Rare_PowerCell.Ingredient_Rare_PowerCell" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Ore_Obsidian.Ingredient_Ore_Obsidian" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Batteries.Ingredient_Batteries" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Blastpowder.Ingredient_Blastpowder" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Mechanical_Parts_T04.Ingredient_Mechanical_Parts_T04" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Nuts_Bolts.Ingredient_Nuts_Bolts" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Crystal_Quartz.Ingredient_Crystal_Quartz" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Powder_T04.Ingredient_Powder_T04" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Twine_T06.Ingredient_Twine_T06" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Ore_Alloy.Ingredient_Ore_Alloy" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Planks.Ingredient_Planks" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Twine_T04.Ingredient_Twine_T04" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Rare_PowerCell.Ingredient_Rare_PowerCell" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Ore_Obsidian.Ingredient_Ore_Obsidian" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Batteries.Ingredient_Batteries" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Blastpowder.Ingredient_Blastpowder" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Mechanical_Parts_T04.Ingredient_Mechanical_Parts_T04" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Nuts_Bolts.Ingredient_Nuts_Bolts" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Crystal_Quartz.Ingredient_Crystal_Quartz" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Powder_T04.Ingredient_Powder_T04" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Twine_T06.Ingredient_Twine_T06" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Planks.Ingredient_Planks" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Twine_T01.Ingredient_Twine_T01" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Rare_PowerCell.Ingredient_Rare_PowerCell" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Ore_Copper.Ingredient_Ore_Copper" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Batteries.Ingredient_Batteries" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Blastpowder.Ingredient_Blastpowder" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Mechanical_Parts_T01.Ingredient_Mechanical_Parts_T01" 198 1
++Cmd=Cheat GiveSpecificItem "/Game/Items/Ingredients/Ingredient_Powder_T01.Ingredient_Powder_T01" 198 1
++Cmd=Cheat GiveAmmo Light 2000
++Cmd=Cheat GiveAmmo Medium 2000
++Cmd=Cheat GiveAmmo Heavy 2000
++Cmd=Cheat GiveAmmo Shells 2000
++Cmd=Cheat GiveResources 800
+
+[CheatScript.GiveCraftingIngredientsT01]
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Bacon.Ingredient_Bacon\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Batteries.Ingredient_Batteries\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Blastpowder.Ingredient_Blastpowder\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Crystal_Quartz.Ingredient_Crystal_Quartz\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Duct_Tape.Ingredient_Duct_Tape\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Flowers.Ingredient_Flowers\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Herbs.Ingredient_Herbs\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Honey.Ingredient_Honey\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Mechanical_Parts_T01.Ingredient_Mechanical_Parts_T01\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Nuts_Bolts.Ingredient_Nuts_Bolts\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Alloy.Ingredient_Ore_Alloy\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Coal.Ingredient_Ore_Coal\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Copper.Ingredient_Ore_Copper\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Planks.Ingredient_Planks\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Powder_T01.Ingredient_Powder_T01\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Resin.Ingredient_Resin\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Twine_T01.Ingredient_Twine_T01\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Rare_Mechanism.Ingredient_Rare_Mechanism\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Rare_PowerCell.Ingredient_Rare_PowerCell\" 99"
+
+[CheatScript.GiveCraftingIngredientsT02]
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Bacon.Ingredient_Bacon\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Batteries.Ingredient_Batteries\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Blastpowder.Ingredient_Blastpowder\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Crystal_Quartz.Ingredient_Crystal_Quartz\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Duct_Tape.Ingredient_Duct_Tape\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Flowers.Ingredient_Flowers\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Herbs.Ingredient_Herbs\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Honey.Ingredient_Honey\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Mechanical_Parts_T02.Ingredient_Mechanical_Parts_T02\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Nuts_Bolts.Ingredient_Nuts_Bolts\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Alloy.Ingredient_Ore_Alloy\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Coal.Ingredient_Ore_Coal\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Silver.Ingredient_Ore_Silver\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Planks.Ingredient_Planks\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Powder_T02.Ingredient_Powder_T02\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Resin.Ingredient_Resin\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Twine_T02.Ingredient_Twine_T02\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Rare_Mechanism.Ingredient_Rare_Mechanism\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Rare_PowerCell.Ingredient_Rare_PowerCell\" 99"
+
+[CheatScript.GiveCraftingIngredientsT03]
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Bacon.Ingredient_Bacon\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Batteries.Ingredient_Batteries\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Blastpowder.Ingredient_Blastpowder\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Crystal_Quartz.Ingredient_Crystal_Quartz\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Duct_Tape.Ingredient_Duct_Tape\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Flowers.Ingredient_Flowers\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Herbs.Ingredient_Herbs\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Honey.Ingredient_Honey\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Mechanical_Parts_T03.Ingredient_Mechanical_Parts_T03\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Nuts_Bolts.Ingredient_Nuts_Bolts\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Alloy.Ingredient_Ore_Alloy\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Coal.Ingredient_Ore_Coal\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Malachite.Ingredient_Ore_Malachite\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Planks.Ingredient_Planks\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Powder_T03.Ingredient_Powder_T03\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Resin.Ingredient_Resin\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Twine_T03.Ingredient_Twine_T03\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Rare_Mechanism.Ingredient_Rare_Mechanism\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Rare_PowerCell.Ingredient_Rare_PowerCell\" 99"
+
+[CheatScript.GiveCraftingIngredientsT04]
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Bacon.Ingredient_Bacon\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Batteries.Ingredient_Batteries\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Blastpowder.Ingredient_Blastpowder\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Crystal_ShadowShard.Ingredient_Crystal_ShadowShard\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Duct_Tape.Ingredient_Duct_Tape\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Flowers.Ingredient_Flowers\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Herbs.Ingredient_Herbs\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Honey.Ingredient_Honey\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Mechanical_Parts_T04.Ingredient_Mechanical_Parts_T04\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Nuts_Bolts.Ingredient_Nuts_Bolts\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Alloy.Ingredient_Ore_Alloy\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Coal.Ingredient_Ore_Coal\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Obsidian.Ingredient_Ore_Obsidian\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Planks.Ingredient_Planks\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Powder_T04.Ingredient_Powder_T04\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Resin.Ingredient_Resin\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Twine_T04.Ingredient_Twine_T04\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Rare_Mechanism.Ingredient_Rare_Mechanism\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Rare_PowerCell.Ingredient_Rare_PowerCell\" 99"
+
+[CheatScript.GiveCraftingIngredientsT05]
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Bacon.Ingredient_Bacon\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Batteries.Ingredient_Batteries\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Blastpowder.Ingredient_Blastpowder\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Crystal_Sunbeam.Ingredient_Crystal_Sunbeam\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Duct_Tape.Ingredient_Duct_Tape\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Flowers.Ingredient_Flowers\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Herbs.Ingredient_Herbs\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Honey.Ingredient_Honey\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Mechanical_Parts_T05.Ingredient_Mechanical_Parts_T05\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Nuts_Bolts.Ingredient_Nuts_Bolts\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Alloy.Ingredient_Ore_Alloy\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Coal.Ingredient_Ore_Coal\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_BrightCore.Ingredient_Ore_BrightCore\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Planks.Ingredient_Planks\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Powder_T05.Ingredient_Powder_T05\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Resin.Ingredient_Resin\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Twine_T05.Ingredient_Twine_T05\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Rare_Mechanism.Ingredient_Rare_Mechanism\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Rare_PowerCell.Ingredient_Rare_PowerCell\" 99"
+
+[CheatScript.GiveCraftingIngredientsT06]
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Bacon.Ingredient_Bacon\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Batteries.Ingredient_Batteries\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Blastpowder.Ingredient_Blastpowder\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Crystal_Moonglow.Ingredient_Crystal_Moonglow\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Duct_Tape.Ingredient_Duct_Tape\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Flowers.Ingredient_Flowers\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Herbs.Ingredient_Herbs\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Honey.Ingredient_Honey\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Mechanical_Parts_T06.Ingredient_Mechanical_Parts_T06\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Nuts_Bolts.Ingredient_Nuts_Bolts\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Alloy.Ingredient_Ore_Alloy\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Coal.Ingredient_Ore_Coal\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Ore_Spectrolite.Ingredient_Ore_Spectrolite\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Planks.Ingredient_Planks\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Powder_T06.Ingredient_Powder_T06\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Resin.Ingredient_Resin\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Twine_T06.Ingredient_Twine_T06\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Rare_Mechanism.Ingredient_Rare_Mechanism\" 99"
++Cmd="cheat GiveSpecificItem \"/Game/Items/Ingredients/Ingredient_Rare_PowerCell.Ingredient_Rare_PowerCell\" 99"
+
+[CheatScript.TestTraps]
++Cmd="cheat givetrap \"tid_floor_defender\" 1 1"
++Cmd="cheat givetrap \"tid_floor_health_uc_t01\" 1 1"
++Cmd="cheat givetrap \"tid_floor_health_r_t02\" 10 1"
++Cmd="cheat givetrap \"tid_floor_health_vr_t03\" 20 1"
++Cmd="cheat givetrap \"tid_floor_player_jump_pad\" 1 1"
++Cmd="cheat givetrap \"tid_floor_player_jump_pad_free_direction\" 1 1"
++Cmd="cheat givetrap \"tid_floor_launcher_r_t01\" 1 1"
++Cmd="cheat givetrap \"tid_floor_spikes_wood_c_t01\" 1 2"
++Cmd="cheat givetrap \"tid_floor_spikes_wood_uc_t02\" 10 2"
++Cmd="cheat givetrap \"tid_floor_spikes_r_t01\" 1 1"
++Cmd="cheat givetrap \"tid_floor_spikes_vr_t02\" 10 1"
++Cmd="cheat givetrap \"tid_floor_spikes_sr_t03\" 20 1"
++Cmd="cheat givetrap \"tid_wall_launcher_r_t01\" 1 1"
++Cmd="cheat givetrap \"tid_wall_darts_r_t01\" 2 1"
++Cmd="cheat givetrap \"tid_wall_electric_uc_t01\" 1 1"
++Cmd="cheat givetrap \"tid_wall_light_uc_t01\" 1 1"
++Cmd="cheat givetrap \"tid_ceiling_electric_aoe_r_t01\" 1 1"
++Cmd="cheat givetrap \"tid_ceiling_electric_aoe_vr_t01\" 1 1"
++Cmd="cheat givetrap \"tid_ceiling_electric_aoe_sr_t01\" 1 1"
++Cmd="cheat givetrap \"tid_ceiling_gas_uc_t01\" 1 2"
+
+; Gameplay Capture
+
+[CheatScript.GameplayCapture]
+; visual commands
++Cmd="r.MotionBlurNew 1"
++Cmd="r.MotionBlurQuality 3"
++Cmd="r.SSR.Quality 3"
++Cmd="r.DepthOfFieldQuality 2"
++Cmd="r.MipMapLODBias -1"
++Cmd="r.Streaming.PoolSize 3000"
++Cmd="r.ViewDistanceScale 50"
++Cmd="r.ForceLOD 0"
++Cmd="r.HLOD 0"
++Cmd="FortniteForceCharLOD 0"
++Cmd="a.uro.enable 0"
++Cmd="DisableAllScreenMessages"
++Cmd="SetRes 1920x1080fw"
++Cmd="UI.Toggle"
++Cmd="replay.ToggleScrubBar"
+
+; gameplay
++Cmd="ToggleUnlimitedHealth"
+
+; Runs commands for easier capture process, doesn't alter visuals
+[CheatScript.CaptureMode]
++Cmd="cheat god"
++Cmd="cheat ToggleInfiniteAmmo"
++Cmd="cheat ToggleInfiniteDurability"
++Cmd="cheat BuildFree"
++Cmd="cheat CraftFree"
++Cmd="cheat BackpackSetSize 500"
+
+[/Script/FortniteGame.FortPathFollowingComponent]
+MovementBlockBumpFrustration=0.1f
+MovementBlockFrustrationCooldownSpeed=1.4f
+MovementBlockFrustrationThreshold=5.0f
+
+[/Script/UnrealEd.ProjectPackagingSettings]
+InternationalizationPreset=All
++CulturesToStage=en
++CulturesToStage=de
++CulturesToStage=fr
++CulturesToStage=es-419
++CulturesToStage=es
++CulturesToStage=it
++CulturesToStage=pl
++CulturesToStage=pt-BR
++CulturesToStage=ru
++CulturesToStage=zh-Hans-CN
++DirectoriesToAlwaysStageAsNonUFS=(Path="Legal")
+bEncryptIniFiles=True
+
+[Internationalization]
++CultureMappings="zh-Hans;zh-CN"
++DisabledCultures=zh-CN;Shipping
+
+[PerformanceAndMemory]
+PerfTestReplayId=c5cae965b7f64b868833a284d23bc511
+
+[CheatScript.ReplayLastFullPerfTest]
++Cmd=demoplay 330e1d3a57b34771977b8b4b9a598057
+
+[/Script/CommonUI.CommonUISettings]
+DefaultTextStyle_StringRef=/Game/UI/Foundation/Text/TextStyle-Base.TextStyle-Base_C
+DefaultButtonStyle_StringRef=/Game/UI/Foundation/Buttons/ButtonStyles/Primary/ButtonStyle-Primary-M.ButtonStyle-Primary-M_C
+DefaultBorderStyle_StringRef=None
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_FaceButton_Right,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_B_40.T_XB1_B_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_Circle_40.T_PS4_Circle_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_FaceButton_Bottom,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_A_40.T_XB1_A_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_Cross_40.T_PS4_Cross_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_FaceButton_Top,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_Y_40.T_XB1_Y_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_Triangle_40.T_PS4_Triangle_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_FaceButton_Left,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_X_40.T_XB1_X_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_Square_40.T_PS4_Square_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_LeftShoulder,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_LB_40.T_XB1_LB_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_L1_40.T_PS4_L1_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_RightShoulder,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_RB_40.T_XB1_RB_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_R1_40.T_PS4_R1_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_LeftThumbstick,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_LStick_Press_40.T_XB1_LStick_Press_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_LStick_Press_40.T_PS4_LStick_Press_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_RightThumbstick,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_RStick_Press_40.T_XB1_RStick_Press_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_RStick_Press_40.T_PS4_RStick_Press_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_Special_Right,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_Menu_40.T_XB1_Menu_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_Options_40.T_PS4_Options_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_Special_Left,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_Windows_40.T_XB1_Windows_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_TouchPad_40.T_PS4_TouchPad_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_DPad_Left,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_DPad_Left_40.T_XB1_DPad_Left_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_DPad_Left_40.T_PS4_DPad_Left_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_DPad_Up,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_DPad_Up_40.T_XB1_DPad_Up_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_DPad_Up_40.T_PS4_DPad_Up_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_DPad_Right,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_DPad_Right_40.T_XB1_DPad_Right_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_DPad_Right_40.T_PS4_DPad_Right_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_DPad_Down,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_DPad_Down_40.T_XB1_DPad_Down_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_DPad_Down_40.T_PS4_DPad_Down_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_LeftTrigger,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_LT_40.T_XB1_LT_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_L2_40.T_PS4_L2_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Gamepad_RightTrigger,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_RT_40.T_XB1_RT_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_R2_40.T_PS4_R2_40',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=C,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-C-32.T-PC-C-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=I,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-I-32.T-PC-I-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Escape,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=50.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-Esc-32.T-PC-Esc-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=S,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-S-32.T-PC-S-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=R,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-R-32.T-PC-R-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=F,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-F-32.T-PC-F-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=L,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-L-32.T-PC-L-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=E,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-E-32.T-PC-E-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=M,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-M-32.T-PC-M-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=G,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-G-32.T-PC-G-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=V,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-V-32.T-PC-V-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=P,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-P-32.T-PC-P-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=A,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-A-32.T-PC-A-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=SpaceBar,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=72.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-Space-32.T-PC-Space-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=T,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-T-32.T-PC-T-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=U,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-U-32.T-PC-U-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=X,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-X-32.T-PC-X-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=Z,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-Z-32.T-PC-Z-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
++InputKeyToPlatformSpecificDisplayDataMap=(Key=H,Value=(PlatformSpecificBrush[0]=(ImageSize=(X=28.000000,Y=28.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=Texture2D'/Game/UI/Foundation/Textures/Icons/PCButtons/T-PC-H-32.T-PC-H-32',ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[1]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0)),PlatformSpecificBrush[2]=(ImageSize=(X=32.000000,Y=32.000000),DrawAs=Image,Margin=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000),Tint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),TintColor=(SpecifiedColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),ColorUseRule=UseColor_Specified),Tiling=NoTile,Mirroring=NoMirror,ImageType=NoImage,ResourceObject=None,ResourceName="",bIsDynamicallyLoaded=False,bHasUObject=False,UVRegion=(Min=(X=0.000000,Y=0.000000),Max=(X=0.000000,Y=0.000000),IsValid=0))))
+DefaultClickAction=(DataTable=DataTable'/Game/UI/Foundation/Input/InputActionDataTable.InputActionDataTable',RowName=µυθ…	Β	}¨1Β

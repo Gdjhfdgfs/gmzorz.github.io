@@ -1,0 +1,13 @@
+[CommonSettings]
+SourcePath=Content/Localization/MCP
+DestinationPath=Content/Localization/MCP
+ManifestName=MCP.manifest
+ArchiveName=MCP.archive
+CulturesToGenerate=en
+CulturesToGenerate=zh-CN
+
+[GatherTextStep0]
+CommandletClass=GenerateTextLocalizationReport
+bWordCountReport=true
+WordCountReportName=MCP.csv
+b ‹

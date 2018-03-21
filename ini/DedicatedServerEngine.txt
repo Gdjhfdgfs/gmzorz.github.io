@@ -1,0 +1,16 @@
+[/Script/EngineSettings.GameMapsSettings]
+ServerDefaultMap=/Game/Maps/FortniteEmptyDedicated
+GlobalDefaultServerGameMode="/Script/FortniteGame.FortGameModeEmptyDedicated"
+
+[Core.Log]
+LogBeacon=verbose
+LogOnline=log
+LogOnlineGame=log
+LogNet=verbose
+
+[OnlineSubsystemMcp]
+bEnableDefaultServiceTracker=false
+
+[OnlineSubsystem]
+; Servers need to forward voice packets for consoles
+bHasVoic…&û™+©h`„Tyæ“

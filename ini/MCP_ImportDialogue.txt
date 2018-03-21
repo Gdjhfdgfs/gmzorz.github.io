@@ -1,0 +1,13 @@
+[CommonSettings]
+SourcePath=Content/Localization/MCP
+ManifestName=MCP.manifest
+ArchiveName=MCP.archive
+NativeCulture=en
+CulturesToGenerate=en
+CulturesToGenerate=zh-CN
+
+[GatherTextStep0]
+CommandletClass=ImportLocalizedDialogue
+RawAudioPath=
+ImportedDialogueFolder=ImportedDialogue
+bImportNativeAsSource=false§D†D

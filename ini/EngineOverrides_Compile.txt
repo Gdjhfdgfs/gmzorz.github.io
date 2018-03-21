@@ -1,0 +1,21 @@
+[CommonSettings]
+SourcePath=Content/Localization/EngineOverrides
+DestinationPath=Content/Localization/EngineOverrides
+ManifestName=EngineOverrides.manifest
+ArchiveName=EngineOverrides.archive
+ResourceName=EngineOverrides.locres
+bSkipSourceCheck=false
+NativeCulture=en
+CulturesToGenerate=en
+CulturesToGenerate=zh-CN
+CulturesToGenerate=fr
+CulturesToGenerate=de
+CulturesToGenerate=it
+CulturesToGenerate=pl
+CulturesToGenerate=pt-BR
+CulturesToGenerate=ru
+CulturesToGenerate=es
+CulturesToGenerate=es-419
+
+[GatherTextStep0]
+CommandletClass=GenerateTextLocalizatioV& 2&l‡®©,X«-^
